@@ -6,8 +6,8 @@ class AppColors {
   static const Color appBarBackgroundColor = Color(0xFF3F2E3E);
 
   static const LinearGradient buttonGradient = LinearGradient(
-    begin: Alignment.topCenter,
-    end: Alignment.bottomCenter,
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
     colors: [buttonStartColor, buttonEndColor],
   );
 
