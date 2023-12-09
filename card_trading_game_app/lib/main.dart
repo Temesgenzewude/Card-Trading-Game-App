@@ -1,5 +1,7 @@
-import 'package:card_trading_game_app/src/features/browse_set/presentation/screens/browse_sets.dart';
 import 'package:flutter/material.dart';
+
+import 'src/features/home/presentation/screens/home_screen.dart';
+import 'src/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: BrowseSetScreen(),
+    return MaterialApp(
+      title: 'Card Trading Game App',
+      theme: lightTheme,
+      home: const HomeScreen(),
     );
   }
 }

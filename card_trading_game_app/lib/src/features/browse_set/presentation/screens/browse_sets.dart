@@ -1,4 +1,3 @@
-import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 
 class BrowseSetScreen extends StatefulWidget {
