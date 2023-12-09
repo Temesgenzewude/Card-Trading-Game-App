@@ -47,6 +47,17 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              Padding(
+                  padding: EdgeInsets.only(
+                    top: AppSizer.getHeight(context, 34),
+                  ),
+                  child: Container(
+                    height: AppSizer.getHeight(context, 90),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).secondaryHeaderColor,
+                    ),
+                  )),
             ],
           ),
         ),
