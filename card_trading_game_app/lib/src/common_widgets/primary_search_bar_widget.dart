@@ -1,6 +1,5 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:card_trading_game_app/src/constants/colors.dart';
 import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 
@@ -25,13 +24,15 @@ class PrimarySearchBar extends StatelessWidget {
       ),
       elevation: const MaterialStatePropertyAll(1),
       side: MaterialStateProperty.all(
-        const BorderSide(color: Color.fromARGB(146, 63, 46, 62)),
+        BorderSide(
+          color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+        ),
       ),
       hintText: hintText,
-      hintStyle: const MaterialStatePropertyAll(
+      hintStyle: MaterialStatePropertyAll(
         TextStyle(
           fontWeight: FontWeight.w300,
-          color: Color(0xFF3F2E3E),
+          color: Theme.of(context).colorScheme.primary.withOpacity(0.7),
           fontSize: 14,
         ),
       ),
