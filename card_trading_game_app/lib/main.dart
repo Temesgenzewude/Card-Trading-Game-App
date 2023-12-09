@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Card Trading Game App',
       theme: lightTheme,
-      home: MoreOptionsScreen(),
+      home: HomeScreen(),
     );
   }
 }
