@@ -10,16 +10,26 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.only(
-            top: AppSizer.getHeight(context, 58),
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/bg_images/bg_image.png'),
+              fit: BoxFit.cover,
+            ),
           ),
           child: Column(
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                    left: AppSizer.getWidth(context, 365),
-                    right: AppSizer.getWidth(context, 147)),
+                  left: AppSizer.getWidth(context, 365),
+                  right: AppSizer.getWidth(
+                    context,
+                    147,
+                  ),
+                  top: AppSizer.getHeight(context, 58),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
