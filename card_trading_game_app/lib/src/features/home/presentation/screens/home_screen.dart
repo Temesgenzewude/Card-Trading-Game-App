@@ -11,6 +11,8 @@ import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+import '../../../../common_widgets/button_widget.dart';
+import '../../../../common_widgets/primary_search_bar_widget.dart';
 import '../widgets/build_tab_bar_for_home_page.dart';
 
 class HomeScreen extends HookWidget {
@@ -25,71 +27,67 @@ class HomeScreen extends HookWidget {
   Widget build(BuildContext context) {
     final tabController = useTabController(initialLength: 2);
     var selectedCard = useState("Pokellector");
+    print(selectedCard.value);
+
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/bg_images/bg_image.png'),
-              fit: BoxFit.cover,
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/bg_images/bg_image.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: AppSizer.getWidth(context, 365),
+                      right: AppSizer.getWidth(
+                        context,
+                        147,
+                      ),
+                      top: AppSizer.getHeight(context, 58),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        PrimarySearchBar(
+                          hintText: 'Search for cards',
+                        ),
+                        PrimaryButton(
+                          buttonName: 'Signin',
+                          buttonRadius: 8,
+                        ),
+                        PrimaryButton(
+                          buttonName: 'Signup',
+                          buttonRadius: 8,
+                        ),
+                      ],
+                    ),
+                  ),
+                  TabBarContainer(
+                    selectedCard: selectedCard,
+                    cardGames: cardGames,
+                    tabController: tabController,
+                  ),
+                ],
+              ),
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                  left: AppSizer.getWidth(context, 365),
-                  right: AppSizer.getWidth(context, 147),
-                  top: AppSizer.getHeight(context, 58),
-                ),
-                child: const AppBarWidget(),
-              ),
-              TabBarContainer(
-                  selectedCard: selectedCard,
-                  cardGames: cardGames,
-                  tabController: tabController),
-              Expanded(
-                child: TabBarView(controller: tabController, children: const [
-                  HomeTab(),
-                  BrowseSetTab(),
-                ]),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSizer.getWidth(context, 150),
-                  vertical: AppSizer.getHeight(context, 60),
-                ),
-                child: const Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    NewestSetsCardWidget(),
-                    NewestSeriesCardWidget(),
-                  ],
-                ),
-              ),
-              const FeaturedCardWidget(),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSizer.getWidth(context, 150),
-                  vertical: AppSizer.getHeight(context, 60),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    NewestSetsCardWidget(),
-                    NewestSetsCardWidget(),
-                    NewestSetsCardWidget(),
-                  ],
-                ),
-              ),
-              const FooterWidget()
-            ],
+          SliverFillRemaining(
+            child: TabBarView(
+              controller: tabController,
+              children: const [
+                HomeTab(),
+                BrowseSetTab(),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
