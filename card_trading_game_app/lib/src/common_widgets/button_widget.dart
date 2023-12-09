@@ -29,7 +29,7 @@ class PrimaryButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          foregroundColor: Colors.white,
+          foregroundColor: Theme.of(context).colorScheme.secondary,
         ),
         child: Text(
           buttonName,
