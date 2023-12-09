@@ -1,8 +1,12 @@
-import 'package:card_trading_game_app/src/common_widgets/button_widget.dart';
-import 'package:card_trading_game_app/src/common_widgets/primary_search_bar_widget.dart';
 import 'package:card_trading_game_app/src/constants/colors.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/widgets/browse_set_tab.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/widgets/home_tab.dart';
+
+import 'package:card_trading_game_app/src/common_widgets/app_bar_widget.dart';
+import 'package:card_trading_game_app/src/common_widgets/footer_widget.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/widgets/featured_card_widgets.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/widgets/newest_series_card_widget.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/widgets/newest_sets_card_widget.dart';
 import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -21,7 +25,6 @@ class HomeScreen extends HookWidget {
   Widget build(BuildContext context) {
     final tabController = useTabController(initialLength: 2);
     var selectedCard = useState("Pokellector");
-    print(selectedCard.value);
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -34,32 +37,15 @@ class HomeScreen extends HookWidget {
             ),
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: EdgeInsets.only(
                   left: AppSizer.getWidth(context, 365),
-                  right: AppSizer.getWidth(
-                    context,
-                    147,
-                  ),
+                  right: AppSizer.getWidth(context, 147),
                   top: AppSizer.getHeight(context, 58),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    PrimarySearchBar(
-                      hintText: 'Search for cards',
-                    ),
-                    PrimaryButton(
-                      buttonName: 'Signin',
-                      buttonRadius: 8,
-                    ),
-                    PrimaryButton(
-                      buttonName: 'Signup',
-                      buttonRadius: 8,
-                    ),
-                  ],
-                ),
+                child: const AppBarWidget(),
               ),
               TabBarContainer(
                   selectedCard: selectedCard,
@@ -70,7 +56,37 @@ class HomeScreen extends HookWidget {
                   HomeTab(),
                   BrowseSetTab(),
                 ]),
-              )
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSizer.getWidth(context, 150),
+                  vertical: AppSizer.getHeight(context, 60),
+                ),
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    NewestSetsCardWidget(),
+                    NewestSeriesCardWidget(),
+                  ],
+                ),
+              ),
+              const FeaturedCardWidget(),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSizer.getWidth(context, 150),
+                  vertical: AppSizer.getHeight(context, 60),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    NewestSetsCardWidget(),
+                    NewestSetsCardWidget(),
+                    NewestSetsCardWidget(),
+                  ],
+                ),
+              ),
+              const FooterWidget()
             ],
           ),
         ),
