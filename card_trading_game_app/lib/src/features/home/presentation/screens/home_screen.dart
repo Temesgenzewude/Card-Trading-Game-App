@@ -1,13 +1,27 @@
 import 'package:card_trading_game_app/src/common_widgets/button_widget.dart';
 import 'package:card_trading_game_app/src/common_widgets/primary_search_bar_widget.dart';
+import 'package:card_trading_game_app/src/constants/colors.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/widgets/browse_set_tab.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/widgets/home_tab.dart';
 import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+import '../widgets/build_tab_bar_for_home_page.dart';
+
+class HomeScreen extends HookWidget {
+  HomeScreen({super.key});
+
+  final List<String> cardGames = [
+    'Pokellector',
+    'Pokellector2',
+  ];
 
   @override
   Widget build(BuildContext context) {
+    final tabController = useTabController(initialLength: 2);
+    var selectedCard = useState("Pokellector");
+    print(selectedCard.value);
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -48,16 +62,89 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.only(
-                    top: AppSizer.getHeight(context, 34),
+                padding: EdgeInsets.only(
+                  top: AppSizer.getHeight(context, 34),
+                ),
+                child: Container(
+                  height: AppSizer.getHeight(context, 120),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).secondaryHeaderColor,
                   ),
-                  child: Container(
-                    height: AppSizer.getHeight(context, 90),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).secondaryHeaderColor,
+                  child: Row(children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: AppSizer.getWidth(context, 175), right: 65),
+                      child: Container(
+                        height: AppSizer.getHeight(context, 80),
+                        width: AppSizer.getWidth(context, 180),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: AppSizer.getWidth(context, 10),
+                                    right: AppSizer.getWidth(
+                                      context,
+                                      15,
+                                    ),
+                                    bottom: AppSizer.getHeight(
+                                      context,
+                                      10,
+                                    )),
+                                child: Image.asset(
+                                  'assets/images/logo_images/pokellector_logo.png',
+                                  height: AppSizer.getHeight(context, 80),
+                                  width: AppSizer.getWidth(context, 40),
+                                ),
+                              ),
+                              DropdownButton(
+                                  // isDense: true,
+                                  underline: Container(),
+                                  padding: EdgeInsets.only(
+                                      left: AppSizer.getWidth(context, 10),
+                                      right: AppSizer.getWidth(context, 10)),
+                                  value: selectedCard.value,
+                                  style: TextStyle(
+                                      color: AppColors.darkReddishTextColor,
+                                      fontSize: AppSizer.getHeight(context, 20),
+                                      fontFamily: 'InterBold'),
+                                  dropdownColor:
+                                      Theme.of(context).colorScheme.secondary,
+
+                                  // Down Arrow Icon
+                                  icon: const Padding(
+                                    padding: EdgeInsets.only(left: 20),
+                                    child: Icon(Icons.arrow_drop_down,
+                                        size: 20,
+                                        color: AppColors.darkPurplishTextColor),
+                                  ),
+                                  items: cardGames.map((String items) {
+                                    return DropdownMenuItem(
+                                      value: items,
+                                      child: Text(items),
+                                    );
+                                  }).toList(),
+                                  onChanged: (value) {
+                                    selectedCard.value = value ?? "";
+                                  })
+                            ]),
+                      ),
                     ),
-                  )),
+                    BuildTabBarForHomePage(tabController: tabController),
+                  ]),
+                ),
+              ),
+              Expanded(
+                child: TabBarView(controller: tabController, children: const [
+                  HomeTab(),
+                  BrowseSetTab(),
+                ]),
+              )
             ],
           ),
         ),
