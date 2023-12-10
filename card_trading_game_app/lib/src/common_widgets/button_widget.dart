@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
@@ -19,23 +17,25 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: AppSizer.getWidth(context, 5),
-        vertical: AppSizer.getHeight(context, 8),
+        horizontal: AppSizer.getWidth(context, 2),
+        vertical: AppSizer.getHeight(context, 4),
       ),
       decoration: BoxDecoration(
           gradient: AppColors.buttonGradient,
           borderRadius: BorderRadius.circular(buttonRadius)),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
-          foregroundColor: Theme.of(context).colorScheme.secondary,
-        ),
-        child: Text(
-          buttonName,
-          style: const TextStyle(
-            fontWeight: FontWeight.w300,
+      child: Center(
+        child: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            foregroundColor: Theme.of(context).colorScheme.secondary,
+          ),
+          child: Text(
+            buttonName,
+            style: const TextStyle(
+              fontWeight: FontWeight.w300,
+            ),
           ),
         ),
       ),

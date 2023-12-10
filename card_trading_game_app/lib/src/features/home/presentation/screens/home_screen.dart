@@ -41,10 +41,10 @@ class HomeScreen extends HookWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                      left: AppSizer.getWidth(context, 365),
+                      // left: AppSizer.getWidth(context, 365),
                       right: AppSizer.getWidth(
                         context,
-                        147,
+                        165,
                       ),
                       top: AppSizer.getHeight(context, 58),
                     ),
@@ -99,10 +99,10 @@ class HomeScreenTab extends StatelessWidget {
               NewestSeriesCardWidget(),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 45),
-            child: FeaturedCardWidget(),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric(vertical: 45),
+          //   child: FeaturedCardWidget(),
+          // ),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -25,6 +25,7 @@ class NewestSeriesCardWidget extends StatelessWidget {
             vertical: AppSizer.getHeight(context, 35),
           ),
           width: AppSizer.getWidth(context, 662),
+          height: AppSizer.getHeight(context, 350),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(8),
