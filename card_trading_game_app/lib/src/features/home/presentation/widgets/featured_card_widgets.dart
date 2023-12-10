@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../common_widgets/card_name_widget.dart';
@@ -40,8 +39,8 @@ class FeaturedCardWidget extends StatelessWidget {
               ),
             ],
           ),
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: const Wrap(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ProductCardWidget(),
               ProductCardWidget(),

@@ -45,7 +45,7 @@ class CardNameWidget extends StatelessWidget {
             Text(
               primaryTitile,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: AppSizer.getHeight(context, 20),
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).colorScheme.secondary,
               ),
@@ -54,12 +54,12 @@ class CardNameWidget extends StatelessWidget {
                 ? Text(
                     'View all',
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: AppSizer.getHeight(context, 20),
                       fontWeight: FontWeight.w300,
                       color: Theme.of(context).colorScheme.secondary,
                     ),
                   )
-                : SizedBox(),
+                : Container(),
           ],
         ),
       ),

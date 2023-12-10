@@ -190,33 +190,40 @@ class HomeScreenTab extends StatelessWidget {
         padding: EdgeInsets.only(top: 30.0),
         child: Column(
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Column(
               children: [
-                Expanded(
-                  child: NewestSetsCardWidget(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 180.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      NewestSetsCardWidget(),
+                      NewestSeriesCardWidget(),
+                    ],
+                  ),
                 ),
-                Expanded(
-                  child: NewestSeriesCardWidget(),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 45, horizontal: 180.0),
+                  child: FeaturedCardWidget(),
                 ),
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 45),
-              child: FeaturedCardWidget(),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Flexible(
-                  child: NewestSetsCardWidget(),
-                ),
-                Flexible(
-                  child: NewestSetsCardWidget(),
-                ),
-                Flexible(
-                  child: NewestSetsCardWidget(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 180.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: NewestSetsCardWidget(),
+                      ),
+                      Flexible(
+                        child: NewestSetsCardWidget(),
+                      ),
+                      Flexible(
+                        child: NewestSetsCardWidget(),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
