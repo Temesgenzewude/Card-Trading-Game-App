@@ -3,6 +3,7 @@ import 'package:card_trading_game_app/src/common_widgets/footer_widget.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/screens/home_screen.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/widgets/browse_set_tab.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/widgets/build_tab_bar_container.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/widgets/featured_card_widgets.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/widgets/newest_series_card_widget.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/widgets/newest_sets_card_widget.dart';
 import 'package:card_trading_game_app/src/utils/size_convertor.dart';
@@ -25,37 +26,153 @@ class _NewHomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final tabController = useTabController(initialLength: 2);
     var selectedCard = useState("Pokellector");
+    // return Scaffold(
+    //   body: CustomScrollView(
+    //     slivers: [
+    //       const SliverAppBar(
+    //         title: AppBarWidget(),
+    //       ),
+    //       SliverAppBar(
+    //         pinned: true,
+    //         backgroundColor: Theme.of(context).secondaryHeaderColor,
+    //         title: TabBarContainer(
+    //           selectedCard: selectedCard,
+    //           cardGames: cardGames,
+    //           tabController: tabController,
+    //         ),
+    //       ),
+    //       DefaultTabController(
+    //           length: 2,
+    //           child: NestedScrollView(
+    //             headerSliverBuilder:
+    //                 (BuildContext context, bool innerBoxSelected) {
+    //               return [];
+    //             },
+    //             body: const TabBarView(
+    //                 children: [HomeScreenTab(), BrowseSetTab()]),
+    //           )),
+    //       SliverToBoxAdapter(
+    //         child: TabBarView(controller: tabController, children: [
+    //           Container(
+    //             height: 100,
+    //             color: Colors.black,
+    //           ),
+    //           // Column(
+    //           //   children: [
+    //           //     Row(
+    //           //       crossAxisAlignment: CrossAxisAlignment.start,
+    //           //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //           //       children: [
+    //           //         Expanded(
+    //           //           child: NewestSetsCardWidget(),
+    //           //         ),
+    //           //         Expanded(
+    //           //           child: NewestSeriesCardWidget(),
+    //           //         ),
+    //           //       ],
+    //           //     ),
+    //           //     Padding(
+    //           //       padding: EdgeInsets.symmetric(vertical: 45),
+    //           //       child: FeaturedCardWidget(),
+    //           //     ),
+    //           //     Row(
+    //           //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //           //       children: [
+    //           //         Flexible(
+    //           //           child: NewestSetsCardWidget(),
+    //           //         ),
+    //           //         Flexible(
+    //           //           child: NewestSetsCardWidget(),
+    //           //         ),
+    //           //         Flexible(
+    //           //           child: NewestSetsCardWidget(),
+    //           //         ),
+    //           //       ],
+    //           //     ),
+    //           //   ],
+    //           // ),
+    //         ]),
+    //       ),
+    //       const SliverToBoxAdapter(
+    //         child: Column(
+    //           children: [
+    //             Row(
+    //               crossAxisAlignment: CrossAxisAlignment.start,
+    //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //               children: [
+    //                 Expanded(
+    //                   child: NewestSetsCardWidget(),
+    //                 ),
+    //                 Expanded(
+    //                   child: NewestSeriesCardWidget(),
+    //                 ),
+    //               ],
+    //             ),
+    //             Padding(
+    //               padding: EdgeInsets.symmetric(vertical: 45),
+    //               child: FeaturedCardWidget(),
+    //             ),
+    //             Row(
+    //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //               children: [
+    //                 Flexible(
+    //                   child: NewestSetsCardWidget(),
+    //                 ),
+    //                 Flexible(
+    //                   child: NewestSetsCardWidget(),
+    //                 ),
+    //                 Flexible(
+    //                   child: NewestSetsCardWidget(),
+    //                 ),
+    //               ],
+    //             ),
+    //           ],
+    //         ),
+    //       ),
+    //       // SliverToBoxAdapter(
+    //       //   child: TabBarView(
+    //       //     controller: tabController,
+    //       //     children: [
+    //       //       HomeScreenTab(),
+    //       //       BrowseSetTab(),
+    //       //     ],
+    //       //   ),
+    //       // ),
+    //       // SliverToBoxAdapter(
+    //       //   child: Container(
+    //       //     height: 200,
+    //       //     color: Colors.black,
+    //       //   ),
+    //       // ),
+    //       // const FooterWidget(),
+    //     ],
+    //   ),
+    // );
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          const SliverAppBar(
-            title: AppBarWidget(),
-          ),
-          SliverAppBar(
-            pinned: true,
-            backgroundColor: Theme.of(context).secondaryHeaderColor,
-            title: TabBarContainer(
-              selectedCard: selectedCard,
-              cardGames: cardGames,
-              tabController: tabController,
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            const SliverAppBar(
+              title: AppBarWidget(),
             ),
-          ),
-          SliverFillRemaining(
-            child: SizedBox(
-              width: 500,
-              child: TabBarView(
-                controller: tabController,
-                children: const [
-                  HomeScreenTab(),
-                  BrowseSetTab(),
-                ],
+            SliverAppBar(
+              pinned: true,
+              backgroundColor: Theme.of(context).secondaryHeaderColor,
+              title: TabBarContainer(
+                selectedCard: selectedCard,
+                cardGames: cardGames,
+                tabController: tabController,
               ),
             ),
-          ),
-          const SliverToBoxAdapter(
-            child: FooterWidget(),
-          ),
-        ],
+          ];
+        },
+        body: TabBarView(
+          controller: tabController,
+          children: const [
+            HomeScreenTab(),
+            BrowseSetTab(),
+          ],
+        ),
       ),
     );
   }
@@ -63,41 +180,49 @@ class _NewHomeScreenState extends State<HomeScreen> {
 
 class HomeScreenTab extends StatelessWidget {
   const HomeScreenTab({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSizer.getWidth(context, 150),
-        vertical: AppSizer.getHeight(context, 60),
-      ),
-      child: const Column(
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              NewestSetsCardWidget(),
-              NewestSeriesCardWidget(),
-            ],
-          ),
-          // Padding(
-          //   padding: EdgeInsets.symmetric(vertical: 45),
-          //   child: FeaturedCardWidget(),
-          // ),
-          Expanded(
-            child: Row(
+    return const SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.only(top: 30.0),
+        child: Column(
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                NewestSetsCardWidget(),
-                NewestSetsCardWidget(),
-                NewestSetsCardWidget(),
+                Expanded(
+                  child: NewestSetsCardWidget(),
+                ),
+                Expanded(
+                  child: NewestSeriesCardWidget(),
+                ),
               ],
             ),
-          ),
-        ],
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 45),
+              child: FeaturedCardWidget(),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: NewestSetsCardWidget(),
+                ),
+                Flexible(
+                  child: NewestSetsCardWidget(),
+                ),
+                Flexible(
+                  child: NewestSetsCardWidget(),
+                ),
+              ],
+            ),
+            FooterWidget(),
+          ],
+        ),
       ),
     );
   }
