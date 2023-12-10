@@ -16,7 +16,7 @@ class NewestSeriesCardWidget extends StatelessWidget {
       children: [
         CardNameWidget(
           primaryTitile: 'Newest Series',
-          width: 374,
+          width: 200,
         ),
         Container(
           padding: EdgeInsets.symmetric(
