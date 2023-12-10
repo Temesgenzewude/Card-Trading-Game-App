@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: must_be_immutable
 
-import '../constants/colors.dart';
-import '../utils/size_convertor.dart';
+import 'package:card_trading_game_app/src/constants/colors.dart';
+import 'package:card_trading_game_app/src/utils/size_convertor.dart';
+import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
   PrimaryButton({
@@ -18,8 +19,8 @@ class PrimaryButton extends StatelessWidget {
     return GestureDetector(
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: AppSizer.getWidth(context, 40),
-          vertical: AppSizer.getHeight(context, 5),
+          horizontal: AppSizer.getWidth(context, 30),
+          vertical: AppSizer.getHeight(context, 20),
         ),
         decoration: BoxDecoration(
             gradient: AppColors.buttonGradient,
@@ -27,8 +28,9 @@ class PrimaryButton extends StatelessWidget {
         child: Text(
           buttonName,
           style: TextStyle(
-              color: Theme.of(context).colorScheme.secondary, fontSize: 20),
-        ),
+            fontWeight: FontWeight.w300,
+            color: Theme.of(context).colorScheme.secondary,
+          ),        ),
       ),
     );
   }

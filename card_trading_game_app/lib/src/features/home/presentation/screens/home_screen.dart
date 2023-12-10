@@ -1,56 +1,43 @@
+import 'package:card_trading_game_app/src/common_widgets/app_bar_widget.dart';
+import 'package:card_trading_game_app/src/common_widgets/footer_widget.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/screens/home_screen.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/widgets/browse_set_tab.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/widgets/build_tab_bar_container.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/widgets/newest_series_card_widget.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/widgets/newest_sets_card_widget.dart';
+import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-import '../../../../common_widgets/app_bar_widget.dart';
-import '../../../../common_widgets/footer_widget.dart';
-import '../../../../utils/size_convertor.dart';
-import '../widgets/browse_set_tab.dart';
-import '../widgets/build_tab_bar_container.dart';
-import '../widgets/featured_card_widgets.dart';
-import '../widgets/newest_series_card_widget.dart';
-import '../widgets/newest_sets_card_widget.dart';
+class HomeScreen extends StatefulHookWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
-class HomeScreen extends HookWidget {
-  HomeScreen({super.key});
+  @override
+  _NewHomeScreenState createState() => _NewHomeScreenState();
+}
 
+class _NewHomeScreenState extends State<HomeScreen> {
   final List<String> cardGames = [
     'Pokellector',
     'Pokellector2',
   ];
-
   @override
   Widget build(BuildContext context) {
     final tabController = useTabController(initialLength: 2);
     var selectedCard = useState("Pokellector");
-    // print(selectedCard.value);
-
     return Scaffold(
       body: CustomScrollView(
         slivers: [
+          const SliverAppBar(
+            title: AppBarWidget(),
+          ),
           SliverAppBar(
             pinned: true,
-            // expandedHeight: 250.0,
-            title: FlexibleSpaceBar(
-              title: Container(
-                width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/bg_images/bg_image.png'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const AppBarWidget(),
-                    TabBarContainer(
-                      selectedCard: selectedCard,
-                      cardGames: cardGames,
-                      tabController: tabController,
-                    ),
-                  ],
-                ),
-              ),
+            backgroundColor: Theme.of(context).secondaryHeaderColor,
+            title: TabBarContainer(
+              selectedCard: selectedCard,
+              cardGames: cardGames,
+              tabController: tabController,
             ),
           ),
           SliverFillRemaining(
@@ -96,17 +83,19 @@ class HomeScreenTab extends StatelessWidget {
               NewestSeriesCardWidget(),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 45),
-            child: FeaturedCardWidget(),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              NewestSetsCardWidget(),
-              NewestSetsCardWidget(),
-              NewestSetsCardWidget(),
-            ],
+          // Padding(
+          //   padding: EdgeInsets.symmetric(vertical: 45),
+          //   child: FeaturedCardWidget(),
+          // ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                NewestSetsCardWidget(),
+                NewestSetsCardWidget(),
+                NewestSetsCardWidget(),
+              ],
+            ),
           ),
         ],
       ),
