@@ -27,35 +27,42 @@ class HomeScreen extends HookWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/bg_images/bg_image.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const AppBarWidget(),
-                  TabBarContainer(
-                    selectedCard: selectedCard,
-                    cardGames: cardGames,
-                    tabController: tabController,
+          SliverAppBar(
+            pinned: true,
+            // expandedHeight: 250.0,
+            title: FlexibleSpaceBar(
+              title: Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/bg_images/bg_image.png'),
+                    fit: BoxFit.cover,
                   ),
-                ],
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const AppBarWidget(),
+                    TabBarContainer(
+                      selectedCard: selectedCard,
+                      cardGames: cardGames,
+                      tabController: tabController,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
           SliverFillRemaining(
-            child: TabBarView(
-              controller: tabController,
-              children: const [
-                HomeScreenTab(),
-                BrowseSetTab(),
-              ],
+            child: SizedBox(
+              width: 500,
+              child: TabBarView(
+                controller: tabController,
+                children: const [
+                  HomeScreenTab(),
+                  BrowseSetTab(),
+                ],
+              ),
             ),
           ),
           const SliverToBoxAdapter(
@@ -89,19 +96,17 @@ class HomeScreenTab extends StatelessWidget {
               NewestSeriesCardWidget(),
             ],
           ),
-          // Padding(
-          //   padding: EdgeInsets.symmetric(vertical: 45),
-          //   child: FeaturedCardWidget(),
-          // ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                NewestSetsCardWidget(),
-                NewestSetsCardWidget(),
-                NewestSetsCardWidget(),
-              ],
-            ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 45),
+            child: FeaturedCardWidget(),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              NewestSetsCardWidget(),
+              NewestSetsCardWidget(),
+              NewestSetsCardWidget(),
+            ],
           ),
         ],
       ),
