@@ -39,17 +39,7 @@ class HomeScreen extends HookWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: AppSizer.getWidth(context, 365),
-                      right: AppSizer.getWidth(
-                        context,
-                        147,
-                      ),
-                      top: AppSizer.getHeight(context, 58),
-                    ),
-                    child: const AppBarWidget(),
-                  ),
+                  const AppBarWidget(),
                   TabBarContainer(
                     selectedCard: selectedCard,
                     cardGames: cardGames,

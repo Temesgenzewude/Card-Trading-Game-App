@@ -16,25 +16,20 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSizer.getWidth(context, 5),
-        vertical: AppSizer.getHeight(context, 8),
-      ),
-      decoration: BoxDecoration(
-          gradient: AppColors.buttonGradient,
-          borderRadius: BorderRadius.circular(buttonRadius)),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
-          foregroundColor: Theme.of(context).colorScheme.secondary,
+    return GestureDetector(
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSizer.getWidth(context, 30),
+          vertical: AppSizer.getHeight(context, 20),
         ),
+        decoration: BoxDecoration(
+            gradient: AppColors.buttonGradient,
+            borderRadius: BorderRadius.circular(buttonRadius)),
         child: Text(
           buttonName,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.w300,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
       ),

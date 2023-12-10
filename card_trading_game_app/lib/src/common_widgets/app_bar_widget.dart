@@ -1,4 +1,3 @@
-
 import 'package:card_trading_game_app/src/common_widgets/button_widget.dart';
 import 'package:card_trading_game_app/src/common_widgets/primary_search_bar_widget.dart';
 import 'package:flutter/material.dart';
@@ -10,21 +9,30 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        PrimarySearchBar(
-          hintText: 'Search for cards',
-        ),
-        PrimaryButton(
-          buttonName: 'Signin',
-          buttonRadius: 8,
-        ),
-        PrimaryButton(
-          buttonName: 'Signup',
-          buttonRadius: 8,
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 20.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: PrimarySearchBar(
+              hintText: 'Search for cards',
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: PrimaryButton(
+              buttonName: 'Sign In',
+              buttonRadius: 8,
+            ),
+          ),
+          PrimaryButton(
+            buttonName: 'Create Account',
+            buttonRadius: 8,
+          ),
+        ],
+      ),
     );
   }
 }
