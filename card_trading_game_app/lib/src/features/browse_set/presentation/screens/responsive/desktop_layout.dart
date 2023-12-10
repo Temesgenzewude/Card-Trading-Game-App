@@ -1,78 +1,91 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:card_trading_game_app/src/common_widgets/card_name_widget.dart';
-import 'package:card_trading_game_app/src/features/home/presentation/widgets/product_card_widget.dart';
+import 'package:card_trading_game_app/src/common_widgets/footer_widget.dart';
+import 'package:card_trading_game_app/src/features/browse_set/presentation/widgets/series_card_widget.dart';
 import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 
-class BrowseSetsDesktop extends StatelessWidget {
+class BrowseSetsDesktop extends StatefulWidget {
   const BrowseSetsDesktop({super.key});
 
+  @override
+  State<BrowseSetsDesktop> createState() => _BrowseSetsDesktopState();
+}
+
+class _BrowseSetsDesktopState extends State<BrowseSetsDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: AppSizer.getWidth(context, 154)),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SeriesNameCardWidget(
-                wrap: const Wrap(
-                  runSpacing: 12,
-                  spacing: 10,
-                  children: [
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                  ],
-                ),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSizer.getWidth(context, 154),
+                vertical: AppSizer.getHeight(context, 54),
               ),
-              SizedBox(
-                height: 10,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SeriesNameCardWidget(
+                    wrap: Wrap(
+                      runSpacing: 12,
+                      spacing: 10,
+                      children: [
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SeriesNameCardWidget(
+                    wrap: Wrap(
+                      runSpacing: 12,
+                      spacing: 10,
+                      children: [
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                      ],
+                    ),
+                  ),
+                  SeriesNameCardWidget(
+                    wrap:  Wrap(
+                      runSpacing: 12,
+                      spacing: 10,
+                      children: [
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                        SeriesCardWidget(),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              SeriesNameCardWidget(
-                wrap: const Wrap(
-                  runSpacing: 12,
-                  spacing: 10,
-                  children: [
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                  ],
-                ),
-              ),
-              SeriesNameCardWidget(
-                wrap: const Wrap(
-                  runSpacing: 12,
-                  spacing: 10,
-                  children: [
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                    SeriesCardWidget(),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+            const FooterWidget()
+          ],
         ),
       ),
     );
@@ -89,75 +102,39 @@ class SeriesNameCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CardNameWidget(
-          primaryTitile: 'Series name',
-          width: 313,
-        ),
-        Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppSizer.getWidth(context, 27),
-            vertical: AppSizer.getHeight(context, 35),
-          ),
-          width: AppSizer.getWidth(context, 917),
-          // height: AppSizer.getHeight(context, 350),
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(8),
-              bottomRight: Radius.circular(8),
-            ),
-            color: Theme.of(context).colorScheme.secondary,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.25),
-                offset: const Offset(0, 4),
-                blurRadius: 4,
-                spreadRadius: 1,
-              ),
-            ],
-          ),
-          child: wrap,
-        )
-      ],
-    );
-  }
-}
-
-class SeriesCardWidget extends StatelessWidget {
-  const SeriesCardWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: 15,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(3),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.25),
-            offset: const Offset(0, 4),
-            blurRadius: 4,
-            spreadRadius: 1,
-          ),
-        ],
-        border: Border.all(
-          color: Theme.of(context).colorScheme.primary.withOpacity(0.8),
-          width: 1,
-        ),
-        color: Theme.of(context).colorScheme.secondary,
-      ),
+    return Padding(
+      padding: EdgeInsets.only(top: AppSizer.getHeight(context, 32)),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            'assets/images/image26.png',
-            width: AppSizer.getWidth(context, 115),
-            fit: BoxFit.cover,
+          CardNameWidget(
+            primaryTitile: 'Series name',
+            width: 313,
           ),
-          const Text('set name'),
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: AppSizer.getWidth(context, 27),
+              vertical: AppSizer.getHeight(context, 35),
+            ),
+            width: AppSizer.getWidth(context, 917),
+            // height: AppSizer.getHeight(context, 350),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(8),
+                bottomRight: Radius.circular(8),
+              ),
+              color: Theme.of(context).colorScheme.secondary,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.25),
+                  offset: const Offset(0, 4),
+                  blurRadius: 4,
+                  spreadRadius: 1,
+                ),
+              ],
+            ),
+            child: wrap,
+          )
         ],
       ),
     );

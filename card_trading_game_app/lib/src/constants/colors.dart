@@ -16,6 +16,7 @@ class AppColors {
   static const Color primaryColor = Color.fromRGBO(0, 98, 148, 1);
   static const Color secondaryColor = Colors.white;
   static const Color borderColor = Color.fromARGB(146, 63, 46, 62);
+  static const Color textColor = Colors.black;
   static Color shadowColor = Colors.black.withOpacity(0.5);
 
   static const Color darkReddishTextColor = Color(0xFF331D2C);
