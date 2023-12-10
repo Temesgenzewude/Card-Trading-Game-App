@@ -23,6 +23,7 @@ class ParagraphWidget extends StatelessWidget {
               fontWeight: FontWeight.normal,
               color: Colors.black
             ),
+            textAlign: TextAlign.left,
           )
     );
   }
