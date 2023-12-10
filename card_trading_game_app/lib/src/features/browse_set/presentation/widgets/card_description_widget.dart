@@ -1,4 +1,3 @@
-
 import 'package:card_trading_game_app/src/features/browse_set/presentation/widgets/card_detail_card_widget.dart';
 import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +12,7 @@ class CardDescriptionWidget extends StatelessWidget {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.only(
-              right: AppSizer.getWidth(context, 50)),
+          padding: EdgeInsets.only(right: AppSizer.getWidth(context, 50)),
           child: Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -28,10 +26,7 @@ class CardDescriptionWidget extends StatelessWidget {
                 ),
               ],
               border: Border.all(
-                color: Theme.of(context)
-                    .colorScheme
-                    .primary
-                    .withOpacity(0.8),
+                color: Theme.of(context).colorScheme.primary.withOpacity(0.8),
                 width: 1,
               ),
               color: Theme.of(context).colorScheme.secondary,
@@ -58,15 +53,13 @@ class CardDescriptionWidget extends StatelessWidget {
                 style: TextStyle(
                   fontSize: AppSizer.getHeight(context, 20),
                   fontWeight: FontWeight.bold,
-                  color:
-                      Theme.of(context).colorScheme.onTertiary,
+                  color: Theme.of(context).colorScheme.onTertiary,
                 ),
               ),
             ),
             const Padding(
               padding: EdgeInsets.only(bottom: 40.0),
-              child: Text(
-                  'The first TCG set to feature Paradox Pokemon'),
+              child: Text('The first TCG set to feature Paradox Pokemon'),
             ),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

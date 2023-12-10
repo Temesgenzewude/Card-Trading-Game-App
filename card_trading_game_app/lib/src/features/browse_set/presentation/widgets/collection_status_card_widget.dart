@@ -35,21 +35,24 @@ class CollectionStatusCardWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Padding(
-              padding: EdgeInsets.only(right: AppSizer.getWidth(context, 100)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Collection Status',
-                    style: TextStyle(
-                      fontSize: AppSizer.getHeight(context, 20),
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.primary,
+            Flexible(
+              child: Padding(
+                padding:
+                    EdgeInsets.only(right: AppSizer.getWidth(context, 100)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Collection Status',
+                      style: TextStyle(
+                        fontSize: AppSizer.getHeight(context, 20),
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                     ),
-                  ),
-                  const Text('You must be logged in to track your collection')
-                ],
+                    const Text('You must be logged in to track your collection')
+                  ],
+                ),
               ),
             ),
             Row(
