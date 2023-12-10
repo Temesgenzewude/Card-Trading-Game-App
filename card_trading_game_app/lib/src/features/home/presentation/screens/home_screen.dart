@@ -1,5 +1,9 @@
 import 'package:card_trading_game_app/src/common_widgets/app_bar_widget.dart';
 import 'package:card_trading_game_app/src/common_widgets/footer_widget.dart';
+import 'package:card_trading_game_app/src/features/browse_set/presentation/screens/browse_sets.dart';
+import 'package:card_trading_game_app/src/features/browse_set/presentation/screens/responsive/desktop_layout.dart';
+import 'package:card_trading_game_app/src/features/browse_set/presentation/screens/responsive/mobile_layout.dart';
+import 'package:card_trading_game_app/src/features/browse_set/presentation/screens/responsive/tablet_layout.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/screens/home_screen.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/widgets/browse_set_tab.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/widgets/build_tab_bar_container.dart';
@@ -170,7 +174,11 @@ class _NewHomeScreenState extends State<HomeScreen> {
           controller: tabController,
           children: const [
             HomeScreenTab(),
-            BrowseSetTab(),
+            BrowseSetTab(
+              desktopScaffold: BrowseSetsDesktop(),
+              mobileScaffold: BrowseSetsMobile(),
+              tabletScaffold: BrowseSetsTablet(),
+            ),
           ],
         ),
       ),
