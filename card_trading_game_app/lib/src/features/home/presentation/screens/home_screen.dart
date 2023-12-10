@@ -58,28 +58,6 @@ class HomeScreen extends HookWidget {
               ],
             ),
           ),
-          // SliverToBoxAdapter(
-          //   child: HomeScreenTab(),
-          // ),
-          // const SliverToBoxAdapter(
-          //   child: FeaturedCardWidget(),
-          // ),
-          // SliverToBoxAdapter(
-          //   child: Padding(
-          //     padding: EdgeInsets.symmetric(
-          //       horizontal: AppSizer.getWidth(context, 150),
-          //       vertical: AppSizer.getHeight(context, 60),
-          //     ),
-          //     child: const Row(
-          //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //       children: [
-          //         NewestSetsCardWidget(),
-          //         NewestSetsCardWidget(),
-          //         NewestSetsCardWidget(),
-          //       ],
-          //     ),
-          //   ),
-          // ),
           const SliverToBoxAdapter(
             child: FooterWidget(),
           ),
