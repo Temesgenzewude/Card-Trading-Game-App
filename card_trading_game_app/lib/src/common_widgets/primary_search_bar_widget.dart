@@ -18,7 +18,7 @@ class PrimarySearchBar extends StatelessWidget {
       padding: MaterialStateProperty.all(
         EdgeInsets.symmetric(
           horizontal: AppSizer.getWidth(context, 20),
-          vertical: AppSizer.getHeight(context, 14),
+          vertical: AppSizer.getHeight(context, 10),
         ),
       ),
       elevation: const MaterialStatePropertyAll(1),

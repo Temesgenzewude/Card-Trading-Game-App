@@ -1,3 +1,5 @@
+import 'package:card_trading_game_app/src/features/home/presentation/screens/new_home_screen.dart';
+import 'package:card_trading_game_app/src/features/home/presentation/screens/new_home_screen_2.dart';
 import 'package:flutter/material.dart';
 
 import 'src/features/home/presentation/screens/home_screen.dart';
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Card Trading Game App',
       theme: lightTheme,
-      home: HomeScreen(),
+      home: const NewHomeScreen2(),
     );
   }
 }

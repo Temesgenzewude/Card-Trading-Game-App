@@ -18,8 +18,8 @@ class PrimaryButton extends StatelessWidget {
     return GestureDetector(
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: AppSizer.getWidth(context, 30),
-          vertical: AppSizer.getHeight(context, 20),
+          horizontal: AppSizer.getWidth(context, 20),
+          vertical: AppSizer.getHeight(context, 10),
         ),
         decoration: BoxDecoration(
             gradient: AppColors.buttonGradient,
