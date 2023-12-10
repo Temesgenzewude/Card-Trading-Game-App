@@ -1,11 +1,6 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../utils/size_convertor.dart';
-
-
-
-
 
 class InnerCardWidget extends StatelessWidget {
   InnerCardWidget({
@@ -40,6 +35,7 @@ class InnerCardWidget extends StatelessWidget {
         children: [
           Image(
             image: AssetImage(imageUrl),
+            width: AppSizer.getWidth(context, 25),
           ),
           SizedBox(
             width: AppSizer.getWidth(context, 10),
@@ -47,7 +43,8 @@ class InnerCardWidget extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-                color: Theme.of(context).colorScheme.primary, fontSize: 13),
+                color: Theme.of(context).colorScheme.primary,
+                fontSize: AppSizer.getHeight(context, 15)),
           )
         ],
       ),

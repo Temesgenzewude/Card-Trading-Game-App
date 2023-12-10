@@ -10,40 +10,43 @@ class ProductCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Image(
-          width: AppSizer.getWidth(context, 87),
-          // height: AppSizer.getHeight(context, 121),
-          fit: BoxFit.contain,
-          image: const AssetImage(
-            'assets/images/image14.png',
+    return SizedBox(
+      width: AppSizer.getWidth(context, 100),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image(
+            width: AppSizer.getWidth(context, 87),
+            // height: AppSizer.getHeight(context, 121),
+            fit: BoxFit.contain,
+            image: const AssetImage(
+              'assets/images/image14.png',
+            ),
           ),
-        ),
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            AppIcons.yellowStar,
-            AppIcons.yellowStar,
-            AppIcons.yellowStar,
-            AppIcons.yellowStar,
-            AppIcons.yellowStar,
-            Text(
-              '(512)',
-              style: TextStyle(fontSize: 10),
-            )
-          ],
-        ),
-        const Text(
-          'Card Name',
-          style: TextStyle(fontSize: 12),
-        ),
-        const Text(
-          '\$0.85',
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-        )
-      ],
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              AppIcons.yellowStar,
+              AppIcons.yellowStar,
+              AppIcons.yellowStar,
+              AppIcons.yellowStar,
+              AppIcons.yellowStar,
+              Text(
+                '(512)',
+                style: TextStyle(fontSize: 10),
+              )
+            ],
+          ),
+          const Text(
+            'Card Name',
+            style: TextStyle(fontSize: 12),
+          ),
+          const Text(
+            '\$0.85',
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          )
+        ],
+      ),
     );
   }
 }
