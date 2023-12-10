@@ -1,4 +1,3 @@
-import 'package:card_trading_game_app/src/features/more_options/presentation/screens/more_options_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'src/features/home/presentation/screens/home_screen.dart';
