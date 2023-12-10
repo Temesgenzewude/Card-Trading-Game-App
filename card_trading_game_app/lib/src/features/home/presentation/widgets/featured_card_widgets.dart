@@ -1,8 +1,9 @@
 
-import 'package:card_trading_game_app/src/common_widgets/card_name_widget.dart';
-import 'package:card_trading_game_app/src/features/home/presentation/widgets/product_card_widget.dart';
-import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../common_widgets/card_name_widget.dart';
+import '../../../../utils/size_convertor.dart';
+import 'product_card_widget.dart';
 
 class FeaturedCardWidget extends StatelessWidget {
   const FeaturedCardWidget({

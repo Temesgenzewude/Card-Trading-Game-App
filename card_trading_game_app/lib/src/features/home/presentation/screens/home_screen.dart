@@ -89,10 +89,10 @@ class HomeScreenTab extends StatelessWidget {
               NewestSeriesCardWidget(),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 45),
-            child: FeaturedCardWidget(),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric(vertical: 45),
+          //   child: FeaturedCardWidget(),
+          // ),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

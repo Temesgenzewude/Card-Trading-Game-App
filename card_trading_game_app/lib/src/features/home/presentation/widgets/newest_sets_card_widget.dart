@@ -1,7 +1,8 @@
-import 'package:card_trading_game_app/src/common_widgets/card_name_widget.dart';
-import 'package:card_trading_game_app/src/features/home/presentation/widgets/inner_card_widget.dart';
-import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../common_widgets/card_name_widget.dart';
+import '../../../../utils/size_convertor.dart';
+import 'inner_card_widget.dart';
 
 class NewestSetsCardWidget extends StatelessWidget {
   const NewestSetsCardWidget({

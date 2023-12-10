@@ -10,6 +10,6 @@ class AppSizer {
 
   static double getHeight(context, height) {
     double screenHeight = MediaQuery.of(context).size.height;
-    return (height * screenHeight) / 1416;
+    return (height * screenHeight) / 900;
   }
 }
