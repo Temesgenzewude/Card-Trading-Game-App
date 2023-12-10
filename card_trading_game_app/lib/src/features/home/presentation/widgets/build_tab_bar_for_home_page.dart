@@ -23,8 +23,9 @@ class BuildTabBarForHomePage extends StatelessWidget {
             borderRadius: BorderRadius.circular(32.0),
             gradient: const LinearGradient(
               colors: [
-                Color(0xFF3F2E3E),
-                Color(0xFFA78295),
+                //rgba(142, 202, 230, 1), rgba(33, 158, 188, 1)
+                Color.fromRGBO(142, 202, 230, 1),
+                Color.fromRGBO(33, 158, 188, 1),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
