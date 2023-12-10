@@ -9,6 +9,7 @@ ThemeData lightTheme = ThemeData(
     secondary: AppColors.secondaryColor,
     tertiary: AppColors.borderColor,
     shadow: AppColors.shadowColor,
+    onTertiary: AppColors.textColor,
   ),
   secondaryHeaderColor: AppColors.appBarBackgroundColor,
 );

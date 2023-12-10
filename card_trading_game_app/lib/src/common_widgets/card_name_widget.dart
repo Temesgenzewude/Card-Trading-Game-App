@@ -4,15 +4,20 @@ import '../constants/colors.dart';
 import '../utils/size_convertor.dart';
 
 class CardNameWidget extends StatelessWidget {
-  CardNameWidget(
-      {super.key,
-      required this.primaryTitile,
-      this.secondaryTitle,
-      required this.width});
+  CardNameWidget({
+    super.key,
+    required this.primaryTitile,
+    this.secondaryTitle,
+    required this.width,
+    this.isCenter,
+    this.verticalPadding,
+  });
 
   String primaryTitile;
   String? secondaryTitle;
   double width;
+  bool? isCenter;
+  double? verticalPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,7 @@ class CardNameWidget extends StatelessWidget {
         width: AppSizer.getWidth(context, width),
         padding: EdgeInsets.symmetric(
           horizontal: AppSizer.getWidth(context, 20),
-          vertical: AppSizer.getHeight(context, 28),
+          vertical: AppSizer.getHeight(context, verticalPadding ?? 28) ,
         ),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
@@ -40,7 +45,9 @@ class CardNameWidget extends StatelessWidget {
           ],
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: isCenter == null
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.center,
           children: [
             Text(
               primaryTitile,
