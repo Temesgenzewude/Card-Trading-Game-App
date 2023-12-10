@@ -1,5 +1,6 @@
-import 'package:card_trading_game_app/src/constants/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../constants/colors.dart';
 
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,

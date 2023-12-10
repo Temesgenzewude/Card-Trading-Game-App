@@ -1,6 +1,7 @@
-import 'package:card_trading_game_app/src/constants/colors.dart';
-import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+
+import '../constants/colors.dart';
+import '../utils/size_convertor.dart';
 
 class CardNameWidget extends StatelessWidget {
   CardNameWidget(
