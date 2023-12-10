@@ -1,6 +1,7 @@
-import 'package:card_trading_game_app/src/constants/icons.dart';
-import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../constants/icons.dart';
+import '../../../../utils/size_convertor.dart';
 
 class ProductCardWidget extends StatelessWidget {
   const ProductCardWidget({

@@ -1,5 +1,6 @@
-import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+
+import '../utils/size_convertor.dart';
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({
