@@ -15,9 +15,9 @@ class InnerCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSizer.getWidth(context, 19),
-        vertical: AppSizer.getHeight(context, 12),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 10,
+        vertical: 12,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
@@ -44,7 +44,7 @@ class InnerCardWidget extends StatelessWidget {
             title,
             style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
-                fontSize: AppSizer.getHeight(context, 15)),
+                fontSize: AppSizer.getWidth(context, 15)),
           )
         ],
       ),

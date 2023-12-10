@@ -64,5 +64,3 @@ class NewestSetsCardWidget extends StatelessWidget {
     );
   }
 }
-
-
