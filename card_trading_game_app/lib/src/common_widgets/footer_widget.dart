@@ -12,8 +12,8 @@ class FooterWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(
         left: AppSizer.getWidth(context, 155),
-        top: AppSizer.getHeight(context, 36),
-        bottom: AppSizer.getHeight(context, 36),
+        top: AppSizer.getHeight(context, 20),
+        bottom: AppSizer.getHeight(context, 20),
       ),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primary,
