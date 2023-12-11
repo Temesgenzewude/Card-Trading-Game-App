@@ -23,7 +23,7 @@ class ProductCardWidget extends StatelessWidget {
               'assets/images/image14.png',
             ),
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               AppIcons.yellowStar,
@@ -33,17 +33,22 @@ class ProductCardWidget extends StatelessWidget {
               AppIcons.yellowStar,
               Text(
                 '(512)',
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(
+                    fontSize: 10, color: Theme.of(context).colorScheme.primary),
               )
             ],
           ),
-          const Text(
+          Text(
             'Card Name',
-            style: TextStyle(fontSize: 12),
+            style: TextStyle(
+                fontSize: 12, color: Theme.of(context).colorScheme.primary),
           ),
-          const Text(
+          Text(
             '\$0.85',
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.primary),
           )
         ],
       ),
