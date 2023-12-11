@@ -53,7 +53,6 @@ class _NewHomeScreenState extends State<HomeScreen> {
             BrowseSetTab(
               desktopScaffold: BrowseSetsDesktop(),
               mobileScaffold: BrowseSetsMobile(),
-              tabletScaffold: BrowseSetsTablet(),
             ),
           ],
         ),

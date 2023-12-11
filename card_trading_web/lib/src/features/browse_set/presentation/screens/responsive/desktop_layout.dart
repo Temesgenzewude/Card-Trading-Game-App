@@ -29,57 +29,16 @@ class _BrowseSetsDesktopState extends State<BrowseSetsDesktop> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SeriesNameCardWidget(
-                    wrap: Wrap(
-                      runSpacing: 12,
-                      spacing: 10,
-                      children: [
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                      ],
-                    ),
+                    children: 10,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   SeriesNameCardWidget(
-                    wrap: Wrap(
-                      runSpacing: 12,
-                      spacing: 10,
-                      children: [
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                      ],
-                    ),
+                    children: 10,
                   ),
                   SeriesNameCardWidget(
-                    wrap: Wrap(
-                      runSpacing: 12,
-                      spacing: 10,
-                      children: [
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                        SeriesCardWidget(),
-                      ],
-                    ),
+                    children: 10,
                   ),
                 ],
               ),
@@ -94,11 +53,11 @@ class _BrowseSetsDesktopState extends State<BrowseSetsDesktop> {
 
 class SeriesNameCardWidget extends StatelessWidget {
   SeriesNameCardWidget({
-    required this.wrap,
+    required this.children,
     super.key,
   });
 
-  Wrap wrap;
+  int children;
 
   @override
   Widget build(BuildContext context) {
@@ -133,8 +92,15 @@ class SeriesNameCardWidget extends StatelessWidget {
                 ),
               ],
             ),
-            child: wrap,
-          )
+            child: Wrap(
+              spacing: AppSizer.getWidth(context, 20),
+              runSpacing: AppSizer.getWidth(context, 40),
+              children: List.generate(
+                children,
+                (index) => SeriesCardWidget(),
+              ),
+            ),
+          ),
         ],
       ),
     );
