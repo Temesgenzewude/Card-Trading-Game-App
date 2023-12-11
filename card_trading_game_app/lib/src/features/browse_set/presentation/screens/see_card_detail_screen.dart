@@ -1,5 +1,6 @@
 import 'package:card_trading_game_app/src/common_widgets/app_bar_widget.dart';
 import 'package:card_trading_game_app/src/common_widgets/card_name_widget.dart';
+import 'package:card_trading_game_app/src/common_widgets/footer_widget.dart';
 import 'package:card_trading_game_app/src/features/browse_set/presentation/widgets/card_description_widget.dart';
 import 'package:card_trading_game_app/src/features/browse_set/presentation/widgets/collection_status_card_widget.dart';
 import 'package:card_trading_game_app/src/features/home/presentation/widgets/build_tab_bar_container.dart';
@@ -90,38 +91,34 @@ class _NewSeeCardDetailScreenState extends State<SeeCardDetailScreen> {
                                   runSpacing: AppSizer.getWidth(context, 40),
                                   children: List.generate(
                                     10,
-                                    (index) => Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(3),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color:
-                                                Colors.black.withOpacity(0.25),
-                                            offset: const Offset(0, 4),
-                                            blurRadius: 4,
-                                            spreadRadius: 1,
-                                          ),
-                                        ],
-                                        // border: Border.all(
-                                        //   color: Theme.of(context)
-                                        //       .colorScheme
-                                        //       .primary
-                                        //       .withOpacity(0.8),
-                                        //   width: 1,
-                                        // ),
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .secondary,
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/image3.png',
-                                        width: AppSizer.getWidth(
-                                          context,
-                                          140,
+                                    (index) => Flexible(
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(3),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.black
+                                                  .withOpacity(0.25),
+                                              offset: const Offset(0, 4),
+                                              blurRadius: 4,
+                                              spreadRadius: 1,
+                                            ),
+                                          ],
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .secondary,
                                         ),
-                                        height:
-                                            AppSizer.getHeight(context, 222),
-                                        fit: BoxFit.cover,
+                                        child: Image.asset(
+                                          'assets/images/image3.png',
+                                          width: AppSizer.getWidth(
+                                            context,
+                                            140,
+                                          ),
+                                          height:
+                                              AppSizer.getHeight(context, 222),
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -131,10 +128,11 @@ class _NewSeeCardDetailScreenState extends State<SeeCardDetailScreen> {
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
+              const FooterWidget()
             ],
           ),
         ),

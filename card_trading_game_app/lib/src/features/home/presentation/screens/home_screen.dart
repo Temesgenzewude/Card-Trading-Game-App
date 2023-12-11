@@ -30,128 +30,6 @@ class _NewHomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final tabController = useTabController(initialLength: 2);
     var selectedCard = useState("Pokellector");
-    // return Scaffold(
-    //   body: CustomScrollView(
-    //     slivers: [
-    //       const SliverAppBar(
-    //         title: AppBarWidget(),
-    //       ),
-    //       SliverAppBar(
-    //         pinned: true,
-    //         backgroundColor: Theme.of(context).secondaryHeaderColor,
-    //         title: TabBarContainer(
-    //           selectedCard: selectedCard,
-    //           cardGames: cardGames,
-    //           tabController: tabController,
-    //         ),
-    //       ),
-    //       DefaultTabController(
-    //           length: 2,
-    //           child: NestedScrollView(
-    //             headerSliverBuilder:
-    //                 (BuildContext context, bool innerBoxSelected) {
-    //               return [];
-    //             },
-    //             body: const TabBarView(
-    //                 children: [HomeScreenTab(), BrowseSetTab()]),
-    //           )),
-    //       SliverToBoxAdapter(
-    //         child: TabBarView(controller: tabController, children: [
-    //           Container(
-    //             height: 100,
-    //             color: Colors.black,
-    //           ),
-    //           // Column(
-    //           //   children: [
-    //           //     Row(
-    //           //       crossAxisAlignment: CrossAxisAlignment.start,
-    //           //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //           //       children: [
-    //           //         Expanded(
-    //           //           child: NewestSetsCardWidget(),
-    //           //         ),
-    //           //         Expanded(
-    //           //           child: NewestSeriesCardWidget(),
-    //           //         ),
-    //           //       ],
-    //           //     ),
-    //           //     Padding(
-    //           //       padding: EdgeInsets.symmetric(vertical: 45),
-    //           //       child: FeaturedCardWidget(),
-    //           //     ),
-    //           //     Row(
-    //           //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //           //       children: [
-    //           //         Flexible(
-    //           //           child: NewestSetsCardWidget(),
-    //           //         ),
-    //           //         Flexible(
-    //           //           child: NewestSetsCardWidget(),
-    //           //         ),
-    //           //         Flexible(
-    //           //           child: NewestSetsCardWidget(),
-    //           //         ),
-    //           //       ],
-    //           //     ),
-    //           //   ],
-    //           // ),
-    //         ]),
-    //       ),
-    //       const SliverToBoxAdapter(
-    //         child: Column(
-    //           children: [
-    //             Row(
-    //               crossAxisAlignment: CrossAxisAlignment.start,
-    //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //               children: [
-    //                 Expanded(
-    //                   child: NewestSetsCardWidget(),
-    //                 ),
-    //                 Expanded(
-    //                   child: NewestSeriesCardWidget(),
-    //                 ),
-    //               ],
-    //             ),
-    //             Padding(
-    //               padding: EdgeInsets.symmetric(vertical: 45),
-    //               child: FeaturedCardWidget(),
-    //             ),
-    //             Row(
-    //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //               children: [
-    //                 Flexible(
-    //                   child: NewestSetsCardWidget(),
-    //                 ),
-    //                 Flexible(
-    //                   child: NewestSetsCardWidget(),
-    //                 ),
-    //                 Flexible(
-    //                   child: NewestSetsCardWidget(),
-    //                 ),
-    //               ],
-    //             ),
-    //           ],
-    //         ),
-    //       ),
-    //       // SliverToBoxAdapter(
-    //       //   child: TabBarView(
-    //       //     controller: tabController,
-    //       //     children: [
-    //       //       HomeScreenTab(),
-    //       //       BrowseSetTab(),
-    //       //     ],
-    //       //   ),
-    //       // ),
-    //       // SliverToBoxAdapter(
-    //       //   child: Container(
-    //       //     height: 200,
-    //       //     color: Colors.black,
-    //       //   ),
-    //       // ),
-    //       // const FooterWidget(),
-    //     ],
-    //   ),
-    // );
     return Scaffold(
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -217,19 +95,13 @@ class HomeScreenTab extends StatelessWidget {
                   child: FeaturedCardWidget(),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 180.0),
+                  padding: EdgeInsets.symmetric(horizontal: 100.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Flexible(
-                        child: NewestSetsCardWidget(),
-                      ),
-                      Flexible(
-                        child: NewestSetsCardWidget(),
-                      ),
-                      Flexible(
-                        child: NewestSetsCardWidget(),
-                      ),
+                      NewestSetsCardWidget(),
+                      NewestSetsCardWidget(),
+                      NewestSetsCardWidget(),
                     ],
                   ),
                 ),
