@@ -1,6 +1,6 @@
 import 'package:card_trading_game_app/src/common_widgets/button_widget.dart';
-import 'package:card_trading_game_app/src/features/terms_and_services/presentation/widgets/paragraph_widget.dart';
-import 'package:card_trading_game_app/src/features/terms_and_services/presentation/widgets/text_widget.dart';
+import 'package:card_trading_game_app/src/features/terms_and_privacy/presentation/widgets/paragraph_widget.dart';
+import 'package:card_trading_game_app/src/features/terms_and_privacy/presentation/widgets/text_widget.dart';
 import 'package:card_trading_game_app/src/theme/theme.dart';
 import 'package:card_trading_game_app/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
