@@ -13,6 +13,15 @@ class AppColors {
     colors: [buttonStartColor, buttonEndColor],
   );
 
+  static const LinearGradient buttonGradientLight = LinearGradient(
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+    colors: [
+      Color(0xFF8ECAE6), // Replace with your desired color value
+      Color(0xFF219EBC), // Replace with your desired color value
+    ],
+  );
+
   static const Color primaryColor = Color.fromRGBO(0, 98, 148, 1);
   static const Color secondaryColor = Colors.white;
   static const Color borderColor = Color.fromRGBO(33, 158, 188, 1);
@@ -24,4 +33,5 @@ class AppColors {
   static const Color offWhiteTextColor = Color(0xFFEFE1D1);
 
   static Color scaffoldBackgroundColor = Color(0xFFF9F3F6).withOpacity(0.4);
+  static const Color disabledColor = Color.fromRGBO(161, 159, 159, 0.502);
 }
