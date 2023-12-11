@@ -25,7 +25,7 @@ class _CardDescriptionScreenState extends State<CardDescriptionScreen> {
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            const SliverAppBar(
+           SliverAppBar(
               title: AppBarWidget(),
             ),
             SliverAppBar(

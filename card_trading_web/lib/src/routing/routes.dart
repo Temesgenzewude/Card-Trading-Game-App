@@ -6,4 +6,9 @@ enum AppRoutes {
   BrowseSets, 
   Home,
   SeeCardDetailScreen,
+
+  MoreOptions,
+
+  ProfileScreen,
+  ContactUsScreen,
 }

@@ -52,7 +52,7 @@ class CardNameWidget extends StatelessWidget {
             Text(
               primaryTitile,
               style: TextStyle(
-                fontSize: AppSizer.getHeight(context, 15),
+                fontSize: AppSizer.getHeight(context, 16),
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).colorScheme.secondary,
               ),

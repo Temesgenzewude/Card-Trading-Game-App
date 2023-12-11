@@ -32,7 +32,7 @@ class _NewHomeScreenState extends State<HomeScreen> {
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            const SliverAppBar(
+             SliverAppBar(
               title: AppBarWidget(),
             ),
             SliverAppBar(

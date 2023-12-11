@@ -4,9 +4,12 @@ import 'button_widget.dart';
 import 'primary_search_bar_widget.dart';
 
 class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({
+  AppBarWidget({
     super.key,
+    this.left,
   });
+
+  Widget? left;
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +24,22 @@ class AppBarWidget extends StatelessWidget {
               hintText: 'Search for cards',
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 20.0),
-            child: PrimaryButton(
-              buttonName: 'Sign In',
-              buttonRadius: 8,
-            ),
-          ),
-          PrimaryButton(
-            buttonName: 'Create Account',
-            buttonRadius: 8,
-          ),
+          left ??
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20.0),
+                    child: PrimaryButton(
+                      buttonName: 'Sign In',
+                      buttonRadius: 8,
+                    ),
+                  ),
+                  PrimaryButton(
+                    buttonName: 'Create Account',
+                    buttonRadius: 8,
+                  ),
+                ],
+              ),
         ],
       ),
     );
