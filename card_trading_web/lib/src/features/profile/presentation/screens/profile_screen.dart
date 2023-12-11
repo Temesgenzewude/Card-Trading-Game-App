@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-import '../../../../../../../common_widgets/app_bar_widget.dart';
-import '../../../../../../../common_widgets/footer_widget.dart';
-import '../../../../../../home/presentation/widgets/build_tab_bar_container.dart';
-import 'login_screen.dart';
+import '../../../../common_widgets/app_bar_widget.dart';
+import '../../../../common_widgets/footer_widget.dart';
+import '../../../../common_widgets/user_profile_name_and_profile_pic.dart';
+import '../../../home/presentation/widgets/build_tab_bar_container.dart';
+import '../widgets/profile_tab.dart';
 
-class LoginAuthScreen extends StatefulHookWidget {
-  const LoginAuthScreen({Key? key}) : super(key: key);
+class ProfileScreen extends StatefulHookWidget {
+  const ProfileScreen({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _ProfileScreenState createState() => _ProfileScreenState();
 }
 
-class _LoginScreenState extends State<LoginAuthScreen> {
+class _ProfileScreenState extends State<ProfileScreen> {
   final List<String> cardGames = [
     'Pokellector',
     'Pokellector2',
@@ -30,12 +31,14 @@ class _LoginScreenState extends State<LoginAuthScreen> {
             fit: BoxFit.cover),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                title: AppBarWidget(),
+                title: AppBarWidget(
+                  left: buildProfileNameAndProfilePic(),
+                ),
               ),
               SliverAppBar(
                 pinned: true,
@@ -53,9 +56,7 @@ class _LoginScreenState extends State<LoginAuthScreen> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
-                    children: [
-                      LoginDesktop(),
-                    ],
+                    children: [ProfileTabDesktop()],
                   ),
                 ),
               ),
@@ -66,4 +67,8 @@ class _LoginScreenState extends State<LoginAuthScreen> {
       ),
     );
   }
+
+ 
+
+ 
 }

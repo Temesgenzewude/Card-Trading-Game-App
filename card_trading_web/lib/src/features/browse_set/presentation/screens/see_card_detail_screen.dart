@@ -30,7 +30,7 @@ class _NewSeeCardDetailScreenState extends State<SeeCardDetailScreen> {
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            const SliverAppBar(
+           SliverAppBar(
               title: AppBarWidget(),
             ),
             SliverAppBar(

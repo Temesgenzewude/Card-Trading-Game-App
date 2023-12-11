@@ -22,4 +22,6 @@ class AppColors {
   static const Color darkReddishTextColor = Color(0xFF331D2C);
   static const Color darkPurplishTextColor = Color(0xFF3F2E3E);
   static const Color offWhiteTextColor = Color(0xFFEFE1D1);
+
+  static Color scaffoldBackgroundColor = Color(0xFFF9F3F6).withOpacity(0.4);
 }
