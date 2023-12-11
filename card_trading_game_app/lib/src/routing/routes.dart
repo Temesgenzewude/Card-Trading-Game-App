@@ -1,4 +1,0 @@
-enum AppRoutes {
-  DesktopSignup,
-  DesktopLogin,
-}
