@@ -105,13 +105,6 @@ class _NewSeeCardDetailScreenState extends State<SeeCardDetailScreen> {
                                               spreadRadius: 1,
                                             ),
                                           ],
-                                          // border: Border.all(
-                                          //   color: Theme.of(context)
-                                          //       .colorScheme
-                                          //       .primary
-                                          //       .withOpacity(0.8),
-                                          //   width: 1,
-                                          // ),
                                           color: Theme.of(context)
                                               .colorScheme
                                               .secondary,

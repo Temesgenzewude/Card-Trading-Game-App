@@ -13,10 +13,3 @@ ThemeData lightTheme = ThemeData(
   ),
   secondaryHeaderColor: AppColors.appBarBackgroundColor,
 );
-
-// ThemeData darkTheme = ThemeData(
-//   brightness: Brightness.dark,
-//   colorScheme: const ColorScheme.dark(
-//     primary: AppC
-//   ),
-// );

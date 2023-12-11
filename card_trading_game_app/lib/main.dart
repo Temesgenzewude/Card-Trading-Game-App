@@ -1,12 +1,8 @@
-import 'package:card_trading_game_app/src/features/browse_set/presentation/screens/browse_sets.dart';
-import 'package:card_trading_game_app/src/features/browse_set/presentation/screens/responsive/desktop_layout.dart';
-import 'package:card_trading_game_app/src/features/browse_set/presentation/screens/responsive/mobile_layout.dart';
-import 'package:card_trading_game_app/src/features/browse_set/presentation/screens/responsive/tablet_layout.dart';
-import 'package:card_trading_game_app/src/features/browse_set/presentation/screens/see_card_detail_screen.dart';
-import 'package:card_trading_game_app/src/features/home/presentation/screens/home_screen.dart';
+import 'package:card_trading_game_app/src/features/auth/presentation/login/responsive/desktop/screens/login_auth_screen.dart';
+import 'package:card_trading_game_app/src/features/auth/presentation/signup/responsive/desktop/screens/auth_screen.dart';
+import 'package:card_trading_game_app/src/routing/main_router.dart';
 import 'package:flutter/material.dart';
 
-import 'src/features/home/presentation/screens/home_screen.dart';
 import 'src/theme/theme.dart';
 
 void main() {
@@ -18,17 +14,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const MainRouter();
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Card Trading Game App',
-      theme: lightTheme,
-      // home: const BrowseSetsScreen(
-      //   desktopScaffold: BrowseSetsDesktop(),
-      //   mobileScaffold: BrowseSetsMobile(),
-      //   tabletScaffold: BrowseSetsTablet(),
-      // ),
+        debugShowCheckedModeBanner: false,
+        title: 'Card Trading Game App',
+        theme: lightTheme,
+        // home: const BrowseSetsScreen(
+        //   desktopScaffold: BrowseSetsDesktop(),
+        //   mobileScaffold: BrowseSetsMobile(),
+        //   tabletScaffold: BrowseSetsTablet(),
+        // ),
 
-      home: const SeeCardDetailScreen()
-    );
+        home: const SignupAuthScreen());
   }
 }
