@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 
 class BrowseSetTab extends StatelessWidget {
   final Widget mobileScaffold;
-  final Widget tabletScaffold;
   final Widget desktopScaffold;
 
   const BrowseSetTab({
     super.key,
     required this.desktopScaffold,
     required this.mobileScaffold,
-    required this.tabletScaffold,
   });
 
   @override
