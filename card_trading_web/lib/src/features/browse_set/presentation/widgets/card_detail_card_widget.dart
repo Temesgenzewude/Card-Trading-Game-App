@@ -19,8 +19,7 @@ class CardDetailCardWidget extends StatelessWidget {
           verticalPadding: 9,
         ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 10),
-          width: AppSizer.getWidth(context, 103),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(8),
