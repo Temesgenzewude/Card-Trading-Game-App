@@ -39,7 +39,7 @@ class HomeScreenTab extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                         vertical: AppSizer.getHeight(context, 43),
                       ),
-                      child: FeaturedCardWidget(),
+                      child: const FeaturedCardWidget(),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

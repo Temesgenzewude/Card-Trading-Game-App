@@ -1,3 +1,5 @@
+// ignore_for_file: empty_statements, dead_code
+
 import 'package:card_trading_web/src/common_widgets/button_widget.dart';
 import 'package:card_trading_web/src/features/terms_and_privacy/presentation/widgets/paragraph_widget.dart';
 import 'package:card_trading_web/src/features/terms_and_privacy/presentation/widgets/text_widget.dart';

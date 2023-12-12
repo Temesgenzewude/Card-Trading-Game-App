@@ -13,7 +13,7 @@ enum AppRoutes {
   DesktopPrivacyScreen,
   DesktopCardDetailScreen,
   DesktopTermsScreen,
-  BrowseSets, 
+  BrowseSets,
   Home,
   SeeCardDetailScreen,
 
@@ -22,4 +22,5 @@ enum AppRoutes {
   ProfileScreen,
   ContactUsScreen,
   CardDescriptionScreen,
+  ForgotPasswordScreen,
 }

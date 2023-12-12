@@ -18,7 +18,6 @@ Future<void> main() async {
   prefManager.setBool('isLoggedIn', false);
 
   // getting value for a given key
-  print('isLoggedIn: ${prefManager.getBool('isLoggedIn')}');
 
   runApp(const ProviderScope(child: MyApp()));
 }

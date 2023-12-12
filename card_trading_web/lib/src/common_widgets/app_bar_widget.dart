@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:card_trading_web/dependency_injection/shared_pref_injection.dart';
 import 'package:card_trading_web/src/constants/shared_pref_keys.dart';
 import 'package:card_trading_web/src/routing/routes.dart';
