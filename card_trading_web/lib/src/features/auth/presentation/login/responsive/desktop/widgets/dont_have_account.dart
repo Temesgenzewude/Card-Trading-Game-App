@@ -1,5 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../../../../routing/routes.dart';
 
 class DontHaveAccount extends StatelessWidget {
   final String? message;
@@ -15,7 +18,14 @@ class DontHaveAccount extends StatelessWidget {
           TextSpan(
             text: message != null ? 'Sign In' : 'Signup',
             style: const TextStyle(color: Colors.blue),
-            recognizer: TapGestureRecognizer()..onTap = () {},
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                if (message != null) {
+                  context.go('/${AppRoutes.DesktopLogin.name}');
+                } else {
+                  context.go('/${AppRoutes.DesktopSignup.name}');
+                }
+              },
           ),
         ],
       ),
