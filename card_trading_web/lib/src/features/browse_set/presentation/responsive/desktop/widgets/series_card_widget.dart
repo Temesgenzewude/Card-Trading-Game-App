@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../utils/size_convertor.dart';
+import '../../../../../../utils/size_convertor.dart';
 
 class SeriesCardWidget extends StatelessWidget {
   SeriesCardWidget({super.key, this.imageWidth});

@@ -18,7 +18,7 @@ class TabBarContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 50),
+      padding: const EdgeInsets.only(left: 50),
       height: AppSizer.getHeight(context, 84),
       width: double.infinity,
       decoration: BoxDecoration(
