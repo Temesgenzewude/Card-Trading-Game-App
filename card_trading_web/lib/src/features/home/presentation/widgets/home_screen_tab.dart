@@ -27,7 +27,7 @@ class HomeScreenTab extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    const Row(
+                    Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -41,7 +41,7 @@ class HomeScreenTab extends StatelessWidget {
                       ),
                       child: FeaturedCardWidget(),
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         NewestSetsCardWidget(),

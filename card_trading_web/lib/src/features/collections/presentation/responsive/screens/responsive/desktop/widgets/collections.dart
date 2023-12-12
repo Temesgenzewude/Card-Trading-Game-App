@@ -60,8 +60,8 @@ class _CollectionsState extends ConsumerState<Collections> {
                             ),
                             Padding(
                               padding: const EdgeInsets.only(bottom: 20.0),
-                              child: FourDots(
-                                index: currentSelected,
+                              child: DotsWidget(
+                                selectedIndex: currentSelected,
                               ),
                             ),
                           ],

@@ -1,6 +1,6 @@
 import 'package:card_trading_web/src/common_widgets/app_bar_widget.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/browse_sets.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/desktop_layout.dart';
+import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/browse_sets_desktop.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/mobile/mobile_layout.dart';
 import 'package:card_trading_web/src/features/home/presentation/widgets/build_tab_bar_container.dart';
 import 'package:card_trading_web/src/features/home/presentation/widgets/home_screen_tab.dart';

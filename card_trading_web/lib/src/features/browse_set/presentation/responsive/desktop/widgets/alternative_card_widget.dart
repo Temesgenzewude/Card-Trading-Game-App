@@ -1,37 +1,31 @@
+import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/widgets/four_dots_widget.dart';
+import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../common_widgets/card_name_widget.dart';
-import '../../../../utils/size_convertor.dart';
-import 'product_card_widget.dart';
-
-class NewestSeriesCardWidget extends StatelessWidget {
-  const NewestSeriesCardWidget({
+class AlternateVersionCardWidget extends StatelessWidget {
+  const AlternateVersionCardWidget({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CardNameWidget(
-          primaryTitile: 'Newest Series',
-          width: 374,
+          primaryTitile: 'Alternate version of this card',
+          width: 302,
         ),
         Container(
-          padding: EdgeInsets.only(
-            left: AppSizer.getWidth(context, 27),
-            right: AppSizer.getWidth(context, 33),
-            top: AppSizer.getHeight(context, 22),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSizer.getWidth(context, 101),
+            vertical: AppSizer.getHeight(context, 22),
           ),
-          width: AppSizer.getWidth(context, 662),
-          // height: AppSizer.getHeight(context, 350),
+          width: AppSizer.getWidth(context, 302),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(8),
               bottomRight: Radius.circular(8),
-              topRight: Radius.circular(8),
             ),
             color: Theme.of(context).colorScheme.secondary,
             boxShadow: [
@@ -44,24 +38,25 @@ class NewestSeriesCardWidget extends StatelessWidget {
             ],
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Wrap(
-                spacing: 16,
-                runSpacing: 10,
-                children: List.generate(
-                  6,
-                  (index) => const ProductCardWidget(),
+              Image.asset(
+                'assets/images/image17.png',
+              ),
+              Text(
+                'Holo card game',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onTertiary,
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(
-                  top: AppSizer.getHeight(context, 29),
-                  bottom: AppSizer.getHeight(context, 16),
+                padding: EdgeInsets.symmetric(
+                  vertical: AppSizer.getHeight(context, 10),
                 ),
                 child: DotsWidget(
-                  size: 20,
                   selectedIndex: 0,
+                  totalDots: 2,
+                  size: 16,
                 ),
               )
             ],
