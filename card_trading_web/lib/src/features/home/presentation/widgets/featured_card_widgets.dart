@@ -16,12 +16,12 @@ class FeaturedCardWidget extends StatelessWidget {
       children: [
         CardNameWidget(
           primaryTitile: 'Featured Cards',
-          width: 313,
+          width: 269,
         ),
         Container(
           padding: EdgeInsets.symmetric(
             horizontal: AppSizer.getWidth(context, 27),
-            vertical: AppSizer.getHeight(context, 35),
+            vertical: AppSizer.getHeight(context, 32),
           ),
           width: AppSizer.getWidth(context, 971),
           decoration: BoxDecoration(
@@ -39,19 +39,13 @@ class FeaturedCardWidget extends StatelessWidget {
               ),
             ],
           ),
-          child: const Wrap(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
-            ],
+          child: Wrap(
+            spacing: 16,
+            runSpacing: 10,
+            children: List.generate(
+              9,
+              (index) => const ProductCardWidget(),
+            ),
           ),
         )
       ],

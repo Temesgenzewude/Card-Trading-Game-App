@@ -35,11 +35,11 @@ class InnerCardWidget extends StatelessWidget {
         children: [
           Image(
             image: AssetImage(imageUrl),
-            // width: AppSizer.getWidth(context, 25),
+            width: AppSizer.getWidth(context, 33),
             fit: BoxFit.cover,
           ),
           SizedBox(
-            width: AppSizer.getWidth(context, 10),
+            width: AppSizer.getWidth(context, 12),
           ),
           Flexible(
             child: Text(

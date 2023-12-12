@@ -1,6 +1,8 @@
+import 'package:card_trading_web/src/common_widgets/footer_widget.dart';
 import 'package:card_trading_web/src/features/home/presentation/widgets/featured_card_widgets.dart';
 import 'package:card_trading_web/src/features/home/presentation/widgets/newest_series_card_widget.dart';
 import 'package:card_trading_web/src/features/home/presentation/widgets/newest_sets_card_widget.dart';
+import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreenTab extends StatelessWidget {
@@ -10,44 +12,50 @@ class HomeScreenTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.only(top: 30.0),
-        child: Column(
-          children: [
-            Column(
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              top: AppSizer.getHeight(context, 67),
+              bottom: AppSizer.getHeight(context, 56),
+              left: AppSizer.getWidth(context, 155),
+              right: AppSizer.getWidth(context, 155),
+            ),
+            // padding: EdgeInsets.only(top: 30.0),
+            child: Column(
               children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 180.0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      NewestSetsCardWidget(),
-                      NewestSeriesCardWidget(),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 45, horizontal: 180.0),
-                  child: FeaturedCardWidget(),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 100.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      NewestSetsCardWidget(),
-                      NewestSetsCardWidget(),
-                      NewestSetsCardWidget(),
-                    ],
-                  ),
+                Column(
+                  children: [
+                    const Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        NewestSetsCardWidget(),
+                        NewestSeriesCardWidget(),
+                      ],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: AppSizer.getHeight(context, 43),
+                      ),
+                      child: FeaturedCardWidget(),
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        NewestSetsCardWidget(),
+                        NewestSetsCardWidget(),
+                        NewestSetsCardWidget(),
+                      ],
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+          const FooterWidget()
+        ],
       ),
     );
   }

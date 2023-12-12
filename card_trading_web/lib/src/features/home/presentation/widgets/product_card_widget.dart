@@ -11,26 +11,31 @@ class ProductCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: AppSizer.getWidth(context, 100),
+      width: AppSizer.getWidth(context, 87),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image(
             width: AppSizer.getWidth(context, 87),
             // height: AppSizer.getHeight(context, 121),
-            fit: BoxFit.contain,
+            fit: BoxFit.cover,
             image: const AssetImage(
               'assets/images/image14.png',
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          Wrap(
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              AppIcons.yellowStar,
-              AppIcons.yellowStar,
-              AppIcons.yellowStar,
-              AppIcons.yellowStar,
-              AppIcons.yellowStar,
+              const Row(
+                children: [
+                  AppIcons.yellowStar,
+                  AppIcons.yellowStar,
+                  AppIcons.yellowStar,
+                  AppIcons.yellowStar,
+                  AppIcons.yellowStar,
+                ],
+              ),
               Text(
                 '(512)',
                 style: TextStyle(
@@ -41,14 +46,17 @@ class ProductCardWidget extends StatelessWidget {
           Text(
             'Card Name',
             style: TextStyle(
-                fontSize: 12, color: Theme.of(context).colorScheme.primary),
+              fontSize: 12,
+              color: Theme.of(context).colorScheme.primary,
+            ),
           ),
           Text(
             '\$0.85',
             style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.primary),
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.primary,
+            ),
           )
         ],
       ),
