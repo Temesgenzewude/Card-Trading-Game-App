@@ -23,11 +23,12 @@ class CardNameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 10,
+      color: Colors.transparent,
       child: Container(
         width: AppSizer.getWidth(context, width),
         padding: EdgeInsets.symmetric(
-          horizontal: AppSizer.getWidth(context, 20),
-          vertical: AppSizer.getHeight(context, verticalPadding ?? 28) ,
+          horizontal: AppSizer.getWidth(context, 24),
+          vertical: AppSizer.getHeight(context, verticalPadding ?? 20),
         ),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
@@ -49,21 +50,25 @@ class CardNameWidget extends StatelessWidget {
               ? MainAxisAlignment.spaceBetween
               : MainAxisAlignment.center,
           children: [
-            Text(
-              primaryTitile,
-              style: TextStyle(
-                fontSize: AppSizer.getHeight(context, 16),
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.secondary,
+            Flexible(
+              child: Text(
+                primaryTitile,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
               ),
             ),
             secondaryTitle != null
-                ? Text(
-                    'View all',
-                    style: TextStyle(
-                      fontSize: AppSizer.getHeight(context, 12),
-                      fontWeight: FontWeight.w300,
-                      color: Theme.of(context).colorScheme.secondary,
+                ? Flexible(
+                    child: Text(
+                      'View all',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
                     ),
                   )
                 : Container(),

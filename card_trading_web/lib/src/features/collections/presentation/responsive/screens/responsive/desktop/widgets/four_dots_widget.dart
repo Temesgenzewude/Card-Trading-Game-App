@@ -4,17 +4,34 @@ import 'package:flutter/material.dart';
 
 class FourDots extends StatelessWidget {
   final int index;
-  const FourDots({required this.index, super.key});
+  double? size;
+  FourDots({required this.index, this.size, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        index == 0 ? const SelectedDot() : const UnselectedDot(),
-        index == 1 ? const SelectedDot() : const UnselectedDot(),
-        index == 2 ? const SelectedDot() : const UnselectedDot(),
-        index == 3 ? const SelectedDot() : const UnselectedDot(),
+        index == 0
+            ? SelectedDot(
+                size: size,
+              )
+            : const UnselectedDot(),
+        index == 1
+            ? SelectedDot(
+                size: size,
+              )
+            : const UnselectedDot(),
+        index == 2
+            ? SelectedDot(
+                size: size,
+              )
+            : const UnselectedDot(),
+        index == 3
+            ? SelectedDot(
+                size: size,
+              )
+            : const UnselectedDot(),
       ],
     );
   }

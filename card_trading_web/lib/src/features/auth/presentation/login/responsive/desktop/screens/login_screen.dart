@@ -2,6 +2,7 @@ import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
 import 'package:card_trading_web/src/constants/colors.dart';
 import 'package:card_trading_web/src/features/auth/presentation/login/responsive/desktop/widgets/dont_have_account.dart';
 import 'package:card_trading_web/src/routing/routes.dart';
+import 'package:card_trading_web/src/shared_pref/shared_pref_manager.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -9,6 +10,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../../../../../../../dependency_injection/shared_pref_injection.dart';
+import '../../../../../../../constants/shared_pref_keys.dart';
 
 class LoginDesktop extends StatefulHookConsumerWidget {
   const LoginDesktop({super.key});
@@ -18,6 +22,7 @@ class LoginDesktop extends StatefulHookConsumerWidget {
 }
 
 class _LoginScreenState extends ConsumerState<LoginDesktop> {
+  final prefManager = sl<SharedPrefManager>();
   var rememberMe = false;
   @override
   Widget build(BuildContext context) {
@@ -118,6 +123,8 @@ class _LoginScreenState extends ConsumerState<LoginDesktop> {
                                 backgroundColor: MaterialStateProperty.all(
                                     Theme.of(context).colorScheme.tertiary)),
                             onPressed: () {
+                              prefManager.setBool(
+                                  SharedPrefKeys.ISLOGGED, true);
                               Future.delayed(const Duration(seconds: 0), () {
                                 context.go('/${AppRoutes.DesktopHome.name}');
                               });

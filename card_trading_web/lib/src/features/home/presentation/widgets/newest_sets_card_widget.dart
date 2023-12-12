@@ -21,7 +21,7 @@ class NewestSetsCardWidget extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(
             horizontal: AppSizer.getWidth(context, 28),
-            vertical: AppSizer.getHeight(context, 28),
+            vertical: AppSizer.getHeight(context, 22),
           ),
           width: AppSizer.getWidth(context, 265),
           decoration: BoxDecoration(

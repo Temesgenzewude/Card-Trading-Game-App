@@ -34,4 +34,5 @@ class AppColors {
 
   static Color scaffoldBackgroundColor = Color(0xFFF9F3F6).withOpacity(0.4);
   static Color stackedDiscountColor = Color(0xFF3F2E3E);
+  static const Color disabledColor = Color.fromRGBO(161, 159, 159, 0.502);
 }

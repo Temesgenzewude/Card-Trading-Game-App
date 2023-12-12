@@ -1,3 +1,4 @@
+import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/widgets/four_dots_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common_widgets/card_name_widget.dart';
@@ -16,15 +17,16 @@ class NewestSeriesCardWidget extends StatelessWidget {
       children: [
         CardNameWidget(
           primaryTitile: 'Newest Series',
-          width: 200,
+          width: 374,
         ),
         Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppSizer.getWidth(context, 27),
-            vertical: AppSizer.getHeight(context, 35),
+          padding: EdgeInsets.only(
+            left: AppSizer.getWidth(context, 27),
+            right: AppSizer.getWidth(context, 33),
+            top: AppSizer.getHeight(context, 22),
           ),
           width: AppSizer.getWidth(context, 662),
-          height: AppSizer.getHeight(context, 350),
+          // height: AppSizer.getHeight(context, 350),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(8),
@@ -40,15 +42,27 @@ class NewestSeriesCardWidget extends StatelessWidget {
               ),
             ],
           ),
-          child: const Wrap(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
-              ProductCardWidget(),
+              Wrap(
+                spacing: 16,
+                runSpacing: 10,
+                children: List.generate(
+                  6,
+                  (index) => const ProductCardWidget(),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: AppSizer.getHeight(context, 29),
+                  bottom: AppSizer.getHeight(context, 16),
+                ),
+                child: FourDots(
+                  size: 20,
+                  index: 0,
+                ),
+              )
             ],
           ),
         )
