@@ -11,4 +11,6 @@ enum AppRoutes {
 
   ProfileScreen,
   ContactUsScreen,
+  TermsScreen,
+  PrivacyScreen,
 }
