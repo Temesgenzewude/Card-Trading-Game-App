@@ -25,10 +25,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
     var selectedCard = useState("Pokellector");
 
     return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
+      decoration: BoxDecoration(
+        image: const DecorationImage(
             image: AssetImage('assets/images/bg_images/bg_image.png'),
             fit: BoxFit.cover),
+        color: Colors.grey.withOpacity(1.0),
       ),
       child: Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -67,8 +68,4 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
-
- 
-
- 
 }
