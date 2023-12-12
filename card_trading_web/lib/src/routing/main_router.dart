@@ -1,3 +1,4 @@
+import 'package:card_trading_web/src/common_widgets/404_page.dart';
 import 'package:card_trading_web/src/common_widgets/home_and_browse.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/browse_sets.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/desktop_layout.dart';
@@ -19,7 +20,6 @@ import '../features/browse_set/presentation/responsive/desktop/screens/browse_se
 import '../features/browse_set/presentation/responsive/desktop/screens/desktop_layout.dart';
 import '../features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen.dart';
 import '../features/browse_set/presentation/responsive/mobile/mobile_layout.dart';
-
 
 import '../features/contact_us/presentation/screens/contact_us_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
@@ -44,6 +44,9 @@ class _MainRouterState extends State<MainRouter> {
   @override
   Widget build(BuildContext context) {
     final GoRouter router = GoRouter(
+      errorPageBuilder: (context, state) {
+        return PageNotFoundScreen();
+      },
       initialLocation: '/${AppRoutes.DesktopHome.name}',
       routes: [
         GoRoute(
