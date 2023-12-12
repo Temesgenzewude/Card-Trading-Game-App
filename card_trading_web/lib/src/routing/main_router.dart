@@ -8,6 +8,8 @@ import 'package:card_trading_web/src/features/browse_set/presentation/responsive
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/mobile/mobile_layout.dart';
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/screens/collections_desktop.dart';
 import 'package:card_trading_web/src/features/more_options/presentation/responsive/desktop/screens/more_options_screen.dart';
+import 'package:card_trading_web/src/features/home/presentation/screens/home_screen.dart';
+import 'package:card_trading_web/src/features/terms_and_privacy/presentation/screens/terms_of_use_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,7 +20,8 @@ import '../features/contact_us/presentation/screens/contact_us_screen.dart';
 
 import '../features/profile/presentation/screens/profile_screen.dart';
 import '../features/terms_and_privacy/presentation/screens/privacy_screen.dart';
-import '../features/terms_and_privacy/presentation/screens/terms_screen.dart';
+import '../features/terms_and_privacy/presentation/widgets/privacy_tab.dart';
+import '../features/terms_and_privacy/presentation/widgets/terms_tab.dart';
 import '../theme/theme.dart';
 import 'routes.dart';
 
@@ -98,7 +101,7 @@ class _MainRouterState extends State<MainRouter> {
         GoRoute(
           path: '/${AppRoutes.DesktopTermsScreen.name}',
           name: AppRoutes.DesktopTermsScreen.name,
-          builder: (context, state) => const TermsScreen(),
+          builder: (context, state) => const TermsOfUseScreen(),
         ),
         GoRoute(
           path: '/${AppRoutes.ForgotPasswordScreen.name}',
