@@ -156,7 +156,7 @@ class _CardDescriptionScreenState extends State<CardDescriptionScreen> {
                                                   bottom: AppSizer.getHeight(
                                                       context, 100),
                                                 ),
-                                                child: const Row(
+                                                child: Row(
                                                   children: [
                                                     Icon(
                                                       Icons.check_circle,
