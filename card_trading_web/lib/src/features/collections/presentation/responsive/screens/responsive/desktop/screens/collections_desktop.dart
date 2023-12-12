@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:card_trading_web/src/common_widgets/home_and_browse.dart';
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/widgets/collections.dart';
 import 'package:card_trading_web/src/features/home/presentation/widgets/home_screen_tab.dart';

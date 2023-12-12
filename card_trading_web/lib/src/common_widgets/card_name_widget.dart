@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 import '../utils/size_convertor.dart';
 
+// ignore: must_be_immutable
 class CardNameWidget extends StatelessWidget {
   CardNameWidget({
     super.key,

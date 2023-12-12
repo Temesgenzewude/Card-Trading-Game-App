@@ -38,7 +38,6 @@ Row buildProfileNameAndProfilePic() {
           return [
             buildMenuItem(
               onTap: () {
-                print("Profile");
                 Future.delayed(const Duration(seconds: 1), () {
                   context.go('/${AppRoutes.DesktopEditProfileScreen.name}');
                 });
@@ -56,7 +55,6 @@ Row buildProfileNameAndProfilePic() {
             ),
             buildMenuItem(
               onTap: () {
-                print("My Collections");
                 Future.delayed(const Duration(seconds: 1), () {
                   context.go('/${AppRoutes.DesktopCollections.name}');
                 });
@@ -75,7 +73,6 @@ Row buildProfileNameAndProfilePic() {
             ),
             buildMenuItem(
                 onTap: () {
-                  print("Logout");
 
                   prefManage.setBool(SharedPrefKeys.ISLOGGED, false);
                   prefManage.clear();

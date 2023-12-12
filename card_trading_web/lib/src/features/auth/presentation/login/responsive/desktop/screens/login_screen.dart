@@ -9,7 +9,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../../../../dependency_injection/shared_pref_injection.dart';
 import '../../../../../../../constants/shared_pref_keys.dart';
@@ -109,7 +108,13 @@ class _LoginScreenState extends ConsumerState<LoginDesktop> {
                                 ),
                               ],
                             ),
-                            const Text('Forgot Password?')
+                            GestureDetector(
+                              onTap: () {
+                                context.go(
+                                    '/${AppRoutes.ForgotPasswordScreen.name}');
+                              },
+                              child: const Text('Forgot Password?'),
+                            )
                           ],
                         ),
                       ),
