@@ -15,9 +15,9 @@ class InnerCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 12,
+      padding: EdgeInsets.symmetric(
+        horizontal: AppSizer.getWidth(context, 10),
+        vertical: AppSizer.getHeight(context, 12),
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
@@ -35,16 +35,20 @@ class InnerCardWidget extends StatelessWidget {
         children: [
           Image(
             image: AssetImage(imageUrl),
-            width: AppSizer.getWidth(context, 25),
+            // width: AppSizer.getWidth(context, 25),
+            fit: BoxFit.cover,
           ),
           SizedBox(
             width: AppSizer.getWidth(context, 10),
           ),
-          Text(
-            title,
-            style: TextStyle(
+          Flexible(
+            child: Text(
+              title,
+              style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
-                fontSize: AppSizer.getWidth(context, 15)),
+                fontSize: 15,
+              ),
+            ),
           )
         ],
       ),
