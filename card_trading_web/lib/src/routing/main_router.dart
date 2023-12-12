@@ -8,6 +8,7 @@ import 'package:card_trading_web/src/features/browse_set/presentation/responsive
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/screens/collections_desktop.dart';
 import 'package:card_trading_web/src/features/home/presentation/screens/home_screen.dart';
 import 'package:card_trading_web/src/features/more_options/presentation/responsive/desktop/screens/more_options_screen.dart';
+import 'package:card_trading_web/src/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
