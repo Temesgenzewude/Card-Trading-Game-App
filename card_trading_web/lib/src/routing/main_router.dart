@@ -32,7 +32,7 @@ class _MainRouterState extends State<MainRouter> {
       GoRoute(
         path: '/${AppRoutes.DesktopHome.name}',
         name: AppRoutes.DesktopHome.name,
-        builder: (context, state) => HomeAndBrowseTabs(),
+        builder: (context, state) => const HomeScreen(),
       ),
       GoRoute(
         path: '/${AppRoutes.DesktopLogin.name}',
@@ -67,28 +67,7 @@ class _MainRouterState extends State<MainRouter> {
         name: AppRoutes.DesktopMoreOptionsScreen.name,
         builder: (context, state) => const MoreOptionsScreen(),
       ),
-      GoRoute(
-        path: '/${AppRoutes.DesktopEditProfileScreen.name}',
-        name: AppRoutes.DesktopEditProfileScreen.name,
-        builder: (context, state) => const ProfileScreen(),
-      ),
-      GoRoute(
-        path: '/${AppRoutes.DesktopContactUsScreen.name}',
-        name: AppRoutes.DesktopContactUsScreen.name,
-        builder: (context, state) => const ContactUsScreen(),
-      ),
-      GoRoute(
-        path: '/${AppRoutes.DesktopPrivacyScreen.name}',
-        name: AppRoutes.DesktopPrivacyScreen.name,
-        builder: (context, state) => const PrivacyScreen(),
-      ),
-      GoRoute(
-        path: '/${AppRoutes.DesktopTermsScreen.name}',
-        name: AppRoutes.DesktopTermsScreen.name,
-        builder: (context, state) => const TermsScreen(),
-      ),
     ]);
-
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router,
