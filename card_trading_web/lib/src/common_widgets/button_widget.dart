@@ -8,14 +8,17 @@ class PrimaryButton extends StatelessWidget {
     super.key,
     required this.buttonName,
     required this.buttonRadius,
+    this.onPressed,
   });
 
   String buttonName;
   double buttonRadius;
+  void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onPressed ?? () {},
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: AppSizer.getWidth(context, 40),

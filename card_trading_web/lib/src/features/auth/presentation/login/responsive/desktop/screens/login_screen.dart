@@ -119,7 +119,7 @@ class _LoginScreenState extends ConsumerState<LoginDesktop> {
                                     Theme.of(context).colorScheme.tertiary)),
                             onPressed: () {
                               Future.delayed(const Duration(seconds: 0), () {
-                                context.go('/${AppRoutes.DesktopSignup.name}');
+                                context.go('/${AppRoutes.DesktopHome.name}');
                               });
                             },
                             child: Text(

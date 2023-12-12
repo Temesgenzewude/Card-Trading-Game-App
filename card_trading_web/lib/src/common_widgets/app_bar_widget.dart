@@ -1,4 +1,6 @@
+import 'package:card_trading_web/src/routing/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'button_widget.dart';
 import 'primary_search_bar_widget.dart';
@@ -32,11 +34,17 @@ class AppBarWidget extends StatelessWidget {
                     child: PrimaryButton(
                       buttonName: 'Sign In',
                       buttonRadius: 8,
+                      onPressed: () {
+                        context.go('/${AppRoutes.DesktopLogin.name}');
+                      },
                     ),
                   ),
                   PrimaryButton(
                     buttonName: 'Create Account',
                     buttonRadius: 8,
+                    onPressed: () {
+                      context.go('/${AppRoutes.DesktopSignup.name}');
+                    },
                   ),
                 ],
               ),
