@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
@@ -21,8 +23,8 @@ class PrimaryButton extends StatelessWidget {
       onTap: onPressed ?? () {},
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: AppSizer.getWidth(context, 40),
-          vertical: AppSizer.getHeight(context, 5),
+          horizontal: AppSizer.getWidth(context, 19),
+          vertical: AppSizer.getHeight(context, 13),
         ),
         decoration: BoxDecoration(
             gradient: AppColors.buttonGradient,
@@ -30,7 +32,9 @@ class PrimaryButton extends StatelessWidget {
         child: Text(
           buttonName,
           style: TextStyle(
-              color: Theme.of(context).colorScheme.secondary, fontSize: 20),
+            color: Theme.of(context).colorScheme.secondary,
+            fontSize: 14,
+          ),
         ),
       ),
     );

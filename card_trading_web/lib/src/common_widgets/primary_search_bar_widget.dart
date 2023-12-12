@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 import '../utils/size_convertor.dart';
@@ -15,10 +17,15 @@ class PrimarySearchBar extends StatelessWidget {
           Icons.search,
         ),
       ],
+      backgroundColor: MaterialStatePropertyAll(
+        Theme.of(context).colorScheme.secondary,
+      ),
       padding: MaterialStateProperty.all(
-        EdgeInsets.symmetric(
-          horizontal: AppSizer.getWidth(context, 20),
-          vertical: AppSizer.getHeight(context, 10),
+        EdgeInsets.only(
+          left: AppSizer.getWidth(context, 32),
+          top: AppSizer.getHeight(context, 12),
+          bottom: AppSizer.getHeight(context, 12),
+          right: AppSizer.getHeight(context, 15),
         ),
       ),
       elevation: const MaterialStatePropertyAll(1),
@@ -31,13 +38,13 @@ class PrimarySearchBar extends StatelessWidget {
       hintStyle: MaterialStatePropertyAll(
         TextStyle(
           fontWeight: FontWeight.w300,
-          color: Theme.of(context).colorScheme.primary.withOpacity(0.7),
+          color: Theme.of(context).colorScheme.onTertiary.withOpacity(0.7),
           fontSize: 14,
         ),
       ),
       constraints: BoxConstraints(
-        maxWidth: AppSizer.getWidth(context, 547),
-      ),
+          maxWidth: AppSizer.getWidth(context, 473),
+          minWidth: AppSizer.getWidth(context, 133)),
     );
   }
 }

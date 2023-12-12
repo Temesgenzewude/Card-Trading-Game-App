@@ -8,7 +8,7 @@ class CardWithImage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
+    return SizedBox(
       width: AppSizer.getWidth(context, 100),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

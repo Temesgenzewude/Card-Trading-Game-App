@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/series_card_widget.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';

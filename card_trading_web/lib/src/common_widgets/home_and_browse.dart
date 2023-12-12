@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, library_private_types_in_public_api
+
 import 'package:card_trading_web/src/common_widgets/app_bar_widget.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/browse_sets.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/browse_sets_desktop.dart';
@@ -41,7 +43,13 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                title: AppBarWidget(),
+                // title: AppBarWidget(),
+                floating: true,
+                expandedHeight: 150,
+                snap: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: AppBarWidget(),
+                ),
               ),
               SliverAppBar(
                 pinned: true,

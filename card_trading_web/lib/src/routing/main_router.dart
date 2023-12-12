@@ -1,33 +1,21 @@
 import 'package:card_trading_web/src/common_widgets/404_page.dart';
 import 'package:card_trading_web/src/common_widgets/home_and_browse.dart';
+import 'package:card_trading_web/src/features/auth/presentation/forgot_password/responsive/desktop/screens/forgot_password_screen.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/browse_sets.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/browse_sets_desktop.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/card_description_screen_desktop.dart';
+import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen_desktop.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/mobile/mobile_layout.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen_desktop.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen_desktop.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/see_card_detail_view_widget.dart';
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/screens/collections_desktop.dart';
-import 'package:card_trading_web/src/features/home/presentation/screens/home_screen.dart';
 import 'package:card_trading_web/src/features/more_options/presentation/responsive/desktop/screens/more_options_screen.dart';
-import 'package:card_trading_web/src/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../common_widgets/home_and_browse.dart';
 import '../features/auth/presentation/login/responsive/desktop/screens/login_auth_screen.dart';
 import '../features/auth/presentation/signup/responsive/desktop/screens/auth_screen.dart';
-import '../features/browse_set/presentation/responsive/desktop/screens/browse_sets.dart';
-import '../features/browse_set/presentation/responsive/desktop/screens/browse_sets_desktop.dart';
-import '../features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen_desktop.dart';
-import '../features/browse_set/presentation/responsive/mobile/mobile_layout.dart';
 
 import '../features/contact_us/presentation/screens/contact_us_screen.dart';
-import '../features/home/presentation/screens/home_screen.dart';
-import '../features/contact_us/presentation/screens/contact_us_screen.dart';
 
-import '../features/contact_us/presentation/screens/contact_us_screen.dart';
-import '../features/more_options/presentation/responsive/desktop/screens/more_options_screen.dart';
 import '../features/profile/presentation/screens/profile_screen.dart';
 import '../features/terms_and_privacy/presentation/screens/privacy_screen.dart';
 import '../features/terms_and_privacy/presentation/screens/terms_screen.dart';
@@ -111,6 +99,11 @@ class _MainRouterState extends State<MainRouter> {
           path: '/${AppRoutes.DesktopTermsScreen.name}',
           name: AppRoutes.DesktopTermsScreen.name,
           builder: (context, state) => const TermsScreen(),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.ForgotPasswordScreen.name}',
+          name: AppRoutes.ForgotPasswordScreen.name,
+          builder: (context, state) => const ForgotPasswordScreen(),
         ),
       ],
     );

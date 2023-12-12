@@ -47,9 +47,7 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               GestureDetector(
-                                onTap: () {
-                                  print("Editing profile");
-                                },
+                                onTap: () {},
                                 child: Stack(
                                   children: [
                                     Container(
