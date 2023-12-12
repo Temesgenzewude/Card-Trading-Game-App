@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
@@ -63,7 +65,7 @@ class CardNameWidget extends StatelessWidget {
             secondaryTitle != null
                 ? Flexible(
                     child: Text(
-                      'View all',
+                      secondaryTitle!,
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w300,
