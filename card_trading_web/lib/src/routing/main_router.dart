@@ -2,8 +2,7 @@ import 'package:card_trading_web/src/features/browse_set/presentation/responsive
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/desktop_layout.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/mobile/mobile_layout.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/see_card_detail_widget.dart';
+
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/screens/desktop_layout.dart';
 import 'package:card_trading_web/src/features/home/presentation/screens/home_screen.dart';
 import 'package:card_trading_web/src/features/more_options/presentation/responsive/desktop/screens/more_options_screen.dart';
