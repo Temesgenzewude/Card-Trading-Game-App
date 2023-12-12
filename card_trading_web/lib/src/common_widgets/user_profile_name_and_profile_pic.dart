@@ -1,8 +1,7 @@
-
+import 'package:card_trading_web/src/features/more_options/presentation/responsive/desktop/widgets/build_cutom_divider.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
-import '../features/more_options/presentation/widgets/build_cutom_divider.dart';
 
 Row buildProfileNameAndProfilePic() {
   return Row(
