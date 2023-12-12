@@ -28,33 +28,43 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
     final tabController = useTabController(initialLength: 2);
     var selectedCard = useState("Pokellector");
     return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            SliverAppBar(
-              title: AppBarWidget(),
-            ),
-            SliverAppBar(
-              pinned: true,
-              backgroundColor: Theme.of(context).secondaryHeaderColor,
-              title: TabBarContainer(
-                selectedCard: selectedCard,
-                cardGames: cardGames,
-                tabController: tabController,
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/bg_images/bg_image.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                title: AppBarWidget(),
               ),
-            ),
-          ];
-        },
-        body: TabBarView(
-          controller: tabController,
-          children: [
-            widget.tabBarView1 ?? const HomeScreenTab(),
-            widget.tabBarView2 ??
-                const BrowseSetTab(
-                  desktopScaffold: BrowseSetsDesktop(),
-                  mobileScaffold: BrowseSetsMobile(),
+              SliverAppBar(
+                pinned: true,
+                backgroundColor: Theme.of(context).secondaryHeaderColor,
+                title: TabBarContainer(
+                  selectedCard: selectedCard,
+                  cardGames: cardGames,
+                  tabController: tabController,
                 ),
-          ],
+              ),
+            ];
+          },
+          body: TabBarView(
+            controller: tabController,
+            children: [
+              widget.tabBarView1 ?? const HomeScreenTab(),
+              widget.tabBarView2 ??
+                  const BrowseSetTab(
+                    desktopScaffold: BrowseSetsDesktop(),
+                    mobileScaffold: BrowseSetsMobile(),
+                  ),
+            ],
+          ),
         ),
       ),
     );
