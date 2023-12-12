@@ -4,6 +4,7 @@ import 'package:card_trading_web/dependency_injection/shared_pref_injection.dart
 import 'package:card_trading_web/src/constants/shared_pref_keys.dart';
 import 'package:card_trading_web/src/routing/routes.dart';
 import 'package:card_trading_web/src/shared_pref/shared_pref_manager.dart';
+import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -24,12 +25,15 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0, bottom: 20),
+      padding: EdgeInsets.only(
+        left: AppSizer.getWidth(context, 345),
+        right: AppSizer.getWidth(context, 165),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.only(right: 20.0),
+            padding: const EdgeInsets.only(right: 30.0),
             child: PrimarySearchBar(
               hintText: 'Search for cards',
             ),
@@ -40,7 +44,7 @@ class AppBarWidget extends StatelessWidget {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(right: 20.0),
+                  padding: const EdgeInsets.only(right: 25.0),
                   child: PrimaryButton(
                     buttonName: 'Sign In',
                     buttonRadius: 8,

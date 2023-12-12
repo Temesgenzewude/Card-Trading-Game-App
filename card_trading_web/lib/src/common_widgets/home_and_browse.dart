@@ -43,7 +43,13 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                title: AppBarWidget(),
+                // title: AppBarWidget(),
+                floating: true,
+                expandedHeight: 150,
+                snap: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: AppBarWidget(),
+                ),
               ),
               SliverAppBar(
                 pinned: true,
