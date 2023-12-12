@@ -3,12 +3,9 @@
 enum AppRoutes {
   DesktopSignup,
   DesktopLogin,
-  BrowseSets, 
-  Home,
-  SeeCardDetailScreen,
-
-  MoreOptions,
-
-  ProfileScreen,
-  ContactUsScreen,
+  DesktopBrowseSets,
+  DesktopHome,
+  DesktopSeeCardDetailScreen,
+  DesktopCollections,
+  DesktopMoreOptionsScreen,
 }

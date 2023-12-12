@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../common_widgets/card_name_widget.dart';
-import '../../../../utils/size_convertor.dart';
+import '../../../../../../common_widgets/card_name_widget.dart';
+import '../../../../../../utils/size_convertor.dart';
 
 class CardDetailCardWidget extends StatelessWidget {
   const CardDetailCardWidget({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../utils/size_convertor.dart';
+import '../../../../../../utils/size_convertor.dart';
 import 'card_detail_card_widget.dart';
 
 class CardDescriptionWidget extends StatelessWidget {
