@@ -23,6 +23,7 @@ class CardNameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 10,
+      color: Colors.transparent,
       child: Container(
         width: AppSizer.getWidth(context, width),
         padding: EdgeInsets.symmetric(
