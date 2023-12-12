@@ -8,4 +8,8 @@ enum AppRoutes {
   DesktopSeeCardDetailScreen,
   DesktopCollections,
   DesktopMoreOptionsScreen,
+  DesktopEditProfileScreen,
+  DesktopContactUsScreen,
+  DesktopPrivacyScreen,
+  DesktopTermsScreen,
 }

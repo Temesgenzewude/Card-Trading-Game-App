@@ -1,17 +1,19 @@
-import 'package:card_trading_web/src/common_widgets/home_and_browse.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/browse_sets.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/desktop_layout.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/mobile/mobile_layout.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen.dart';
-
-import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/screens/desktop_layout.dart';
-import 'package:card_trading_web/src/features/home/presentation/screens/home_screen.dart';
-import 'package:card_trading_web/src/features/more_options/presentation/responsive/desktop/screens/more_options_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../common_widgets/home_and_browse.dart';
 import '../features/auth/presentation/login/responsive/desktop/screens/login_auth_screen.dart';
 import '../features/auth/presentation/signup/responsive/desktop/screens/auth_screen.dart';
+import '../features/browse_set/presentation/responsive/desktop/screens/browse_sets.dart';
+import '../features/browse_set/presentation/responsive/desktop/screens/desktop_layout.dart';
+import '../features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen.dart';
+import '../features/browse_set/presentation/responsive/mobile/mobile_layout.dart';
+import '../features/collections/presentation/responsive/screens/responsive/desktop/screens/desktop_layout.dart';
+import '../features/contact_us/presentation/screens/contact_us_screen.dart';
+import '../features/more_options/presentation/responsive/desktop/screens/more_options_screen.dart';
+import '../features/profile/presentation/screens/profile_screen.dart';
+import '../features/terms_and_privacy/presentation/screens/privacy_screen.dart';
+import '../features/terms_and_privacy/presentation/screens/terms_screen.dart';
 import '../theme/theme.dart';
 import 'routes.dart';
 
@@ -65,7 +67,28 @@ class _MainRouterState extends State<MainRouter> {
         name: AppRoutes.DesktopMoreOptionsScreen.name,
         builder: (context, state) => const MoreOptionsScreen(),
       ),
+      GoRoute(
+        path: '/${AppRoutes.DesktopEditProfileScreen.name}',
+        name: AppRoutes.DesktopEditProfileScreen.name,
+        builder: (context, state) => const ProfileScreen(),
+      ),
+      GoRoute(
+        path: '/${AppRoutes.DesktopContactUsScreen.name}',
+        name: AppRoutes.DesktopContactUsScreen.name,
+        builder: (context, state) => const ContactUsScreen(),
+      ),
+      GoRoute(
+        path: '/${AppRoutes.DesktopPrivacyScreen.name}',
+        name: AppRoutes.DesktopPrivacyScreen.name,
+        builder: (context, state) => const PrivacyScreen(),
+      ),
+      GoRoute(
+        path: '/${AppRoutes.DesktopTermsScreen.name}',
+        name: AppRoutes.DesktopTermsScreen.name,
+        builder: (context, state) => const TermsScreen(),
+      ),
     ]);
+
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router,
