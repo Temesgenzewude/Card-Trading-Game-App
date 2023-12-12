@@ -1,4 +1,6 @@
+
 import 'package:card_trading_web/src/features/terms_and_privacy/presentation/widgets/privacy_tab.dart';
+import 'package:card_trading_web/src/features/terms_and_privacy/presentation/widgets/terms_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -7,14 +9,14 @@ import '../../../../common_widgets/footer_widget.dart';
 import '../../../../common_widgets/user_profile_name_and_profile_pic.dart';
 import '../../../home/presentation/widgets/build_tab_bar_container.dart';
 
-class PrivacyScreen extends StatefulHookWidget {
-  const PrivacyScreen({Key? key}) : super(key: key);
+class TermsOfUseScreen extends StatefulHookWidget {
+  const TermsOfUseScreen({Key? key}) : super(key: key);
 
   @override
-  _PrivacyScreenState createState() => _PrivacyScreenState();
+  _TermsOfUseScreenState createState() => _TermsOfUseScreenState();
 }
 
-class _PrivacyScreenState extends State<PrivacyScreen> {
+class _TermsOfUseScreenState extends State<TermsOfUseScreen> {
   final List<String> cardGames = [
     'Pokellector',
     'Pokellector2',
@@ -56,7 +58,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
-                    children: [PrivacyTabDesktop()],
+                    children: [TermsOfUseTabDesktop()],
                   ),
                 ),
               ),
