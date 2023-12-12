@@ -36,7 +36,7 @@ class _LoginScreenState extends ConsumerState<LoginDesktop> {
           CardNameWidget(primaryTitile: 'SignIn', width: 400),
           Container(
             color: Theme.of(context).colorScheme.background,
-            height: AppSizer.getHeight(context, 600),
+            height: AppSizer.getHeight(context, 650),
             width: AppSizer.getWidth(context, 1000),
             child: Center(
               child: Padding(

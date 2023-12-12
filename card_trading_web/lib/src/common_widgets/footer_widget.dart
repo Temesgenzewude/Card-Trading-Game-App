@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../routing/routes.dart';
 import '../utils/size_convertor.dart';
 
 class FooterWidget extends StatelessWidget {
@@ -20,30 +22,45 @@ class FooterWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 3.0),
-            child: Text(
-              'Contact us',
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.secondary,
+          InkWell(
+            onTap: () {
+              context.go('/${AppRoutes.DesktopContactUsScreen.name}');
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 3.0),
+              child: Text(
+                'Contact us',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 3.0),
-            child: Text(
-              '\u2022 Terms of use',
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.secondary,
+          InkWell(
+            onTap: () {
+              context.go('/${AppRoutes.DesktopTermsScreen.name}');
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 3.0),
+              child: Text(
+                '\u2022 Terms of use',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 3.0),
-            child: Text(
-              '\u2022 Privacy Policy',
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.secondary,
+          InkWell(
+            onTap: () {
+              context.go('/${AppRoutes.DesktopPrivacyScreen.name}');
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 3.0),
+              child: Text(
+                '\u2022 Privacy Policy',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
               ),
             ),
           ),

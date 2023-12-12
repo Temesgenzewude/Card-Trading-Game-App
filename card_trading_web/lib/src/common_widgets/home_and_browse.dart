@@ -31,12 +31,12 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/bg_images/bg_image.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
+        decoration: BoxDecoration(
+            image: const DecorationImage(
+              image: AssetImage('assets/images/bg_images/bg_image.png'),
+              fit: BoxFit.cover,
+            ),
+            color: Colors.grey.withOpacity(1.0)),
         child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
