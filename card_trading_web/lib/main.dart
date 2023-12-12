@@ -2,13 +2,23 @@ import 'package:card_trading_web/src/shared_pref/shared_pref_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'dependency_injection/shared_pref_injection.dart';
 import 'src/routing/main_router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final sharedPrefManager = SharedPrefManager();
-  sharedPrefManager.setBool('isLoggedIn', true);
-  print(await sharedPrefManager.getBool('isLoggedIn'));
+
+  await initPrefManager();
+
+  final prefManager = sl<SharedPrefManager>();
+
+  prefManager.clear();
+
+// setting value for a given key
+  prefManager.setBool('isLoggedIn', false);
+
+  // getting value for a given key
+  print('isLoggedIn: ${prefManager.getBool('isLoggedIn')}');
 
   runApp(const ProviderScope(child: MyApp()));
 }
