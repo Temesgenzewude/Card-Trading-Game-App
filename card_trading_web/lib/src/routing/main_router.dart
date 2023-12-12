@@ -4,8 +4,8 @@ import 'package:card_trading_web/src/features/auth/presentation/forgot_password/
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/browse_sets.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/browse_sets_desktop.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/card_description_screen_desktop.dart';
+import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen_desktop.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/mobile/mobile_layout.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_screen.dart';
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/screens/collections_desktop.dart';
 import 'package:card_trading_web/src/features/more_options/presentation/responsive/desktop/screens/more_options_screen.dart';
 import 'package:flutter/material.dart';
