@@ -1,7 +1,14 @@
+import 'package:card_trading_web/dependency_injection/shared_pref_injection.dart';
 import 'package:card_trading_web/src/features/more_options/presentation/responsive/desktop/widgets/build_cutom_divider.dart';
+import 'package:card_trading_web/src/routing/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../constants/colors.dart';
+import '../constants/shared_pref_keys.dart';
+import '../shared_pref/shared_pref_manager.dart';
+
+final prefManage = sl<SharedPrefManager>();
 
 Row buildProfileNameAndProfilePic() {
   return Row(
@@ -32,6 +39,9 @@ Row buildProfileNameAndProfilePic() {
             buildMenuItem(
               onTap: () {
                 print("Profile");
+                Future.delayed(const Duration(seconds: 1), () {
+                  context.go('/${AppRoutes.DesktopEditProfileScreen.name}');
+                });
               },
               title: 'Profile',
               icon: const SizedBox(
@@ -47,6 +57,9 @@ Row buildProfileNameAndProfilePic() {
             buildMenuItem(
               onTap: () {
                 print("My Collections");
+                Future.delayed(const Duration(seconds: 1), () {
+                  context.go('/${AppRoutes.DesktopCollections.name}');
+                });
               },
               title: 'My Collection',
               icon: SizedBox(
@@ -63,6 +76,13 @@ Row buildProfileNameAndProfilePic() {
             buildMenuItem(
                 onTap: () {
                   print("Logout");
+
+                  prefManage.setBool(SharedPrefKeys.ISLOGGED, false);
+                  prefManage.clear();
+
+                  Future.delayed(const Duration(seconds: 1), () {
+                    context.go('/${AppRoutes.DesktopLogin.name}');
+                  });
                 },
                 title: 'Logout',
                 icon: SizedBox(
