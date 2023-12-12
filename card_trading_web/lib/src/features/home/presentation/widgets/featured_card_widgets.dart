@@ -5,9 +5,12 @@ import '../../../../utils/size_convertor.dart';
 import 'product_card_widget.dart';
 
 class FeaturedCardWidget extends StatelessWidget {
-  const FeaturedCardWidget({
+  FeaturedCardWidget({
     super.key,
+    this.cardTitle,
   });
+
+  String? cardTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class FeaturedCardWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CardNameWidget(
-          primaryTitile: 'Featured Cards',
+          primaryTitile: cardTitle ?? 'Featured Cards',
           width: 269,
         ),
         Container(
@@ -28,6 +31,7 @@ class FeaturedCardWidget extends StatelessWidget {
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(8),
               bottomRight: Radius.circular(8),
+              topRight: Radius.circular(8),
             ),
             color: Theme.of(context).colorScheme.secondary,
             boxShadow: [

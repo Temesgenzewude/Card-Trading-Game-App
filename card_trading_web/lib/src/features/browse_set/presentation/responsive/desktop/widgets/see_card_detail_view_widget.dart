@@ -1,6 +1,6 @@
 import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
 import 'package:card_trading_web/src/common_widgets/footer_widget.dart';
-import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/card_description_widget.dart';
+import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/see_detail_title_widget.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/collection_status_card_widget.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class _SeeCardDetailState extends ConsumerState<SeeCardDetail> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CardDescriptionWidget(),
+                const SeeDetailTitleWidget(),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizer.getHeight(context, 67),

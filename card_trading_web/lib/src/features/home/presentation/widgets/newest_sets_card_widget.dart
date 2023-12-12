@@ -5,9 +5,9 @@ import '../../../../utils/size_convertor.dart';
 import 'inner_card_widget.dart';
 
 class NewestSetsCardWidget extends StatelessWidget {
-  const NewestSetsCardWidget({
-    super.key,
-  });
+  NewestSetsCardWidget({super.key, this.width});
+
+  double? width;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class NewestSetsCardWidget extends StatelessWidget {
       children: [
         CardNameWidget(
           primaryTitile: 'Newests sets',
-          width: 267,
+          width: width ?? 267,
           secondaryTitle: 'View all',
         ),
         Container(
@@ -23,7 +23,7 @@ class NewestSetsCardWidget extends StatelessWidget {
             horizontal: AppSizer.getWidth(context, 28),
             vertical: AppSizer.getHeight(context, 22),
           ),
-          width: AppSizer.getWidth(context, 265),
+          width: AppSizer.getWidth(context, width ?? 265),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(8),
