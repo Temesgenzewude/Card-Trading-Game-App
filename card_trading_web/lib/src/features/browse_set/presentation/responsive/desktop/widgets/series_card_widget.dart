@@ -1,8 +1,10 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
+import 'package:card_trading_web/src/routing/routes.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SeriesCardWidget extends StatelessWidget {
   SeriesCardWidget({super.key, this.imageWidth});
@@ -12,7 +14,9 @@ class SeriesCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        context.go('/${AppRoutes.DesktopSeeCardDetailScreen.name}');
+      },
       child: Container(
         padding: const EdgeInsets.symmetric(
           vertical: 15,
