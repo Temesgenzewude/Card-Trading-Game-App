@@ -11,14 +11,22 @@ class UnselectedDot extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 2.0),
         child: Container(
-          width: AppSizer.getWidth(context, 12),
-          height: AppSizer.getHeight(context, 12),
+          width: AppSizer.getWidth(context, 20),
+          height: AppSizer.getHeight(context, 20),
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.background,
             shape: BoxShape.circle,
-            border: Border.all(
-              color: Theme.of(context).colorScheme.onTertiary,
-            ),
+            // border: Border.all(
+            //   color: Theme.of(context).colorScheme.onTertiary,
+            // ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.25),
+                offset: const Offset(0, 0),
+                blurRadius: 4,
+                spreadRadius: 1,
+              )
+            ],
           ),
         ),
       ),

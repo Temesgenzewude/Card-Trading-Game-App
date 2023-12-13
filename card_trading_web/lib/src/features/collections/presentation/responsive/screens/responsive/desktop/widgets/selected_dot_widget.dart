@@ -14,15 +14,15 @@ class SelectedDot extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 2.0),
         child: Container(
-          width: AppSizer.getWidth(context, size ?? 10),
-          height: AppSizer.getHeight(context, size ?? 10),
+          width: AppSizer.getWidth(context, 20),
+          height: AppSizer.getHeight(context, 20),
           decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.background,
               shape: BoxShape.circle,
-              border: Border.all(
-                color:
-                    Theme.of(context).colorScheme.onTertiary.withOpacity(0.3),
-              ),
+              // border: Border.all(
+              //   color:
+              //       Theme.of(context).colorScheme.onTertiary.withOpacity(0.3),
+              // ),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.25),
