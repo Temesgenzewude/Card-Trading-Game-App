@@ -14,7 +14,7 @@ import 'package:go_router/go_router.dart';
 import '../common_widgets/404_page.dart';
 import '../common_widgets/home_and_browse.dart';
 import '../features/auth/presentation/forgot_password/responsive/desktop/screens/forgot_password_screen.dart';
-import '../features/auth/presentation/login/responsive/desktop/screens/login_auth_screen.dart';
+import '../features/auth/presentation/login/responsive/desktop/screens/desktop_login.dart';
 import '../features/auth/presentation/signup/responsive/desktop/screens/auth_screen.dart';
 import '../features/browse_set/presentation/responsive/desktop/screens/browse_sets.dart';
 import '../features/browse_set/presentation/responsive/desktop/screens/browse_sets_desktop.dart';
@@ -58,12 +58,12 @@ class _MainRouterState extends State<MainRouter> {
         GoRoute(
           path: '/${AppRoutes.DesktopLogin.name}',
           name: AppRoutes.DesktopLogin.name,
-          builder: (context, state) => const LoginAuthScreen(),
+          builder: (context, state) => const DesktopLogin(),
         ),
         GoRoute(
           path: '/${AppRoutes.DesktopSignup.name}',
           name: AppRoutes.DesktopSignup.name,
-          builder: (context, state) => const SignupAuthScreen(),
+          builder: (context, state) => const SignupDesktop(),
         ),
         GoRoute(
           path: '/${AppRoutes.DesktopSeeCardDetailScreen.name}',

@@ -13,6 +13,7 @@ class CustomTextField extends StatelessWidget {
     this.minLines = 1,
     this.isPhoneNumber = false,
     this.radius = 16,
+    this.isPassword,
   });
 
   final TextEditingController textEditingController;
@@ -21,15 +22,14 @@ class CustomTextField extends StatelessWidget {
   int minLines;
   bool isPhoneNumber;
   double radius;
+  bool? isPassword;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
-        border: Border.all(
-          color: AppColors.borderColor,
-        ),
+        border: Border.all(color: AppColors.borderColor, width: 0.2),
         color: Colors.white,
         boxShadow: const [
           BoxShadow(
@@ -42,6 +42,7 @@ class CustomTextField extends StatelessWidget {
       ),
       width: double.infinity,
       child: TextField(
+        obscureText: isPassword ?? false,
         maxLines: maxLines,
         minLines: minLines,
         keyboardType: isMultiline

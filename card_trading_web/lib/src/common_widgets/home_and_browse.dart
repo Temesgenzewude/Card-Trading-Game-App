@@ -6,14 +6,17 @@ import 'package:card_trading_web/src/features/browse_set/presentation/responsive
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/mobile/mobile_layout.dart';
 import 'package:card_trading_web/src/features/home/presentation/widgets/build_tab_bar_container.dart';
 import 'package:card_trading_web/src/features/home/presentation/widgets/home_screen_tab.dart';
+import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class HomeAndBrowseTabs extends StatefulHookWidget {
   Widget? tabBarView1;
   Widget? tabBarView2;
+  bool isScroll;
 
-  HomeAndBrowseTabs({Key? key, this.tabBarView1, this.tabBarView2})
+  HomeAndBrowseTabs(
+      {Key? key, this.tabBarView1, this.tabBarView2, this.isScroll = true})
       : super(key: key);
 
   @override
@@ -44,13 +47,8 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                // title: AppBarWidget(),
-                floating: true,
-                expandedHeight: 150,
-                snap: true,
-                flexibleSpace: FlexibleSpaceBar(
-                  background: AppBarWidget(),
-                ),
+                title: AppBarWidget(),
+                pinned: true,
               ),
               SliverAppBar(
                 pinned: true,
@@ -63,7 +61,12 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
               ),
             ];
           },
+          physics: widget.isScroll
+              ? const BouncingScrollPhysics()
+              : const NeverScrollableScrollPhysics(),
+          // physics: const NeverScrollableScrollPhysics(),
           body: TabBarView(
+            physics: const NeverScrollableScrollPhysics(),
             controller: tabController,
             children: [
               widget.tabBarView1 ?? const HomeScreenTab(),
