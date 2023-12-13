@@ -31,7 +31,7 @@ class PageNotFoundScreen extends Page {
                   image: AssetImage('assets/images/bg_images/bg_image.png'),
                   fit: BoxFit.cover,
                 ),
-                color: Colors.grey.withOpacity(0.5),
+                color: Colors.grey.withOpacity(0.2),
               ),
               child: Center(
                 child: Column(

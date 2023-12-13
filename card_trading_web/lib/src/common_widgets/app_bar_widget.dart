@@ -23,53 +23,52 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
+      height: AppSizer.getHeight(context, 100),
+      padding: EdgeInsets.only(
+        left: AppSizer.getWidth(context, 300),
+        right: AppSizer.getWidth(context, 165),
+      ),
       decoration: BoxDecoration(
         image: const DecorationImage(
-          image: AssetImage('assets/images/bg_images/bg_image.png'),
-          fit: BoxFit.cover,
-        ),
-        color: Colors.grey.withOpacity(0.1),
+            image: AssetImage('assets/images/bg_images/bg_image.png'),
+            fit: BoxFit.cover),
+        color: Colors.grey.withOpacity(0.2),
       ),
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: AppSizer.getWidth(context, 345),
-          right: AppSizer.getWidth(context, 165),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 30.0),
-              child: PrimarySearchBar(
-                hintText: 'Search for cards',
-              ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 30.0),
+            child: PrimarySearchBar(
+              hintText: 'Search for cards',
             ),
-            if (prefManager.getBool(SharedPrefKeys.ISLOGGED))
-              buildProfileNameAndProfilePic(),
-            if (!prefManager.getBool(SharedPrefKeys.ISLOGGED))
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 25.0),
-                    child: PrimaryButton(
-                      buttonName: 'Sign In',
-                      buttonRadius: 8,
-                      onPressed: () {
-                        context.go('/${AppRoutes.DesktopLogin.name}');
-                      },
-                    ),
-                  ),
-                  PrimaryButton(
-                    buttonName: 'Create Account',
+          ),
+          if (prefManager.getBool(SharedPrefKeys.ISLOGGED))
+            buildProfileNameAndProfilePic(),
+          if (!prefManager.getBool(SharedPrefKeys.ISLOGGED))
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 25.0),
+                  child: PrimaryButton(
+                    buttonName: 'Sign In',
                     buttonRadius: 8,
                     onPressed: () {
-                      context.go('/${AppRoutes.DesktopSignup.name}');
+                      context.go('/${AppRoutes.DesktopLogin.name}');
                     },
                   ),
-                ],
-              ),
-          ],
-        ),
+                ),
+                PrimaryButton(
+                  buttonName: 'Create Account',
+                  buttonRadius: 8,
+                  onPressed: () {
+                    context.go('/${AppRoutes.DesktopSignup.name}');
+                  },
+                ),
+              ],
+            ),
+        ],
       ),
     );
   }
