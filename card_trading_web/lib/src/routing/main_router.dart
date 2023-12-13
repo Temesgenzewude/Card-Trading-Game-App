@@ -49,69 +49,86 @@ class _MainRouterState extends State<MainRouter> {
         GoRoute(
           path: '/${AppRoutes.DesktopHome.name}',
           name: AppRoutes.DesktopHome.name,
-          builder: (context, state) => HomeAndBrowseTabs(),
+          pageBuilder: (context, state) =>
+              buildCustomTransitionForPage(context, state, HomeAndBrowseTabs()),
         ),
         GoRoute(
             path: '/${AppRoutes.DesktopCardDetailScreen.name}',
             name: AppRoutes.DesktopCardDetailScreen.name,
-            builder: (context, state) => const CardDetailScreenDesktop()),
+            pageBuilder: (context, state) => buildCustomTransitionForPage(
+                context, state, const CardDetailScreenDesktop())),
         GoRoute(
           path: '/${AppRoutes.DesktopLogin.name}',
           name: AppRoutes.DesktopLogin.name,
-          builder: (context, state) => const DesktopLogin(),
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const DesktopLogin()),
         ),
         GoRoute(
           path: '/${AppRoutes.DesktopSignup.name}',
           name: AppRoutes.DesktopSignup.name,
-          builder: (context, state) => const SignupDesktop(),
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const SignupDesktop()),
         ),
         GoRoute(
           path: '/${AppRoutes.DesktopSeeCardDetailScreen.name}',
           name: AppRoutes.DesktopSeeCardDetailScreen.name,
-          builder: (context, state) => const SeeCardDetailScreenDesktop(),
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const SeeCardDetailScreenDesktop()),
         ),
         GoRoute(
-          path: '/${AppRoutes.DesktopBrowseSets.name}',
-          name: AppRoutes.DesktopBrowseSets.name,
-          builder: (context, state) => const BrowseSetTab(
-            desktopScaffold: BrowseSetsDesktop(),
-            mobileScaffold: BrowseSetsMobile(),
-          ),
-        ),
+            path: '/${AppRoutes.DesktopBrowseSets.name}',
+            name: AppRoutes.DesktopBrowseSets.name,
+            pageBuilder: (context, state) => buildCustomTransitionForPage(
+                  context,
+                  state,
+                  const BrowseSetTab(
+                    desktopScaffold: BrowseSetsDesktop(),
+                    mobileScaffold: BrowseSetsMobile(),
+                  ),
+                )),
         GoRoute(
           path: '/${AppRoutes.DesktopCollections.name}',
           name: AppRoutes.DesktopCollections.name,
-          builder: (context, state) => const DesktopCollectionsLayout(),
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const DesktopCollectionsLayout()),
         ),
         GoRoute(
           path: '/${AppRoutes.DesktopMoreOptionsScreen.name}',
           name: AppRoutes.DesktopMoreOptionsScreen.name,
-          builder: (context, state) => const MoreOptionsScreen(),
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const MoreOptionsScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.DesktopEditProfileScreen.name}',
           name: AppRoutes.DesktopEditProfileScreen.name,
-          builder: (context, state) => const ProfileScreen(),
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const ProfileScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.DesktopContactUsScreen.name}',
           name: AppRoutes.DesktopContactUsScreen.name,
-          builder: (context, state) => const ContactUsScreen(),
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const ContactUsScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.DesktopPrivacyScreen.name}',
           name: AppRoutes.DesktopPrivacyScreen.name,
-          builder: (context, state) => const PrivacyScreen(),
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const PrivacyScreen()),
         ),
         GoRoute(
           path: '/${AppRoutes.DesktopTermsScreen.name}',
           name: AppRoutes.DesktopTermsScreen.name,
-          builder: (context, state) => const TermsOfUseScreen(),
+          pageBuilder: (context, state) {
+            return buildCustomTransitionForPage(
+                context, state, const TermsOfUseScreen());
+          },
         ),
         GoRoute(
           path: '/${AppRoutes.ForgotPasswordScreen.name}',
           name: AppRoutes.ForgotPasswordScreen.name,
-          builder: (context, state) => const ForgotPasswordScreen(),
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const ForgotPasswordScreen()),
         ),
       ],
     );
@@ -122,5 +139,18 @@ class _MainRouterState extends State<MainRouter> {
       title: 'Card Trading App',
       theme: lightTheme,
     );
+  }
+
+  CustomTransitionPage<dynamic> buildCustomTransitionForPage(
+      BuildContext context, GoRouterState state, Widget page) {
+    return CustomTransitionPage(
+        key: state.pageKey,
+        transitionDuration: const Duration(seconds: 0),
+        child: page,
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(
+              opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+              child: child);
+        });
   }
 }
