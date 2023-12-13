@@ -30,9 +30,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     TextEditingController emailController = useTextEditingController();
     TextEditingController passwordController = useTextEditingController();
     return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 40),
+          padding: EdgeInsets.symmetric(
+              horizontal: AppSizer.getWidth(context, 147),
+              vertical: AppSizer.getHeight(context, 52)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -103,13 +106,21 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             ),
                             AuthButton(isSignIn: true),
                             Padding(
-                              padding: const EdgeInsets.only(top: 10.0),
+                              padding: EdgeInsets.only(
+                                  top: AppSizer.getHeight(context, 10)),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  const Text('or continue with'),
+                                  Text(
+                                    'or continue with',
+                                    style: TextStyle(
+                                        fontSize:
+                                            AppSizer.getHeight(context, 20)),
+                                  ),
                                   Padding(
-                                    padding: const EdgeInsets.only(top: 10.0),
+                                    padding: EdgeInsets.only(
+                                      top: AppSizer.getHeight(context, 10),
+                                    ),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -120,9 +131,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                           child: GestureDetector(
                                             child: SizedBox(
                                               height: AppSizer.getHeight(
-                                                  context, 60),
+                                                  context, 41),
                                               width: AppSizer.getWidth(
-                                                  context, 60),
+                                                  context, 41),
                                               child: SvgPicture.asset(
                                                 'assets/svg_images/google.svg',
                                               ),
@@ -135,9 +146,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                           child: GestureDetector(
                                             child: SizedBox(
                                               height: AppSizer.getHeight(
-                                                  context, 60),
+                                                  context, 41),
                                               width: AppSizer.getWidth(
-                                                  context, 60),
+                                                  context, 41),
                                               child: SvgPicture.asset(
                                                 'assets/svg_images/facebook.svg',
                                               ),
@@ -147,9 +158,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                       ],
                                     ),
                                   ),
-                                  const Padding(
-                                    padding: EdgeInsets.only(top: 10.0),
-                                    child: DontHaveAccount(),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        vertical:
+                                            AppSizer.getHeight(context, 10)),
+                                    child: const DontHaveAccount(),
                                   ),
                                 ],
                               ),

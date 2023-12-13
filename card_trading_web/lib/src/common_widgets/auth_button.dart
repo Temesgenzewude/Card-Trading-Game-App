@@ -23,7 +23,7 @@ class _AuthButtonState extends ConsumerState<AuthButton> {
       child: Padding(
         padding: const EdgeInsets.only(top: 10.0),
         child: SizedBox(
-          height: AppSizer.getHeight(context, 48),
+          height: AppSizer.getHeight(context, 58),
           width: AppSizer.getWidth(context, 430),
           child: ElevatedButton(
             style: ButtonStyle(
