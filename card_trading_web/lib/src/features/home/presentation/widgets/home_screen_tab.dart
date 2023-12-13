@@ -32,14 +32,14 @@ class HomeScreenTab extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         NewestSetsCardWidget(),
-                        NewestSeriesCardWidget(),
+                        const NewestSeriesCardWidget(),
                       ],
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(
                         vertical: AppSizer.getHeight(context, 43),
                       ),
-                      child:  FeaturedCardWidget(),
+                      child: FeaturedCardWidget(),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
