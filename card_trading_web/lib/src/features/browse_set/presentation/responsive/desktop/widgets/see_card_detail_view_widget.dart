@@ -47,9 +47,7 @@ class _SeeCardDetailState extends ConsumerState<SeeCardDetail> {
                         ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(3),
-                          boxShadow: [
-                            boxShadow()
-                          ],
+                          boxShadow: [boxShadow()],
                           color: Theme.of(context).colorScheme.secondary,
                         ),
                         child: Column(
@@ -59,24 +57,23 @@ class _SeeCardDetailState extends ConsumerState<SeeCardDetail> {
                               spacing: AppSizer.getWidth(context, 20),
                               runSpacing: AppSizer.getWidth(context, 40),
                               children: List.generate(
-                                10,
-                                (index) => Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(3),
-                                    boxShadow: [
-                                      boxShadow()
-                                    ],
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                  ),
-                                  child: Image.asset(
-                                    'assets/images/image3.png',
-                                    width: AppSizer.getWidth(
-                                      context,
-                                      140,
+                                30,
+                                (index) => InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(3),
+                                      boxShadow: [boxShadow()],
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
                                     ),
-                                    height: AppSizer.getHeight(context, 222),
-                                    fit: BoxFit.cover,
+                                    child: Image.asset(
+                                      'assets/images/image3.png',
+                                      width: AppSizer.getWidth(context, 140),
+                                      height: AppSizer.getHeight(context, 222),
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
