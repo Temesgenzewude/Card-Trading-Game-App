@@ -27,7 +27,7 @@ class AppBarWidget extends StatelessWidget {
       height: AppSizer.getHeight(context, 100),
       padding: EdgeInsets.only(
         left: AppSizer.getWidth(context, 300),
-        right: AppSizer.getWidth(context, 165),
+        right: AppSizer.getWidth(context, 150),
       ),
       decoration:  BoxDecoration(
         image: const DecorationImage(

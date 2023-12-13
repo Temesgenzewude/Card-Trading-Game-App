@@ -71,10 +71,12 @@ class TabBarContainer extends StatelessWidget {
             ),
           ]),
           Padding(
-            padding:
-                const EdgeInsets.only(right: 40.0, top: 10.0, bottom: 10.0),
+            padding: EdgeInsets.only(
+                right: AppSizer.getWidth(context, 150),
+                top: 10.0,
+                bottom: 10.0),
             child: SizedBox(
-                width: AppSizer.getWidth(context, 360),
+                width: AppSizer.getWidth(context, 300),
                 child: BuildTabBarForHomePage(tabController: tabController)),
           ),
         ],
