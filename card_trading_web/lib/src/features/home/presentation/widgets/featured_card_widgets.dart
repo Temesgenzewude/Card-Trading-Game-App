@@ -1,7 +1,10 @@
+// ignore_for_file: must_be_immutable
+
+import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
+import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
+import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../common_widgets/card_name_widget.dart';
-import '../../../../utils/size_convertor.dart';
 import 'product_card_widget.dart';
 
 class FeaturedCardWidget extends StatelessWidget {
@@ -35,12 +38,7 @@ class FeaturedCardWidget extends StatelessWidget {
             ),
             color: Theme.of(context).colorScheme.secondary,
             boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.25),
-                offset: const Offset(0, 4),
-                blurRadius: 4,
-                spreadRadius: 1,
-              ),
+              boxShadow(),
             ],
           ),
           child: Wrap(

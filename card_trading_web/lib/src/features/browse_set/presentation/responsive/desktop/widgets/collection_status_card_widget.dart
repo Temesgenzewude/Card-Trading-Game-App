@@ -1,3 +1,4 @@
+import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../utils/size_convertor.dart';
@@ -10,22 +11,19 @@ class CollectionStatusCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: AppSizer.getHeight(context, 40)),
+      padding: EdgeInsets.only(
+        bottom: AppSizer.getHeight(context, 40),
+      ),
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(
-          vertical: 21,
-          horizontal: 23,
+        padding: EdgeInsets.symmetric(
+          vertical: AppSizer.getHeight(context, 21),
+          horizontal: AppSizer.getWidth(context, 23),
         ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(3),
+          borderRadius: BorderRadius.circular(12),
           boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.25),
-              offset: const Offset(0, 4),
-              blurRadius: 4,
-              spreadRadius: 1,
-            ),
+            boxShadow(),
           ],
           border: Border.all(
             color: Theme.of(context).colorScheme.primary.withOpacity(0.8),
