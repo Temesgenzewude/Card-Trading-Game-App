@@ -1,5 +1,5 @@
 import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
-import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/widgets/four_dots_widget.dart';
+import 'package:card_trading_web/src/common_widgets/dots_widget.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 

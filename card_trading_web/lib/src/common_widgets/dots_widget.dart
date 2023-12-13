@@ -22,29 +22,6 @@ class DotsWidget extends StatelessWidget {
             ? SelectedDot(size: size)
             : const UnselectedDot(),
       ),
-
-      // children: [
-      //   index == 0
-      //       ? SelectedDot(
-      //           size: size,
-      //         )
-      //       : const UnselectedDot(),
-      //   index == 1
-      //       ? SelectedDot(
-      //           size: size,
-      //         )
-      //       : const UnselectedDot(),
-      //   index == 2
-      //       ? SelectedDot(
-      //           size: size,
-      //         )
-      //       : const UnselectedDot(),
-      //   index == 3
-      //       ? SelectedDot(
-      //           size: size,
-      //         )
-      //       : const UnselectedDot(),
-      // ],
     );
   }
 }
