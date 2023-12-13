@@ -30,7 +30,6 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
     TextEditingController confirmPasswordController =
         useTextEditingController();
     return SingleChildScrollView(
-      physics: const NeverScrollableScrollPhysics(),
       child: Center(
         child: Padding(
           padding: EdgeInsets.symmetric(

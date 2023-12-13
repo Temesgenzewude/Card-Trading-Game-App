@@ -30,7 +30,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     TextEditingController emailController = useTextEditingController();
     TextEditingController passwordController = useTextEditingController();
     return SingleChildScrollView(
-      physics: const NeverScrollableScrollPhysics(),
       child: Center(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -99,8 +98,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                       ),
                                     ],
                                   ),
-                                  const Flexible(
-                                      child: Text('Forgot Password?'))
+                                  GestureDetector(
+                                    onTap: () {
+                                      context.go(
+                                          '/${AppRoutes.ForgotPasswordScreen.name}');
+                                    },
+                                    child: const Flexible(
+                                        child: Text('Forgot Password?')),
+                                  )
                                 ],
                               ),
                             ),

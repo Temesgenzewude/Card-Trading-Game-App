@@ -30,7 +30,6 @@ class DesktopLoginState extends ConsumerState<DesktopLogin> {
   @override
   Widget build(BuildContext context) {
     return HomeAndBrowseTabs(
-      isScroll: false,
       tabBarView1: Column(
         children: [
           Expanded(
