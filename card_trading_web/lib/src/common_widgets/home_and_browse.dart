@@ -37,18 +37,23 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          image: const DecorationImage(
-            image: AssetImage('assets/images/bg_images/bg_image.png'),
-            fit: BoxFit.cover,
-          ),
-          color: Colors.grey.withOpacity(0.1),
-        ),
+            image: const DecorationImage(
+              image: AssetImage('assets/images/bg_images/bg_image.png'),
+              fit: BoxFit.cover,
+            ),
+            color: Colors.grey.withOpacity(0.2)),
         child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                title: AppBarWidget(),
+                // title: AppBarWidget(),
                 pinned: true,
+                expandedHeight: 100,
+                collapsedHeight: 100,
+                // snap: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: AppBarWidget(),
+                ),
               ),
               SliverAppBar(
                 pinned: true,

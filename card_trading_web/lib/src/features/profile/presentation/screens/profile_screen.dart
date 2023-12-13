@@ -31,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         image: const DecorationImage(
             image: AssetImage('assets/images/bg_images/bg_image.png'),
             fit: BoxFit.cover),
-        color: Colors.grey.withOpacity(1.0),
+        color: Colors.grey.withOpacity(0.2),
       ),
       child: Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
