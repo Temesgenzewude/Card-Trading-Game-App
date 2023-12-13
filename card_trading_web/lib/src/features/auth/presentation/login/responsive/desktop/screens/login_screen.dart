@@ -93,8 +93,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                           }),
                                       const Padding(
                                         padding: EdgeInsets.only(left: 10.0),
-                                        child: Flexible(
-                                            child: Text('Remember Me')),
+                                        child: Text('Remember Me'),
                                       ),
                                     ],
                                   ),
@@ -103,8 +102,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                       context.go(
                                           '/${AppRoutes.ForgotPasswordScreen.name}');
                                     },
-                                    child: const Flexible(
-                                        child: Text('Forgot Password?')),
+                                    child: Text('Forgot Password?'),
                                   )
                                 ],
                               ),

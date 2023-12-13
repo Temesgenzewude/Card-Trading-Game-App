@@ -117,9 +117,8 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                   Padding(
                                     padding: EdgeInsets.only(
                                         left: AppSizer.getHeight(context, 10)),
-                                    child: const Flexible(
-                                        child: Text(
-                                            'Agree with Terms & Conditions')),
+                                    child: Text(
+                                        'Agree with Terms & Conditions'),
                                   ),
                                 ],
                               ),
