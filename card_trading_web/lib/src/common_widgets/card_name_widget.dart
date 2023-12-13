@@ -1,11 +1,10 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
+import 'package:card_trading_web/src/constants/colors.dart';
+import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
-import '../utils/size_convertor.dart';
-
-// ignore: must_be_immutable
 class CardNameWidget extends StatelessWidget {
   CardNameWidget({
     super.key,
@@ -40,12 +39,7 @@ class CardNameWidget extends StatelessWidget {
           ),
           gradient: AppColors.buttonGradient,
           boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.25),
-              offset: const Offset(0, 4),
-              blurRadius: 4,
-              spreadRadius: 1,
-            ),
+            boxShadow()
           ],
         ),
         child: Row(
