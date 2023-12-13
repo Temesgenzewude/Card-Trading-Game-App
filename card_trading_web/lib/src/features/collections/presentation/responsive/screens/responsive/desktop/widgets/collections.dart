@@ -5,6 +5,7 @@ import 'package:card_trading_web/src/features/collections/presentation/responsiv
 import 'package:card_trading_web/src/common_widgets/dots_widget.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class Collections extends ConsumerStatefulWidget {
@@ -15,9 +16,9 @@ class Collections extends ConsumerStatefulWidget {
 }
 
 class _CollectionsState extends ConsumerState<Collections> {
-  var currentSelected = 0;
   @override
   Widget build(BuildContext context) {
+    // final currentSelected = useState(0);
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.only(top: 40.0),
@@ -48,20 +49,27 @@ class _CollectionsState extends ConsumerState<Collections> {
                               child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
                                   itemBuilder: (context, index) {
+                                    if (index % 4 == 0) {
+                                      // currentSelected.value =
+                                      //     (currentSelected.value + 1) % 4;
+                                    }
                                     return Padding(
-                                      padding: const EdgeInsets.only(
-                                          top: 40.0,
-                                          left: 10.0,
-                                          right: 10.0,
-                                          bottom: 20),
+                                      padding: EdgeInsets.only(
+                                        top: AppSizer.getHeight(context, 10),
+                                        left: AppSizer.getWidth(context, 10),
+                                        right: AppSizer.getWidth(context, 10),
+                                        bottom: AppSizer.getWidth(context, 10),
+                                      ),
                                       child: SeriesCardWidget(),
                                     );
                                   }),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 20.0),
+                              padding: EdgeInsets.symmetric(
+                                vertical: AppSizer.getHeight(context, 10),
+                              ),
                               child: DotsWidget(
-                                selectedIndex: currentSelected,
+                                selectedIndex: 0,
                               ),
                             ),
                           ],
@@ -73,7 +81,8 @@ class _CollectionsState extends ConsumerState<Collections> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
+              padding: EdgeInsets.symmetric(
+                  vertical: AppSizer.getHeight(context, 20)),
               child: Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,7 +102,7 @@ class _CollectionsState extends ConsumerState<Collections> {
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: SizedBox(
-                          height: AppSizer.getHeight(context, 340),
+                          height: AppSizer.getHeight(context, 380),
                           width: AppSizer.getWidth(context, 800),
                           child: Column(
                             children: [
