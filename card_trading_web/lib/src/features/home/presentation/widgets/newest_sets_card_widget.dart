@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: must_be_immutable
 
-import '../../../../common_widgets/card_name_widget.dart';
-import '../../../../utils/size_convertor.dart';
-import 'inner_card_widget.dart';
+import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
+import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
+import 'package:card_trading_web/src/features/home/presentation/widgets/inner_card_widget.dart';
+import 'package:card_trading_web/src/utils/size_convertor.dart';
+import 'package:flutter/material.dart';
 
 class NewestSetsCardWidget extends StatelessWidget {
   NewestSetsCardWidget({super.key, this.width});
@@ -30,14 +32,7 @@ class NewestSetsCardWidget extends StatelessWidget {
               bottomRight: Radius.circular(8),
             ),
             color: Theme.of(context).colorScheme.secondary,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.25),
-                offset: const Offset(0, 4),
-                blurRadius: 4,
-                spreadRadius: 1,
-              ),
-            ],
+            boxShadow: [boxShadow()],
           ),
           child: Column(
             children: [

@@ -1,3 +1,4 @@
+import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
 import 'package:card_trading_web/src/common_widgets/dots_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -35,12 +36,7 @@ class NewestSeriesCardWidget extends StatelessWidget {
             ),
             color: Theme.of(context).colorScheme.secondary,
             boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.25),
-                offset: const Offset(0, 4),
-                blurRadius: 4,
-                spreadRadius: 1,
-              ),
+              boxShadow()
             ],
           ),
           child: Column(
