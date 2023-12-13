@@ -2,6 +2,7 @@
 
 import 'package:card_trading_web/dependency_injection/shared_pref_injection.dart';
 import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
+import 'package:card_trading_web/src/common_widgets/custom_text_field.dart';
 import 'package:card_trading_web/src/constants/colors.dart';
 import 'package:card_trading_web/src/constants/shared_pref_keys.dart';
 import 'package:card_trading_web/src/routing/routes.dart';
@@ -27,7 +28,6 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     TextEditingController emailController = useTextEditingController();
-    TextEditingController passwordController = useTextEditingController();
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -36,112 +36,108 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
             image: AssetImage('assets/images/bg_images/bg_image.png'),
           ),
         ),
-        child: SingleChildScrollView(
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 80.0),
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.only(top: AppSizer.getHeight(context, 10)),
+            child: SizedBox(
+              height: AppSizer.getHeight(context, 800),
+              width: AppSizer.getWidth(context, 985),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 400.0),
-                    child: CardNameWidget(
-                        primaryTitile: 'Password Recovery', width: 400),
-                  ),
+                  CardNameWidget(
+                      primaryTitile: 'Password Recovery', width: 400),
                   Center(
                     child: Container(
                       color: Theme.of(context).colorScheme.background,
-                      height: AppSizer.getHeight(context, 800),
-                      width: AppSizer.getWidth(context, 1000),
                       child: Center(
                         child: Padding(
                           padding: const EdgeInsets.only(left: 20.0),
                           child: SizedBox(
                             width: AppSizer.getWidth(context, 600),
-                            child: Center(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Center(
+                                  child: Padding(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 20.0),
-                                    child: Lottie.asset(
-                                        'assets/lottie/forgot_password.json'),
-                                  ),
-                                  const Padding(
-                                    padding: EdgeInsets.only(top: 10.0),
-                                    child: Text(
-                                        "Enter the email address associated with your account and we'll send you a link to reset your password."),
-                                  ),
-                                  const Center(
-                                    child: Padding(
-                                      padding: EdgeInsets.only(
-                                          top: 10.0, right: 428),
-                                      child: Text('Email'),
+                                    child: SizedBox(
+                                      height: AppSizer.getHeight(context, 281),
+                                      width: AppSizer.getWidth(context, 356),
+                                      child: Lottie.asset(
+                                          'assets/lottie/forgot_password.json'),
                                     ),
                                   ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.only(bottom: 10.0),
-                                    child: Center(
-                                      child: SizedBox(
-                                        width: AppSizer.getWidth(context, 400),
-                                        child: TextField(
-                                          decoration: InputDecoration(
-                                            focusedBorder: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              borderSide: const BorderSide(
-                                                  color: Colors.greenAccent,
-                                                  width: 1.0),
-                                            ),
-                                            enabledBorder: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              borderSide: const BorderSide(
-                                                  color: AppColors.borderColor,
-                                                  width: 1.0),
-                                            ),
-                                          ),
-                                          controller: emailController,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 10.0),
+                                  child: Center(
+                                    child: SizedBox(
+                                      width: AppSizer.getWidth(context, 410),
+                                      child: Text(
+                                          "Enter the email address associated with your account and we'll send you a link to reset your password."),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 10.0),
+                                  child: Center(
+                                      child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left:
+                                                AppSizer.getWidth(context, 10)),
+                                        child: const Text('Email'),
+                                      ),
+                                      SizedBox(
+                                        width: AppSizer.getWidth(context, 430),
+                                        child: CustomTextField(
+                                            textEditingController:
+                                                emailController),
+                                      ),
+                                    ],
+                                  )),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    top: AppSizer.getHeight(context, 20),
+                                    bottom: AppSizer.getHeight(context, 80),
+                                  ),
+                                  child: Center(
+                                    child: SizedBox(
+                                      height: AppSizer.getHeight(context, 60),
+                                      width: AppSizer.getWidth(context, 400),
+                                      child: ElevatedButton(
+                                        style: ButtonStyle(
+                                            backgroundColor:
+                                                MaterialStateProperty.all(
+                                                    Theme.of(context)
+                                                        .colorScheme
+                                                        .tertiary)),
+                                        onPressed: () {
+                                          Future.delayed(
+                                              const Duration(seconds: 0), () {
+                                            context.go(
+                                                '/${AppRoutes.DesktopLogin.name}');
+                                          });
+                                        },
+                                        child: Text(
+                                          'Continue',
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .secondary),
                                         ),
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 10.0),
-                                    child: Center(
-                                      child: SizedBox(
-                                        height: AppSizer.getHeight(context, 60),
-                                        width: AppSizer.getWidth(context, 400),
-                                        child: ElevatedButton(
-                                          style: ButtonStyle(
-                                              backgroundColor:
-                                                  MaterialStateProperty.all(
-                                                      Theme.of(context)
-                                                          .colorScheme
-                                                          .tertiary)),
-                                          onPressed: () {
-                                            Future.delayed(
-                                                const Duration(seconds: 0), () {
-                                              context.go(
-                                                  '/${AppRoutes.DesktopLogin.name}');
-                                            });
-                                          },
-                                          child: Text(
-                                            'Continue',
-                                            style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .secondary),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ),

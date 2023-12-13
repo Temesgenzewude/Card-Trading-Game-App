@@ -16,7 +16,6 @@ class _SignupDesktopState extends ConsumerState<SignupDesktop> {
   @override
   Widget build(BuildContext context) {
     return HomeAndBrowseTabs(
-      isScroll: false,
       tabBarView1: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
