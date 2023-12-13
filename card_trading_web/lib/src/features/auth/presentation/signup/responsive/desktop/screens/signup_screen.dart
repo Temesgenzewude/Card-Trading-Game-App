@@ -30,153 +30,164 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
     TextEditingController confirmPasswordController =
         useTextEditingController();
     return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 40),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSizer.getWidth(context, 148),
+            vertical: AppSizer.getHeight(context, 55),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CardNameWidget(primaryTitile: 'Signup', width: 313),
               Container(
                 color: Theme.of(context).colorScheme.background,
-                height: AppSizer.getHeight(context, 650),
+                height: AppSizer.getHeight(context, 627),
                 width: AppSizer.getWidth(context, 985),
                 child: Center(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          bottom: 10.0, left: 48, right: 55),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    padding: EdgeInsets.only(
+                      left: AppSizer.getWidth(context, 55),
+                      right: AppSizer.getWidth(context, 48),
+                      top: AppSizer.getHeight(context, 40),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text('Email'),
+                            CustomTextField(
+                                textEditingController: emailController),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    width: AppSizer.getWidth(context, 430),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text('Password'),
+                                        CustomTextField(
+                                            textEditingController:
+                                                passwordController),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: AppSizer.getWidth(context, 430),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text('Confirm Password'),
+                                        CustomTextField(
+                                            textEditingController:
+                                                confirmPasswordController),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: AppSizer.getHeight(context, 20)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text('Email'),
-                              CustomTextField(
-                                  textEditingController: emailController),
+                              Row(
+                                children: [
+                                  Checkbox(
+                                      activeColor: Colors.green,
+                                      checkColor: Colors.white,
+                                      value: rememberMe,
+                                      onChanged: (val) {
+                                        setState(() {
+                                          rememberMe = !rememberMe;
+                                        });
+                                      }),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: AppSizer.getHeight(context, 10)),
+                                    child: const Flexible(
+                                        child: Text(
+                                            'Agree with Terms & Conditions')),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        AuthButton(),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: AppSizer.getHeight(context, 10)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'or continue with',
+                                style: TextStyle(
+                                    fontSize: AppSizer.getHeight(context, 20)),
+                              ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
+                                padding: EdgeInsets.only(
+                                  top: AppSizer.getHeight(context, 10),
+                                ),
                                 child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    SizedBox(
-                                      width: AppSizer.getWidth(context, 430),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          const Text('Password'),
-                                          CustomTextField(
-                                              textEditingController:
-                                                  passwordController),
-                                        ],
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(right: 15.0),
+                                      child: GestureDetector(
+                                        child: SizedBox(
+                                          height:
+                                              AppSizer.getHeight(context, 41),
+                                          width: AppSizer.getWidth(context, 41),
+                                          child: SvgPicture.asset(
+                                            'assets/svg_images/google.svg',
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: AppSizer.getWidth(context, 430),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          const Text('Confirm Password'),
-                                          CustomTextField(
-                                              textEditingController:
-                                                  confirmPasswordController),
-                                        ],
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(left: 15.0),
+                                      child: GestureDetector(
+                                        child: SizedBox(
+                                          height:
+                                              AppSizer.getHeight(context, 41),
+                                          width: AppSizer.getWidth(context, 41),
+                                          child: SvgPicture.asset(
+                                            'assets/svg_images/facebook.svg',
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                    )
                                   ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: AppSizer.getHeight(context, 10)),
+                                child: const DontHaveAccount(
+                                  message: 'Already have an account?',
                                 ),
                               ),
                             ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 20.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Checkbox(
-                                        activeColor: Colors.green,
-                                        checkColor: Colors.white,
-                                        value: rememberMe,
-                                        onChanged: (val) {
-                                          setState(() {
-                                            rememberMe = !rememberMe;
-                                          });
-                                        }),
-                                    const Padding(
-                                      padding: EdgeInsets.only(left: 10.0),
-                                      child: Flexible(
-                                          child: Text(
-                                              'Agree with Terms & Conditions')),
-                                    ),
-                                  ],
-                                ),
-                                const Flexible(child: Text('Forgot Password?'))
-                              ],
-                            ),
-                          ),
-                          AuthButton(),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                const Text('or continue with'),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 10.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 15.0),
-                                        child: GestureDetector(
-                                          child: SizedBox(
-                                            height:
-                                                AppSizer.getHeight(context, 60),
-                                            width:
-                                                AppSizer.getWidth(context, 60),
-                                            child: SvgPicture.asset(
-                                              'assets/svg_images/google.svg',
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 15.0),
-                                        child: GestureDetector(
-                                          child: SizedBox(
-                                            height:
-                                                AppSizer.getHeight(context, 60),
-                                            width:
-                                                AppSizer.getWidth(context, 60),
-                                            child: SvgPicture.asset(
-                                              'assets/svg_images/facebook.svg',
-                                            ),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                const Padding(
-                                  padding: EdgeInsets.only(top: 10.0),
-                                  child: DontHaveAccount(
-                                    message: 'Already have an account?',
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

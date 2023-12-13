@@ -1,3 +1,4 @@
+import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -15,10 +16,14 @@ class DontHaveAccount extends StatelessWidget {
         text: TextSpan(
           style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: message ?? 'Don\'t have an account yet? '),
+            TextSpan(
+                text: message ?? 'Don\'t have an account yet? ',
+                style: TextStyle(fontSize: AppSizer.getHeight(context, 20))),
             TextSpan(
               text: message != null ? 'Sign In' : 'Signup',
-              style: const TextStyle(color: Colors.blue),
+              style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: AppSizer.getHeight(context, 20)),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   if (message != null) {
