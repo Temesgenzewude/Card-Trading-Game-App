@@ -29,7 +29,7 @@ class AppBarWidget extends StatelessWidget {
         left: AppSizer.getWidth(context, 300),
         right: AppSizer.getWidth(context, 165),
       ),
-      decoration: BoxDecoration(
+      decoration:  BoxDecoration(
         image: const DecorationImage(
             image: AssetImage('assets/images/bg_images/bg_image.png'),
             fit: BoxFit.cover),
