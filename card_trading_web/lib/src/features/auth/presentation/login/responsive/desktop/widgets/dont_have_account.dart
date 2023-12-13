@@ -10,24 +10,26 @@ class DontHaveAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: DefaultTextStyle.of(context).style,
-        children: <TextSpan>[
-          TextSpan(text: message ?? 'Don\'t have an account yet? '),
-          TextSpan(
-            text: message != null ? 'Sign In' : 'Signup',
-            style: const TextStyle(color: Colors.blue),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                if (message != null) {
-                  context.go('/${AppRoutes.DesktopLogin.name}');
-                } else {
-                  context.go('/${AppRoutes.DesktopSignup.name}');
-                }
-              },
-          ),
-        ],
+    return Flexible(
+      child: RichText(
+        text: TextSpan(
+          style: DefaultTextStyle.of(context).style,
+          children: <TextSpan>[
+            TextSpan(text: message ?? 'Don\'t have an account yet? '),
+            TextSpan(
+              text: message != null ? 'Sign In' : 'Signup',
+              style: const TextStyle(color: Colors.blue),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  if (message != null) {
+                    context.go('/${AppRoutes.DesktopLogin.name}');
+                  } else {
+                    context.go('/${AppRoutes.DesktopSignup.name}');
+                  }
+                },
+            ),
+          ],
+        ),
       ),
     );
   }
