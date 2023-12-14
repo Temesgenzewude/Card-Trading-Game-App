@@ -23,19 +23,19 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.transparent,
+      // color: Colors.transparent,
       width: double.infinity,
       height: AppSizer.getHeight(context, 100),
       padding: EdgeInsets.only(
         left: AppSizer.getWidth(context, 300),
         right: AppSizer.getWidth(context, 150),
       ),
-      // decoration:  BoxDecoration(
-      //   image: const DecorationImage(
-      //       image: AssetImage('assets/images/bg_images/bg_image.png'),
-      //       fit: BoxFit.cover),
-      //   color: Colors.grey.withOpacity(0.2),
-      // ),
+      decoration:const BoxDecoration(
+        image:  DecorationImage(
+            image: AssetImage('assets/images/bg_images/bg_image.png'),
+            fit: BoxFit.cover),
+        // color: Colors.grey.withOpacity(0.2),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -73,4 +73,4 @@ class AppBarWidget extends StatelessWidget {
       ),
     );
   }
-}
+} 

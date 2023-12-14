@@ -33,7 +33,8 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
     final tabController = useTabController(initialLength: 2);
     var selectedCard = useState("Pokellector");
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      // extendBodyBehindAppBar: true,
+     
       body: Stack(
         children: [
           Image.asset(
