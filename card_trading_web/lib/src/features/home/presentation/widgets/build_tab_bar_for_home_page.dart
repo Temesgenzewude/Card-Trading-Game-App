@@ -14,45 +14,64 @@ class BuildTabBarForHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return TabBar(
         dividerColor: Colors.transparent,
-        // padding: EdgeInsets.zero,
-        // indicatorPadding: EdgeInsets.zero,
+        padding: EdgeInsets.symmetric(horizontal: 2, vertical: 2),
+
         // indicatorColor: Theme.of(context).primaryColor,
-        indicator: BoxDecoration(
-          // shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(8.0),
+
+        indicator: ShapeDecoration(
           gradient: const LinearGradient(
-            colors: [
-              //rgba(142, 202, 230, 1), rgba(33, 158, 188, 1)
-              Color.fromRGBO(142, 202, 230, 1),
-              Color.fromRGBO(33, 158, 188, 1),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment(0.00, -1.00),
+            end: Alignment(0, 1),
+            colors: [Color(0xFF8ECAE6), Color(0xFF219EBC)],
           ),
-          boxShadow: const [
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          shadows: const [
             BoxShadow(
-              offset: Offset(0, 6),
+              color: Color(0x3F000000),
               blurRadius: 8,
-              color: Color.fromRGBO(0, 0, 0, 0.25),
-            ),
+              offset: Offset(0, 6),
+              spreadRadius: 0,
+            )
           ],
         ),
         indicatorSize: TabBarIndicatorSize.label,
-        labelColor: AppColors.offWhiteTextColor,
-        unselectedLabelColor: AppColors.offWhiteTextColor,
         controller: tabController,
+        unselectedLabelStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 14,
+          fontFamily: 'InterRegular',
+          height: 0,
+        ),
+        labelStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 14,
+          fontFamily: 'InterMedium',
+          height: 0,
+        ),
         tabs: const [
           Tab(
-            child: Center(
-              child: Text(
-                'Home',
+            child: SizedBox(
+              width: 65,
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Text(
+                    'Home',
+                  ),
+                ),
               ),
             ),
           ),
           Tab(
-            child: Center(
-              child: Text(
-                'Browse Sets',
+            child: SizedBox(
+              width: 300,
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Text(
+                    'Browse Sets',
+                  ),
+                ),
               ),
             ),
           ),
