@@ -33,23 +33,23 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: AppSizer.getWidth(context, 147),
-                vertical: 20,
-              ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: AppSizer.getWidth(context, 147),
+              vertical: 20,
+            ),
+            child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CardNameWidget(primaryTitile: 'SignIn', width: 313),
                   Container(
                     color: Theme.of(context).colorScheme.background,
-                    height: 567,
+                    height: 500,
                     width: AppSizer.getWidth(context, 885),
                     child: Center(
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 20.0),
+                        padding:  EdgeInsets.only(left: AppSizer.getWidth(context, 20)),
                         child: Padding(
                           padding: const EdgeInsets.only(
                               bottom: 10.0, left: 48, right: 55),
@@ -121,7 +121,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                       Padding(
                                         padding: EdgeInsets.symmetric(
                                             horizontal:
-                                                AppSizer.getWidth(context, 20)),
+                                                AppSizer.getWidth(context, 20),),
                                         child: GestureDetector(
                                           onTap: () {
                                             context.go(
@@ -135,7 +135,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                             ),
                                           ),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -158,8 +158,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(
-                                          top: 40,
+                                        padding: const EdgeInsets.only(
+                                          top: 20,
                                         ),
                                         child: Row(
                                           mainAxisAlignment:
@@ -198,7 +198,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                       ),
                                       const Padding(
                                         padding: EdgeInsets.only(
-                                          top: 40,
+                                          top: 20,
                                         ),
                                         child: DontHaveAccount(),
                                       ),
@@ -216,7 +216,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               ),
             ),
           ),
-          const FooterWidget(),
+          const Padding(
+            padding: EdgeInsets.only(top: 80.0),
+            child: FooterWidget(),
+          ),
         ],
       ),
     );
