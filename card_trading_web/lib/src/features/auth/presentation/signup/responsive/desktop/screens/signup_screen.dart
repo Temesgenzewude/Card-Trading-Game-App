@@ -209,7 +209,9 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                     padding: EdgeInsets.only(
                                       top: 20,
                                     ),
-                                    child: DontHaveAccount(),
+                                    child: DontHaveAccount(
+                                      message: 'Already have an account? ',
+                                    ),
                                   ),
                                 ],
                               ),
