@@ -68,8 +68,8 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
                     ),
                   ),
                   SliverAppBar(
-                    expandedHeight: 80,
-                    collapsedHeight: 80,
+                    expandedHeight: 60,
+                    collapsedHeight: 60,
                     pinned: true,
                     backgroundColor: Theme.of(context).secondaryHeaderColor,
                     flexibleSpace: FlexibleSpaceBar(

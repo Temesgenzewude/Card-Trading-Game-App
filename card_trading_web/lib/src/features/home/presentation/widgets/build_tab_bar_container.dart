@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../utils/size_convertor.dart';
 import 'build_tab_bar_for_home_page.dart';
@@ -18,8 +19,9 @@ class TabBarContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 50),
-      height: 1000,
+      padding: EdgeInsets.only(
+          left: AppSizer.getWidth(context, 150),
+          right: AppSizer.getWidth(context, 150)),
       width: double.infinity,
       decoration: BoxDecoration(
         color: Theme.of(context).secondaryHeaderColor,
@@ -29,54 +31,55 @@ class TabBarContainer extends StatelessWidget {
         children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Container(
-              width: AppSizer.getWidth(context, 100),
-              height: AppSizer.getHeight(context, 84),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
+              width: 80,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+              height: 65,
+              decoration: ShapeDecoration(
                 gradient: const LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
+                  begin: Alignment(0.00, -1.00),
+                  end: Alignment(0, 1),
                   colors: [Color(0xFF8ECAE6), Color(0xFF219EBC)],
                 ),
-                boxShadow: [
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                shadows: const [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.25),
-                    offset: const Offset(0, 6),
+                    color: Color(0x3F000000),
                     blurRadius: 8,
-                  ),
+                    offset: Offset(0, 6),
+                    spreadRadius: 0,
+                  )
                 ],
               ),
               child: Center(
                 child: Image.asset(
-                    'assets/images/logo_images/pokellector_logo.png',
-                    width: AppSizer.getWidth(context, 86),
-                    height: AppSizer.getHeight(context, 31)),
+                  'assets/images/logo_images/pokellector_logo.png',
+                  // width: AppSizer.getWidth(context, 70),
+                  // height: AppSizer.getHeight(context, 25),
+                ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Image.asset(
                 'assets/images/logo_images/one_piece__logo.png',
-                width: AppSizer.getWidth(context, 97),
-                height: AppSizer.getHeight(context, 25),
+                width: AppSizer.getWidth(context, 80),
+                height: AppSizer.getHeight(context, 30),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 0),
               child: Image.asset(
                 'assets/images/logo_images/disney_lorcana_logo.png',
-                width: AppSizer.getWidth(context, 70),
-                height: AppSizer.getHeight(context, 31),
+                width: AppSizer.getWidth(context, 80),
+                height: AppSizer.getHeight(context, 40),
               ),
             ),
           ]),
           Padding(
-            padding: EdgeInsets.only(
-                right: AppSizer.getWidth(context, 150),
-                top: 10.0,
-                bottom: 10.0),
+            padding: const EdgeInsets.symmetric(vertical: 10),
             child: SizedBox(
-                width: AppSizer.getWidth(context, 300),
+                width: 300,
                 child: BuildTabBarForHomePage(tabController: tabController)),
           ),
         ],
