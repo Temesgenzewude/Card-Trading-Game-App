@@ -26,13 +26,13 @@ class InnerCardWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           color: Theme.of(context).colorScheme.secondary,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
-              color: Theme.of(context).colorScheme.shadow,
-              offset: const Offset(0, 0),
-              blurRadius: 1,
-              // spreadRadius: 1,
-            ),
+              color: Color(0x3F000000),
+              blurRadius: 4,
+              offset: Offset(0, 0),
+              spreadRadius: 0,
+            )
           ],
         ),
         child: Row(
