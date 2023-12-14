@@ -49,7 +49,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     width: AppSizer.getWidth(context, 885),
                     child: Center(
                       child: Padding(
-                        padding:  EdgeInsets.only(left: AppSizer.getWidth(context, 20)),
+                        padding: EdgeInsets.only(
+                            left: AppSizer.getWidth(context, 20)),
                         child: Padding(
                           padding: const EdgeInsets.only(
                               bottom: 10.0, left: 48, right: 55),
@@ -120,8 +121,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                       ),
                                       Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal:
-                                                AppSizer.getWidth(context, 20),),
+                                          horizontal:
+                                              AppSizer.getWidth(context, 20),
+                                        ),
                                         child: GestureDetector(
                                           onTap: () {
                                             context.go(
@@ -153,7 +155,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                           'or continue with',
                                           style: TextStyle(
                                             fontFamily: 'InterRegular',
-                                            fontSize: 14,
+                                            fontSize: 16,
                                           ),
                                         ),
                                       ),

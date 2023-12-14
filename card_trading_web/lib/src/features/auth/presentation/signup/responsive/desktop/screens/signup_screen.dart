@@ -64,7 +64,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                     'Email',
                                     style: TextStyle(
                                         fontFamily: 'InterRegular',
-                                        fontSize: 16),
+                                        fontSize: 14),
                                   ),
                                 ),
                                 CustomTextField(
@@ -85,7 +85,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                               'Password',
                                               style: TextStyle(
                                                   fontFamily: 'InterRegular',
-                                                  fontSize: 16),
+                                                  fontSize: 14),
                                             ),
                                             CustomTextField(
                                                 textEditingController:
@@ -103,7 +103,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                               'Confirm Password',
                                               style: TextStyle(
                                                   fontFamily: 'InterRegular',
-                                                  fontSize: 16),
+                                                  fontSize: 14),
                                             ),
                                             CustomTextField(
                                                 textEditingController:

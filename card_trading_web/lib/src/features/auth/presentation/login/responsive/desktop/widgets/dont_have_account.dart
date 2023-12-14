@@ -16,12 +16,18 @@ class DontHaveAccount extends StatelessWidget {
         style: DefaultTextStyle.of(context).style,
         children: <TextSpan>[
           TextSpan(
-              text: message ?? 'Don\'t have an account yet? ',
-              style: TextStyle(fontSize: AppSizer.getHeight(context, 20))),
+            text: message ?? 'Don\'t have an account yet? ',
+            style: const TextStyle(
+              fontFamily: 'InterRegular',
+              fontSize: 16,
+            ),
+          ),
           TextSpan(
             text: message != null ? 'Sign In' : 'Signup',
-            style: TextStyle(
-                color: Colors.blue, fontSize: AppSizer.getHeight(context, 20)),
+            style: const TextStyle(
+              fontFamily: 'InterRegular',
+              fontSize: 16,
+            ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 if (message != null) {
