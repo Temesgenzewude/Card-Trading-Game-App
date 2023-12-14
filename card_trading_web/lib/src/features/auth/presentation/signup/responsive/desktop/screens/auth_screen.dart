@@ -16,18 +16,7 @@ class _SignupDesktopState extends ConsumerState<SignupDesktop> {
   @override
   Widget build(BuildContext context) {
     return HomeAndBrowseTabs(
-      tabBarView1: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(
-              child: Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: AppSizer.getHeight(context, 20)),
-            child: SignupScreen(),
-          )),
-          const FooterWidget(),
-        ],
-      ),
+      tabBarView1: SignupScreen(),
     );
   }
 }
