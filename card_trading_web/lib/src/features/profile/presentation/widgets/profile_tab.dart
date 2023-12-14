@@ -1,3 +1,5 @@
+import 'package:card_trading_web/src/common_widgets/footer_widget.dart';
+import 'package:card_trading_web/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -22,27 +24,27 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
     final firstNController = useTextEditingController();
     final lastNController = useTextEditingController();
     final phoneController = useTextEditingController();
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 40),
-      child: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CardNameWidget(primaryTitile: 'Profile', width: 315),
-              Container(
-                color: Theme.of(context).colorScheme.background,
-                height: AppSizer.getHeight(context, 627),
-                width: AppSizer.getWidth(context, 1000),
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: SizedBox(
-                      width: AppSizer.getWidth(context, 800),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: AppSizer.getWidth(context, 147),
+              vertical: 20,
+            ),
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CardNameWidget(primaryTitile: 'Profile', width: 313),
+                  Container(
+                    color: Theme.of(context).colorScheme.background,
+                    height: 500,
+                    width: AppSizer.getWidth(context, 885),
+                    child: Center(
                       child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: AppSizer.getHeight(context, 40),
+                        padding: const EdgeInsets.only(
+                          top: 20,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,9 +57,8 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                                   child: Stack(
                                     children: [
                                       Container(
-                                        height:
-                                            AppSizer.getHeight(context, 155),
-                                        width: AppSizer.getHeight(context, 155),
+                                        height: 155,
+                                        width: 155,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           color: Theme.of(context)
@@ -71,13 +72,11 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                                         ),
                                       ),
                                       Positioned(
-                                        bottom: 10,
-                                        right: 5,
+                                        bottom: 0,
+                                        right: 0,
                                         child: Container(
-                                          height:
-                                              AppSizer.getHeight(context, 30),
-                                          width:
-                                              AppSizer.getHeight(context, 30),
+                                          height: 50,
+                                          width: AppSizer.getWidth(context, 30),
                                           padding: EdgeInsets.all(
                                               AppSizer.getWidth(context, 15)),
                                           decoration: BoxDecoration(
@@ -115,7 +114,13 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const Text('First name'),
+                                      const Text(
+                                        'First name',
+                                        style: TextStyle(
+                                          fontFamily: 'InterRegular',
+                                          fontSize: 14,
+                                        ),
+                                      ),
                                       SizedBox(
                                         width: AppSizer.getWidth(context, 400),
                                         child: Padding(
@@ -132,7 +137,13 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const Text('Last name'),
+                                      const Text(
+                                        'Last name',
+                                        style: TextStyle(
+                                          fontFamily: 'InterRegular',
+                                          fontSize: 14,
+                                        ),
+                                      ),
                                       SizedBox(
                                         width: AppSizer.getWidth(context, 400),
                                         child: CustomTextField(
@@ -150,7 +161,13 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text('Phone number'),
+                                    const Text(
+                                      'Phone number',
+                                      style: TextStyle(
+                                        fontFamily: 'InterRegular',
+                                        fontSize: 14,
+                                      ),
+                                    ),
                                     SizedBox(
                                       width: AppSizer.getWidth(context, 400),
                                       child: Padding(
@@ -168,7 +185,13 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text('Email'),
+                                    const Text(
+                                      'Email',
+                                      style: TextStyle(
+                                        fontFamily: 'InterRegular',
+                                        fontSize: 14,
+                                      ),
+                                    ),
                                     SizedBox(
                                       width: AppSizer.getWidth(context, 400),
                                       child: CustomTextField(
@@ -180,24 +203,31 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsets.only(
-                                top: AppSizer.getHeight(context, 40),
+                              padding: const EdgeInsets.only(
+                                top: 60,
                               ),
                               child: Center(
-                                child: SizedBox(
-                                  height: AppSizer.getHeight(context, 55),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(64),
+                                    gradient: AppColors.buttonGradient,
+                                  ),
+                                  height: 48,
                                   width: AppSizer.getWidth(context, 430),
                                   child: ElevatedButton(
-                                    style: ButtonStyle(
-                                        backgroundColor:
-                                            MaterialStateProperty.all(
-                                                Theme.of(context)
-                                                    .colorScheme
-                                                    .tertiary)),
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.transparent,
+                                        shadowColor: Colors.transparent,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(40),
+                                        )),
                                     onPressed: () {},
                                     child: Text(
                                       'Save',
                                       style: TextStyle(
+                                          fontFamily: 'InterRegular',
+                                          fontSize: 16,
                                           color: Theme.of(context)
                                               .colorScheme
                                               .secondary),
@@ -211,11 +241,15 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                       ),
                     ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
+          const Padding(
+            padding: EdgeInsets.only(top: 80.0),
+            child: FooterWidget(),
+          ),
+        ],
       ),
     );
   }

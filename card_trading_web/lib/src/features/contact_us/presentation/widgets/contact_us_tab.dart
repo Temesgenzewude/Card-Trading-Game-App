@@ -1,3 +1,5 @@
+import 'package:card_trading_web/src/common_widgets/footer_widget.dart';
+import 'package:card_trading_web/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -22,129 +24,151 @@ class _ContactUsTabDesktopState extends ConsumerState<ContactUsTabDesktop> {
     final nameController = useTextEditingController();
     final subjectController = useTextEditingController();
     final messageController = useTextEditingController();
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 40),
-      child: SingleChildScrollView(
-        // physics: const NeverScrollableScrollPhysics(),
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CardNameWidget(primaryTitile: 'Contact Us', width: 315),
-              Container(
-                color: Theme.of(context).colorScheme.background,
-                height: AppSizer.getHeight(context, 700),
-                width: AppSizer.getWidth(context, 985),
-                child: Center(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: AppSizer.getWidth(context, 48),
-                      vertical: AppSizer.getHeight(context, 33),
-                    ),
-                    child: SizedBox(
-                      width: AppSizer.getWidth(context, 800),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: AppSizer.getWidth(context, 147),
+              vertical: 20,
+            ),
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CardNameWidget(primaryTitile: 'Contact Us', width: 313),
+                  Container(
+                    color: Theme.of(context).colorScheme.background,
+                    height: 500,
+                    width: AppSizer.getWidth(context, 885),
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 48,
+                          vertical: AppSizer.getHeight(context, 33),
+                        ),
+                        child: SizedBox(
+                          width: AppSizer.getWidth(context, 800),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text('Name'),
+                                      SizedBox(
+                                        width: AppSizer.getWidth(context, 400),
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              right: 20.0),
+                                          child: CustomTextField(
+                                              textEditingController:
+                                                  nameController),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text('Email'),
+                                      SizedBox(
+                                        width: AppSizer.getWidth(context, 400),
+                                        child: CustomTextField(
+                                            textEditingController:
+                                                emailController),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 20),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text('Subject'),
+                                    SizedBox(
+                                      width: double.infinity,
+                                      child: CustomTextField(
+                                        textEditingController:
+                                            subjectController,
+                                        isPhoneNumber: true,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text('Name'),
+                                  const Text('Message'),
                                   SizedBox(
-                                    width: AppSizer.getWidth(context, 400),
-                                    child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(right: 20.0),
-                                      child: CustomTextField(
-                                          textEditingController:
-                                              nameController),
+                                    width: double.infinity,
+                                    child: CustomTextField(
+                                      textEditingController: messageController,
+                                      isMultiline: true,
+                                      maxLines: 4,
+                                      minLines: 2,
                                     ),
                                   ),
                                 ],
                               ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text('Email'),
-                                  SizedBox(
-                                    width: AppSizer.getWidth(context, 400),
-                                    child: CustomTextField(
-                                        textEditingController: emailController),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 20),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text('Subject'),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: CustomTextField(
-                                    textEditingController: subjectController,
-                                    isPhoneNumber: true,
-                                  ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 60,
                                 ),
-                              ],
-                            ),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text('Message'),
-                              SizedBox(
-                                width: double.infinity,
-                                child: CustomTextField(
-                                  textEditingController: messageController,
-                                  isMultiline: true,
-                                  maxLines: 4,
-                                  minLines: 2,
+                                child: Center(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(64),
+                                      gradient: AppColors.buttonGradient,
+                                    ),
+                                    height: 48,
+                                    width: AppSizer.getWidth(context, 430),
+                                    child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors.transparent,
+                                          shadowColor: Colors.transparent,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(40),
+                                          )),
+                                      onPressed: () {},
+                                      child: Text(
+                                        'Send',
+                                        style: TextStyle(
+                                            fontFamily: 'InterRegular',
+                                            fontSize: 16,
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .secondary),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
                           ),
-                          Center(
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                top: AppSizer.getHeight(context, 80),
-                              ),
-                              child: SizedBox(
-                                height: AppSizer.getHeight(context, 55),
-                                width: AppSizer.getWidth(context, 430),
-                                child: ElevatedButton(
-                                  style: ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStateProperty.all(
-                                              Theme.of(context)
-                                                  .colorScheme
-                                                  .tertiary)),
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Send',
-                                    style: TextStyle(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .secondary),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
+          const Padding(
+            padding: EdgeInsets.only(top: 80.0),
+            child: FooterWidget(),
+          ),
+        ],
       ),
     );
   }

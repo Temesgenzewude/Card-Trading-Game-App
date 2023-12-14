@@ -38,9 +38,7 @@ class CardNameWidget extends StatelessWidget {
             topRight: Radius.circular(8),
           ),
           gradient: AppColors.buttonGradient,
-          boxShadow: [
-            boxShadow()
-          ],
+          boxShadow: [boxShadow()],
         ),
         child: Row(
           mainAxisAlignment: isCenter == null
