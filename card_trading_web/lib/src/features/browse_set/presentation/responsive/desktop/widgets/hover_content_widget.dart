@@ -17,15 +17,17 @@ class HoverContent extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Wrap(
+              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'Card not owned',
-                  style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
-                      fontSize: 14,
-                      fontFamily: 'InterRegular'),
+                Flexible(
+                  child: Text(
+                    'Card not owned',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
+                        fontSize: 14,
+                        fontFamily: 'InterRegular'),
+                  ),
                 ),
                 const Icon(
                   Icons.check_circle,
