@@ -1,5 +1,6 @@
 import 'package:card_trading_web/dependency_injection/shared_pref_injection.dart';
 import 'package:card_trading_web/src/common_widgets/user_profile_name_and_profile_pic.dart';
+import 'package:card_trading_web/src/constants/colors.dart';
 import 'package:card_trading_web/src/constants/shared_pref_keys.dart';
 import 'package:card_trading_web/src/routing/routes.dart';
 import 'package:card_trading_web/src/shared_pref/shared_pref_manager.dart';
@@ -22,13 +23,20 @@ class _AuthButtonState extends ConsumerState<AuthButton> {
     return Center(
       child: Padding(
         padding: const EdgeInsets.only(top: 10.0),
-        child: SizedBox(
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(64),
+            gradient: AppColors.buttonGradient,
+          ),
           height: 48,
           width: AppSizer.getWidth(context, 430),
           child: ElevatedButton(
-            style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                    Theme.of(context).colorScheme.tertiary)),
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                shadowColor: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40),
+                )),
             onPressed: () {
               widget.isSignIn != null
                   ? login(context)
@@ -38,7 +46,11 @@ class _AuthButtonState extends ConsumerState<AuthButton> {
             },
             child: Text(
               widget.isSignIn != null ? 'Sign In' : 'Sign Up',
-              style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.secondary,
+                fontFamily: 'InterRegular',
+                fontSize: 16,
+              ),
             ),
           ),
         ),

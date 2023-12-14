@@ -18,9 +18,7 @@ class SeriesCardWidget extends StatelessWidget {
         context.go('/${AppRoutes.DesktopSeeCardDetailScreen.name}');
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(
-          vertical: 15,
-        ),
+        height: 170,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(3),
           boxShadow: [
@@ -37,9 +35,17 @@ class SeriesCardWidget extends StatelessWidget {
             Image.asset(
               'assets/images/image26.png',
               width: AppSizer.getWidth(context, imageWidth ?? 115),
+              height: 87,
               fit: BoxFit.cover,
             ),
-            const Text('set name'),
+            const Text(
+              'set name',
+              style: TextStyle(
+                fontSize: 16,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w400,
+              ),
+            ),
           ],
         ),
       ),

@@ -50,7 +50,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     child: Center(
                       child: Padding(
                         padding: EdgeInsets.only(
-                            left: AppSizer.getWidth(context, 20)),
+                            left: AppSizer.getWidth(context, 20),),
                         child: Padding(
                           padding: const EdgeInsets.only(
                               bottom: 10.0, left: 48, right: 55),
