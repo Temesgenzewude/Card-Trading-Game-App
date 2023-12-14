@@ -12,9 +12,11 @@ class PrimarySearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SearchBar(
-      trailing: const [
+      trailing: [
         Icon(
           Icons.search,
+          color: Theme.of(context).colorScheme.tertiary,
+          size: 27,
         ),
       ],
       backgroundColor: MaterialStatePropertyAll(
@@ -22,29 +24,29 @@ class PrimarySearchBar extends StatelessWidget {
       ),
       padding: MaterialStateProperty.all(
         EdgeInsets.only(
-          left: AppSizer.getWidth(context, 32),
-          top: AppSizer.getHeight(context, 12),
-          bottom: AppSizer.getHeight(context, 12),
-          right: AppSizer.getHeight(context, 15),
+          left: AppSizer.getWidth(context, 20),
+          top: 7,
+          bottom: 9,
+          right: AppSizer.getHeight(context, 20),
         ),
       ),
       elevation: const MaterialStatePropertyAll(1),
       side: MaterialStateProperty.all(
         BorderSide(
-          color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+          color: Theme.of(context).colorScheme.tertiary,
         ),
       ),
       hintText: hintText,
       hintStyle: MaterialStatePropertyAll(
         TextStyle(
-          fontWeight: FontWeight.w300,
+          fontWeight: FontWeight.w400,
           color: Theme.of(context).colorScheme.onTertiary.withOpacity(0.7),
           fontSize: 14,
         ),
       ),
       constraints: BoxConstraints(
           maxWidth: AppSizer.getWidth(context, 473),
-          minWidth: AppSizer.getWidth(context, 133)),
+          minWidth: AppSizer.getWidth(context, 233)),
     );
   }
 }

@@ -13,11 +13,12 @@ class CardDetailCardWidget extends StatelessWidget {
       children: [
         CardNameWidget(
           primaryTitile: 'Cards',
-          width: 103,
+          width: AppSizer.getWidth(context, 103),
           isCenter: true,
           verticalPadding: 9,
         ),
         Container(
+          width: AppSizer.getWidth(context, 106),
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(

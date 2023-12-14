@@ -20,7 +20,7 @@ class AlternateVersionCardWidget extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(
             horizontal: AppSizer.getWidth(context, 101),
-            vertical: AppSizer.getHeight(context, 22),
+            vertical: 22,
           ),
           width: AppSizer.getWidth(context, 302),
           decoration: BoxDecoration(
@@ -29,9 +29,7 @@ class AlternateVersionCardWidget extends StatelessWidget {
               bottomRight: Radius.circular(8),
             ),
             color: Theme.of(context).colorScheme.secondary,
-            boxShadow: [
-              boxShadow()
-            ],
+            boxShadow: [boxShadow()],
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,15 +43,13 @@ class AlternateVersionCardWidget extends StatelessWidget {
                   color: Theme.of(context).colorScheme.onTertiary,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: AppSizer.getHeight(context, 10),
-                ),
-                child: DotsWidget(
-                  selectedIndex: 0,
-                  totalDots: 2,
-                  size: 16,
-                ),
+              const SizedBox(
+                height: 10,
+              ),
+              DotsWidget(
+                selectedIndex: 0,
+                totalDots: 2,
+                size: 16,
               )
             ],
           ),

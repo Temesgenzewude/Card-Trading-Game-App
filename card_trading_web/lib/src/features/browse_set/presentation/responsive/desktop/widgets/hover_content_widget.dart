@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
@@ -9,16 +9,25 @@ class HoverContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned.fill(
       child: Container(
+        width: 147,
+        // height: 210,
         padding: const EdgeInsets.only(
           top: 7,
           bottom: 15,
         ),
-        color: Colors.black.withOpacity(0.5),
+        decoration: ShapeDecoration(
+          gradient: LinearGradient(
+            begin: Alignment(0.00, -1.00),
+            end: Alignment(0, 1),
+            colors: [Colors.black, Colors.black.withOpacity(0), Colors.black],
+          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Wrap(
+              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Card not owned',

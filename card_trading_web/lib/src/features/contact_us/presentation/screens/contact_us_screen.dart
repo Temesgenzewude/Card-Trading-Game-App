@@ -22,17 +22,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
   @override
   Widget build(BuildContext context) {
     return HomeAndBrowseTabs(
-      tabBarView1: Column(
-        children: [
-          Expanded(
-              child: Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: AppSizer.getHeight(context, 20)),
-            child: const ContactUsTabDesktop(),
-          )),
-          const FooterWidget(),
-        ],
-      ),
+      tabBarView1: const ContactUsTabDesktop(),
     );
   }
 }

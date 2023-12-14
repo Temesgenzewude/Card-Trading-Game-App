@@ -22,17 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return HomeAndBrowseTabs(
-      tabBarView1: Column(
-        children: [
-          Expanded(
-              child: Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: AppSizer.getHeight(context, 20)),
-            child: const ProfileTabDesktop(),
-          )),
-          const FooterWidget(),
-        ],
-      ),
+      tabBarView1: const ProfileTabDesktop(),
     );
   }
 }
