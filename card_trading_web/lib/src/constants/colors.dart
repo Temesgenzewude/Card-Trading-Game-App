@@ -8,13 +8,9 @@ class AppColors {
   static const Color appBarBackgroundColor = Color.fromRGBO(0, 98, 148, 1);
 
   static const LinearGradient buttonGradient = LinearGradient(
-    begin: Alignment.topCenter,
-    end: Alignment.bottomCenter,
-    colors: [
-      Color(0xFF8ECAE6), // #8ECAE6 in hexadecimal
-      Color(0xFF219EBC), // #219EBC in hexadecimal
-    ],
-    stops: [0.0, 1.0],
+    begin: Alignment(0.00, -1.00),
+    end: Alignment(0, 1),
+    colors: [Color(0xFF8ECAE6), Color(0xFF219EBC)],
   );
 
   static const LinearGradient buttonGradientLight = LinearGradient(
