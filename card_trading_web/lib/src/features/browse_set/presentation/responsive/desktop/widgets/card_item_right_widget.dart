@@ -17,6 +17,9 @@ class CardItemRightWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          const SizedBox(
+            height: 26,
+          ),
           RichTextWidget(
             boldText: 'Rarity',
             regularText: 'Uncommon',

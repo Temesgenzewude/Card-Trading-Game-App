@@ -28,12 +28,16 @@ class _CardDescriptionViewWidgetState extends State<CardDescriptionViewWidget> {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(
-                vertical: AppSizer.getHeight(context, 65),
+                vertical: 65,
+                // vertical: AppSizer.getHeight(context, 65),
                 horizontal: AppSizer.getWidth(context, 149),
               ),
               child: Column(
                 children: [
                   const CardItemDescriptionWidget(),
+                  SizedBox(
+                    height: 44,
+                  ),
                   FeaturedCardWidget(
                     cardTitle: 'More from card set',
                   ),
@@ -47,6 +51,3 @@ class _CardDescriptionViewWidgetState extends State<CardDescriptionViewWidget> {
     );
   }
 }
-
-
-

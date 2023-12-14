@@ -1,4 +1,3 @@
-
 import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
 import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/alternative_card_widget.dart';
@@ -31,8 +30,8 @@ class CardItemDescriptionWidget extends StatelessWidget {
             Container(
               width: AppSizer.getWidth(context, 645),
               padding: EdgeInsets.only(
-                top: AppSizer.getHeight(context, 18),
-                bottom: AppSizer.getHeight(context, 56),
+                top: 18,
+                bottom: 56,
                 left: AppSizer.getWidth(context, 25),
                 right: AppSizer.getWidth(context, 25),
                 // vertical: AppSizer.getHeight(context, 18),
@@ -62,14 +61,14 @@ class CardItemDescriptionWidget extends StatelessWidget {
         SizedBox(
           width: AppSizer.getWidth(context, 29),
         ),
-        Column(
+        const Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(bottom: AppSizer.getHeight(context, 33)),
-              child: const AlternateVersionCardWidget(),
+          children:  [
+            AlternateVersionCardWidget(),
+            SizedBox(
+              height: 33,
             ),
-            const OwnedCardsWidget(),
+             OwnedCardsWidget(),
           ],
         ),
       ],

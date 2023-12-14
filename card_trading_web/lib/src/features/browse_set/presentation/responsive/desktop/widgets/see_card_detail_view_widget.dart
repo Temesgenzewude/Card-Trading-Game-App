@@ -44,8 +44,8 @@ class _SeeCardDetailState extends State<SeeCardDetail> {
                         width: 563,
                       ),
                       Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 36,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppSizer.getWidth(context, 46),
                           vertical: 34,
                         ),
                         decoration: BoxDecoration(
@@ -57,8 +57,8 @@ class _SeeCardDetailState extends State<SeeCardDetail> {
                           children: [
                             const CollectionStatusCardWidget(),
                             Wrap(
-                              spacing: AppSizer.getWidth(context, 20),
-                              runSpacing: AppSizer.getWidth(context, 40),
+                              spacing: AppSizer.getWidth(context, 2),
+                              runSpacing: 40,
                               children: List.generate(
                                 30,
                                 (index) => CardCollectionItem(index: index),
