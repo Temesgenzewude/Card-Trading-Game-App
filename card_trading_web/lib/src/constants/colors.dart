@@ -8,9 +8,13 @@ class AppColors {
   static const Color appBarBackgroundColor = Color.fromRGBO(0, 98, 148, 1);
 
   static const LinearGradient buttonGradient = LinearGradient(
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
-    colors: [buttonStartColor, buttonEndColor],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Color(0xFF8ECAE6), // #8ECAE6 in hexadecimal
+      Color(0xFF219EBC), // #219EBC in hexadecimal
+    ],
+    stops: [0.0, 1.0],
   );
 
   static const LinearGradient buttonGradientLight = LinearGradient(
@@ -32,7 +36,8 @@ class AppColors {
   static const Color darkPurplishTextColor = Color(0xFF3F2E3E);
   static const Color offWhiteTextColor = Color(0xFFEFE1D1);
 
-  static Color scaffoldBackgroundColor = const Color(0xFFF9F3F6).withOpacity(0.4);
+  static Color scaffoldBackgroundColor =
+      const Color(0xFFF9F3F6).withOpacity(0.4);
   static Color stackedDiscountColor = const Color(0xFF3F2E3E);
   static const Color disabledColor = Color.fromRGBO(161, 159, 159, 0.502);
 }

@@ -13,53 +13,73 @@ class ProductCardWidget extends StatelessWidget {
       onTap: () {},
       child: SizedBox(
         width: AppSizer.getWidth(context, 87),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
           children: [
-            Image(
-              width: AppSizer.getWidth(context, 87),
-              // height: AppSizer.getHeight(context, 121),
-              fit: BoxFit.cover,
-              image: const AssetImage(
-                'assets/images/image14.png',
-              ),
-            ),
-            Wrap(
-              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Row(
+                Image(
+                  width: AppSizer.getWidth(context, 87),
+                  // height: AppSizer.getHeight(context, 121),
+                  fit: BoxFit.cover,
+                  image: const AssetImage(
+                    'assets/images/image14.png',
+                  ),
+                ),
+                Row(
                   children: [
                     AppIcons.yellowStar,
                     AppIcons.yellowStar,
                     AppIcons.yellowStar,
                     AppIcons.yellowStar,
                     AppIcons.yellowStar,
+                    Text(
+                      '(512)',
+                      style: TextStyle(
+                          fontSize: 10,
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
                   ],
                 ),
                 Text(
-                  '(512)',
+                  'Card Name',
                   style: TextStyle(
-                      fontSize: 10,
-                      color: Theme.of(context).colorScheme.primary),
+                    fontSize: 12,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+                Text(
+                  '\$0.85',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 )
               ],
             ),
-            Text(
-              'Card Name',
-              style: TextStyle(
-                fontSize: 12,
-                color: Theme.of(context).colorScheme.primary,
+            Positioned(
+              top: 9,
+              left: 12,
+              child: Container(
+                alignment: Alignment.center,
+                width: 47,
+                height: 16,
+                // padding: EdgeInsets.all(AppSizer.getWidth(context, 8)),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF3F2E3E),
+                  borderRadius: BorderRadius.circular(9.5),
+                ),
+                child: Text(
+                  '15% Off',
+                  style: TextStyle(
+                    fontSize: 8,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
-            Text(
-              '\$0.85',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.primary,
-              ),
-            )
           ],
         ),
       ),
