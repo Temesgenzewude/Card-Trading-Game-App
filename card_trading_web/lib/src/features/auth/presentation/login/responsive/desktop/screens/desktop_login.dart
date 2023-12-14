@@ -16,17 +16,7 @@ class DesktopLoginState extends ConsumerState<DesktopLogin> {
   @override
   Widget build(BuildContext context) {
     return HomeAndBrowseTabs(
-      tabBarView1: Column(
-        children: [
-          Expanded(
-              child: Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: AppSizer.getHeight(context, 20)),
-            child: const LoginScreen(),
-          )),
-          const FooterWidget(),
-        ],
-      ),
+      tabBarView1: const LoginScreen(),
     );
   }
 }

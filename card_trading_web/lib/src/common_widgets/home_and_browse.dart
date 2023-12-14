@@ -42,7 +42,7 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
             height: MediaQuery.of(context).size.height,
             fit: BoxFit.cover,
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             // decoration: BoxDecoration(
