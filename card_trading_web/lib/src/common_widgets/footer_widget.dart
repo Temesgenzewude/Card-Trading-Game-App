@@ -12,59 +12,62 @@ class FooterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
-        left: AppSizer.getWidth(context, 155),
-        top: AppSizer.getHeight(context, 20),
-        bottom: AppSizer.getHeight(context, 20),
-      ),
+      width: double.infinity,
+      height: 60,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primary,
       ),
-      child: Row(
-        children: [
-          InkWell(
-            onTap: () {
-              context.go('/${AppRoutes.DesktopContactUsScreen.name}');
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3.0),
-              child: Text(
-                'Contact us',
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: AppSizer.getWidth(context, 155),
+          top: AppSizer.getHeight(context, 20),
+        ),
+        child: Row(
+          children: [
+            InkWell(
+              onTap: () {
+                context.go('/${AppRoutes.DesktopContactUsScreen.name}');
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 3.0),
+                child: Text(
+                  'Contact us',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
                 ),
               ),
             ),
-          ),
-          InkWell(
-            onTap: () {
-              context.go('/${AppRoutes.DesktopTermsScreen.name}');
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3.0),
-              child: Text(
-                '\u2022 Terms of use',
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+            InkWell(
+              onTap: () {
+                context.go('/${AppRoutes.DesktopTermsScreen.name}');
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 3.0),
+                child: Text(
+                  '\u2022 Terms of use',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
                 ),
               ),
             ),
-          ),
-          InkWell(
-            onTap: () {
-              context.go('/${AppRoutes.DesktopPrivacyScreen.name}');
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3.0),
-              child: Text(
-                '\u2022 Privacy Policy',
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+            InkWell(
+              onTap: () {
+                context.go('/${AppRoutes.DesktopPrivacyScreen.name}');
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 3.0),
+                child: Text(
+                  '\u2022 Privacy Policy',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
