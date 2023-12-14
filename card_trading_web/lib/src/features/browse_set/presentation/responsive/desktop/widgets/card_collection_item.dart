@@ -1,4 +1,3 @@
-
 // ignore_for_file: library_private_types_in_public_api, must_be_immutable
 
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/hover_content_widget.dart';
@@ -23,10 +22,10 @@ class _CardCollectionItemState extends State<CardCollectionItem> {
       onEnter: (_) => setState(() => isHovered = true),
       onExit: (_) => setState(() => isHovered = false),
       child: Container(
-        width: AppSizer.getWidth(context, 140),
+        width: AppSizer.getWidth(context, 160),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(3),
-          color: Theme.of(context).colorScheme.secondary,
+          // color: Theme.of(context).colorScheme.secondary,
         ),
         child: Stack(
           children: [
