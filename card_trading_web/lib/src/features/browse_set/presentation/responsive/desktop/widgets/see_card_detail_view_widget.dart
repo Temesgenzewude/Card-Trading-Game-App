@@ -1,20 +1,23 @@
+// ignore_for_file: library_private_types_in_public_api
+
+// Import necessary packages and widgets
+import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/card_collection_item.dart';
+import 'package:flutter/material.dart';
 import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
 import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
 import 'package:card_trading_web/src/common_widgets/footer_widget.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/see_detail_title_widget.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/collection_status_card_widget.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SeeCardDetail extends ConsumerStatefulWidget {
+class SeeCardDetail extends StatefulWidget {
   const SeeCardDetail({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _SeeCardDetailState();
+  _SeeCardDetailState createState() => _SeeCardDetailState();
 }
 
-class _SeeCardDetailState extends ConsumerState<SeeCardDetail> {
+class _SeeCardDetailState extends State<SeeCardDetail> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -58,24 +61,7 @@ class _SeeCardDetailState extends ConsumerState<SeeCardDetail> {
                               runSpacing: AppSizer.getWidth(context, 40),
                               children: List.generate(
                                 30,
-                                (index) => InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(3),
-                                      boxShadow: [boxShadow()],
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                    ),
-                                    child: Image.asset(
-                                      'assets/images/image3.png',
-                                      width: AppSizer.getWidth(context, 140),
-                                      height: AppSizer.getHeight(context, 222),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
+                                (index) => CardCollectionItem(index: index),
                               ),
                             )
                           ],
