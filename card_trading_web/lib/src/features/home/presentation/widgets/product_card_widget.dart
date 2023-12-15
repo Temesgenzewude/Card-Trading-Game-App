@@ -24,7 +24,7 @@ class ProductCardWidget extends StatelessWidget {
                   // height: AppSizer.getHeight(context, 121),
                   fit: BoxFit.cover,
                   image: const AssetImage(
-                    'assets/images/image14.png',
+                    'assets/images/image3.png',
                   ),
                 ),
                 Row(
