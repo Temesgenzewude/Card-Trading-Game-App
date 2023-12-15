@@ -28,13 +28,13 @@ class _BrowseSetsDesktopState extends State<BrowseSetsDesktop> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SeriesNameCardWidget(
-                    children: 10,
+                    children: 5,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   SeriesNameCardWidget(
-                    children: 10,
+                    children: 8,
                   ),
                   SeriesNameCardWidget(
                     children: 10,

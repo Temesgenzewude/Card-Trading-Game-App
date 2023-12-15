@@ -47,7 +47,7 @@ class TabBarContainer extends StatelessWidget {
                     color: Color(0x3F000000),
                     blurRadius: 8,
                     offset: Offset(0, 6),
-                    spreadRadius: 10,
+                    spreadRadius: 0,
                   )
                 ],
               ),

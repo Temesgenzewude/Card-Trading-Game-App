@@ -12,10 +12,10 @@ class SelectedDot extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+        padding: const EdgeInsets.symmetric(horizontal: 1.0),
         child: Container(
-          width: AppSizer.getWidth(context, 20),
-          height: AppSizer.getHeight(context, 20),
+          width: AppSizer.getWidth(context, size),
+          height: AppSizer.getHeight(context, size),
           decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.background,
               shape: BoxShape.circle,
@@ -33,8 +33,8 @@ class SelectedDot extends StatelessWidget {
               ]),
           child: Center(
             child: Container(
-              width: AppSizer.getWidth(context, 10),
-              height: AppSizer.getHeight(context, 10),
+              width: AppSizer.getWidth(context, size == null ? 5 : size! / 2),
+              height: AppSizer.getHeight(context, size == null ? 5 : size! / 2),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.onTertiary,
                 shape: BoxShape.circle,

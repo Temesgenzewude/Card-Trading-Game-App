@@ -2,17 +2,18 @@ import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
 
 class UnselectedDot extends StatelessWidget {
-  const UnselectedDot({super.key});
+  final double? size;
+  const UnselectedDot({super.key, this.size});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+        padding: const EdgeInsets.symmetric(horizontal: 1.0),
         child: Container(
-          width: AppSizer.getWidth(context, 20),
-          height: AppSizer.getHeight(context, 20),
+          width: AppSizer.getWidth(context, size ?? 20),
+          height: AppSizer.getHeight(context, size ?? 20),
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.background,
             shape: BoxShape.circle,

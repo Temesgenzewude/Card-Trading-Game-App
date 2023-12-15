@@ -30,7 +30,7 @@ class _BrowseSetsDesktopState extends State<BrowseSetsDesktop> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SeriesNameCardWidget(
-                    children: 10,
+                    children: 5,
                   ),
                   const SizedBox(
                     height: 10,
@@ -76,17 +76,16 @@ class SeriesNameCardWidget extends StatelessWidget {
               horizontal: AppSizer.getWidth(context, 27),
               vertical: AppSizer.getHeight(context, 35),
             ),
-            width: AppSizer.getWidth(context, 917),
+            width: AppSizer.getWidth(context, 883),
             // height: AppSizer.getHeight(context, 350),
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(8),
                 bottomLeft: Radius.circular(8),
                 bottomRight: Radius.circular(8),
               ),
               color: Theme.of(context).colorScheme.secondary,
-              boxShadow: [
-                boxShadow()
-              ],
+              boxShadow: [boxShadow()],
             ),
             child: Wrap(
               spacing: AppSizer.getWidth(context, 20),

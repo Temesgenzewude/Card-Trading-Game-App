@@ -15,12 +15,13 @@ class DotsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-
       children: List.generate(
         totalDots ?? 4,
         (index) => index == selectedIndex
             ? SelectedDot(size: size)
-            : const UnselectedDot(),
+            : UnselectedDot(
+                size: size,
+              ),
       ),
     );
   }

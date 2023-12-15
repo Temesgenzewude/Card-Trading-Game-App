@@ -50,7 +50,7 @@ class CardNameWidget extends StatelessWidget {
                 primaryTitile,
                 style: TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: 'InterBold',
                   color: Theme.of(context).colorScheme.secondary,
                 ),
               ),

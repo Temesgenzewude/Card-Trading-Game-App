@@ -18,7 +18,8 @@ class SeriesCardWidget extends StatelessWidget {
         context.go('/${AppRoutes.DesktopSeeCardDetailScreen.name}');
       },
       child: Container(
-        height: 170,
+        height: 200,
+        width: AppSizer.getWidth(context, 148),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(3),
           boxShadow: [
@@ -32,11 +33,17 @@ class SeriesCardWidget extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Image.asset(
-              'assets/images/image26.png',
-              width: AppSizer.getWidth(context, imageWidth ?? 115),
-              height: 87,
-              fit: BoxFit.cover,
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Image.asset(
+                'assets/images/image26.png',
+                width: AppSizer.getWidth(context, imageWidth ?? 115),
+                height: 87,
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(
+              height: 40,
             ),
             const Text(
               'set name',

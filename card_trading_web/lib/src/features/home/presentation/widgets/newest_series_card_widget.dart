@@ -35,9 +35,7 @@ class NewestSeriesCardWidget extends StatelessWidget {
               topRight: Radius.circular(8),
             ),
             color: Theme.of(context).colorScheme.secondary,
-            boxShadow: [
-              boxShadow()
-            ],
+            boxShadow: [boxShadow()],
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +54,7 @@ class NewestSeriesCardWidget extends StatelessWidget {
                   bottom: AppSizer.getHeight(context, 16),
                 ),
                 child: DotsWidget(
-                  size: 20,
+                  size: 14,
                   selectedIndex: 0,
                 ),
               )

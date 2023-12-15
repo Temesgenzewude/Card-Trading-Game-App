@@ -1,3 +1,4 @@
+import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
 import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
 import 'package:card_trading_web/src/common_widgets/footer_widget.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/widgets/series_card_widget.dart';
@@ -26,72 +27,44 @@ class _CollectionsState extends ConsumerState<Collections> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CardNameWidget(primaryTitile: 'Your Collections', width: 200),
-                  Material(
-                    color: Theme.of(context).colorScheme.background,
-                    borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(10),
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10),
+              child: Padding(
+                padding: EdgeInsets.only(top: AppSizer.getHeight(context, 32)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CardNameWidget(
+                      primaryTitile: 'Series name',
+                      width: 313,
                     ),
-                    elevation: 10,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: SizedBox(
-                        height: 269,
-                        width: AppSizer.getWidth(context, 883),
-                        child: Column(
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 30,
-                                    horizontal: AppSizer.getWidth(context, 40)),
-                                child: ListView.builder(
-                                    scrollDirection: Axis.horizontal,
-                                    itemBuilder: (context, index) {
-                                      if (index % 4 == 0) {
-                                        // currentSelected.value =
-                                        //     (currentSelected.value + 1) % 4;
-                                      }
-                                      return Padding(
-                                        padding: EdgeInsets.only(
-                                          top: AppSizer.getHeight(context, 10),
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            SizedBox(
-                                              width: AppSizer.getWidth(
-                                                  context, 144),
-                                              child: SeriesCardWidget(),
-                                            ),
-                                            SizedBox(
-                                              width: AppSizer.getWidth(
-                                                  context, 20),
-                                            ),
-                                          ],
-                                        ),
-                                      );
-                                    }),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                bottom: AppSizer.getHeight(context, 5),
-                              ),
-                              child: DotsWidget(
-                                selectedIndex: 0,
-                              ),
-                            ),
-                          ],
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: AppSizer.getWidth(context, 27),
+                        vertical: AppSizer.getHeight(context, 35),
+                      ),
+                      width: AppSizer.getWidth(context, 883),
+                      // height: AppSizer.getHeight(context, 350),
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(8),
+                          bottomLeft: Radius.circular(8),
+                          bottomRight: Radius.circular(8),
+                        ),
+                        color: Theme.of(context).colorScheme.secondary,
+                        boxShadow: [boxShadow()],
+                      ),
+                      child: Center(
+                        child: Wrap(
+                          spacing: AppSizer.getWidth(context, 20),
+                          runSpacing: AppSizer.getWidth(context, 40),
+                          children: List.generate(
+                            5,
+                            (index) => SeriesCardWidget(),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Padding(
