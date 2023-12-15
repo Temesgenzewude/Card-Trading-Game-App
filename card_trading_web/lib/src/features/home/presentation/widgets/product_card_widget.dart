@@ -1,6 +1,8 @@
 import 'package:card_trading_web/src/constants/icons.dart';
+import 'package:card_trading_web/src/routing/routes.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductCardWidget extends StatelessWidget {
   const ProductCardWidget({
@@ -10,7 +12,9 @@ class ProductCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        context.go('/${AppRoutes.DesktopCardDetailScreen.name}');
+      },
       child: SizedBox(
         width: AppSizer.getWidth(context, 87),
         child: Stack(
