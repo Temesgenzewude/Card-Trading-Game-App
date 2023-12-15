@@ -17,6 +17,7 @@ class _CardDetailScreenDesktopState
   Widget build(BuildContext context) {
     return HomeAndBrowseTabs(
       tabBarView2: const CardDescriptionViewWidget(),
+      isHome: false,
     );
   }
 }

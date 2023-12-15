@@ -17,6 +17,7 @@ class _SeeCardDetailDesktopState
   Widget build(BuildContext context) {
     return HomeAndBrowseTabs(
       tabBarView2: const SeeCardDetail(),
+      isHome: false,
     );
   }
 }

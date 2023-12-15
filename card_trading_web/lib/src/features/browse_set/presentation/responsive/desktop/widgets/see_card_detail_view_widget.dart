@@ -25,9 +25,7 @@ class _SeeCardDetailState extends State<SeeCardDetail> {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: AppSizer.getWidth(context, 173),
-              vertical: AppSizer.getHeight(context, 95),
-            ),
+                horizontal: AppSizer.getWidth(context, 173), vertical: 95),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -35,7 +33,7 @@ class _SeeCardDetailState extends State<SeeCardDetail> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizer.getHeight(context, 67),
-                  ),
+                  ),  
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
