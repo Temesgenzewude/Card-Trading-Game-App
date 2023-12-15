@@ -97,7 +97,7 @@ class _CollectionsState extends ConsumerState<Collections> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 vertical: 80,
               ),
               child: Center(
@@ -131,39 +131,47 @@ class _CollectionsState extends ConsumerState<Collections> {
                       child: Padding(
                         padding: EdgeInsets.only(
                             left: AppSizer.getWidth(context, 20)),
-                        child: Row(
+                        child: Wrap(
                           children: [
-                            const Text(
-                              'Your cards from Card set',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontFamily: 'InterBold',
+                            const Padding(
+                              padding: EdgeInsets.only(top: 20.0),
+                              child: Text(
+                                'Your cards from Card set',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontFamily: 'InterBold',
+                                ),
                               ),
                             ),
                             SizedBox(
                               width: AppSizer.getWidth(context, 80),
                             ),
-                            Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: '80',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: AppSizer.getWidth(context, 32),
-                                      fontFamily: 'InterRegular',
+                            Padding(
+                              padding: const EdgeInsets.only(top: 5.0),
+                              child: Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: '80',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize:
+                                            AppSizer.getWidth(context, 32),
+                                        fontFamily: 'InterRegular',
+                                      ),
                                     ),
-                                  ),
-                                  TextSpan(
-                                    text: '/182',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: AppSizer.getWidth(context, 12),
-                                      fontFamily: 'InterRegular',
+                                    TextSpan(
+                                      text: '/182',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize:
+                                            AppSizer.getWidth(context, 12),
+                                        fontFamily: 'InterRegular',
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ],
