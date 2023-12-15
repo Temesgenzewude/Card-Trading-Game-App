@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
@@ -19,21 +17,39 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed ?? () {},
+    return InkWell(
+      onTap: onPressed,
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: AppSizer.getWidth(context, 19),
-          vertical: AppSizer.getHeight(context, 13),
+          horizontal: AppSizer.getWidth(context, 10),
+          vertical: AppSizer.getHeight(context, 10),
         ),
-        decoration: BoxDecoration(
-            gradient: AppColors.buttonGradient,
-            borderRadius: BorderRadius.circular(buttonRadius)),
-        child: Text(
-          buttonName,
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.secondary,
-            fontSize: 14,
+        decoration: ShapeDecoration(
+          gradient: const LinearGradient(
+            begin: Alignment(0.00, -1.00),
+            end: Alignment(0, 1),
+            colors: [Color(0xFF8ECAE6), Color(0xFF219EBC)],
+          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          shadows: const [
+            BoxShadow(
+              color: Color(0x3F000000),
+              blurRadius: 8,
+              offset: Offset(0, 6),
+              spreadRadius: 0,
+            )
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 3),
+          child: Text(
+            buttonName,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+              fontFamily: 'InterRegular',
+              height: 0,
+            ),
           ),
         ),
       ),
