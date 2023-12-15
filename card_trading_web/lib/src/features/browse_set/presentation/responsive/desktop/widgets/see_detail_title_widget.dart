@@ -63,9 +63,17 @@ class SeeDetailTitleWidget extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(right: 20.0),
-                  child: CardDetailCardWidget(),
+                  child: CardDetailCardWidget(
+                    cardName: "Cards",
+                    cardTitle: '182',
+                    cardSubTitle: '+82 Secret', 
+                  ),
                 ),
-                CardDetailCardWidget(),
+                CardDetailCardWidget(
+                  cardName: 'Released',
+                  cardTitle: 'Nov 3rd',
+                  cardSubTitle: '2023',
+                ),
               ],
             )
           ],
