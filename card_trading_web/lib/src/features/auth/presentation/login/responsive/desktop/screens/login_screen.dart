@@ -44,13 +44,21 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 children: [
                   CardNameWidget(primaryTitile: 'SignIn', width: 313),
                   Container(
-                    color: Theme.of(context).colorScheme.background,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.background,
+                      borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(8),
+                        bottomLeft: Radius.circular(8),
+                        bottomRight: Radius.circular(8),
+                      ),
+                    ),
                     height: 500,
                     width: AppSizer.getWidth(context, 885),
                     child: Center(
                       child: Padding(
                         padding: EdgeInsets.only(
-                            left: AppSizer.getWidth(context, 20),),
+                          left: AppSizer.getWidth(context, 20),
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.only(
                               bottom: 10.0, left: 48, right: 55),
