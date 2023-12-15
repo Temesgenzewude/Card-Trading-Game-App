@@ -26,6 +26,7 @@ class BuyThisCardWidget extends StatelessWidget {
         child: Column(
           children: [
             Text(
+              textAlign: TextAlign.center,
               '\$ 0.32',
               style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
@@ -33,6 +34,7 @@ class BuyThisCardWidget extends StatelessWidget {
                   fontSize: 13),
             ),
             Text(
+              textAlign: TextAlign.center,
               'By this card from seller name',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onTertiary,
