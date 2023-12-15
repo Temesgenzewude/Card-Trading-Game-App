@@ -11,7 +11,8 @@ import 'package:go_router/go_router.dart';
 
 class AuthButton extends ConsumerStatefulWidget {
   bool? isSignIn;
-  AuthButton({super.key, this.isSignIn});
+  String? text;
+  AuthButton({super.key, this.isSignIn, this.text});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _AuthButtonState();
@@ -44,14 +45,23 @@ class _AuthButtonState extends ConsumerState<AuthButton> {
                         context.go('/${AppRoutes.DesktopLogin.name}');
                       });
             },
-            child: Text(
-              widget.isSignIn != null ? 'Sign In' : 'Sign Up',
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.secondary,
-                fontFamily: 'InterRegular',
-                fontSize: 16,
-              ),
-            ),
+            child: widget.text == null
+                ? Text(
+                    widget.isSignIn != null ? 'Sign In' : 'Sign Up',
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontFamily: 'InterRegular',
+                      fontSize: 16,
+                    ),
+                  )
+                : Text(
+                    'Continue',
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontFamily: 'InterRegular',
+                      fontSize: 16,
+                    ),
+                  ),
           ),
         ),
       ),
