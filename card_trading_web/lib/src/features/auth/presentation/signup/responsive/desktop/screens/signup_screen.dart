@@ -43,7 +43,14 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                 children: [
                   CardNameWidget(primaryTitile: 'Signup', width: 313),
                   Container(
-                    color: Theme.of(context).colorScheme.background,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.background,
+                      borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(8),
+                        bottomLeft: Radius.circular(8),
+                        bottomRight: Radius.circular(8),
+                      ),
+                    ),
                     height: 500,
                     width: AppSizer.getWidth(context, 885),
                     child: Center(
@@ -84,8 +91,9 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                             const Text(
                                               'Password',
                                               style: TextStyle(
-                                                  fontFamily: 'InterRegular',
-                                                  fontSize: 14),
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14,
+                                              ),
                                             ),
                                             CustomTextField(
                                                 textEditingController:
