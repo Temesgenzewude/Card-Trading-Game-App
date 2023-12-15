@@ -21,8 +21,8 @@ class PrimaryButton extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: AppSizer.getWidth(context, 10),
-          vertical: AppSizer.getHeight(context, 10),
+          horizontal: AppSizer.getWidth(context, 14),
+          vertical: 12,
         ),
         decoration: ShapeDecoration(
           gradient: const LinearGradient(

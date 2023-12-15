@@ -52,15 +52,28 @@ class _CollectionsState extends ConsumerState<Collections> {
                         color: Theme.of(context).colorScheme.secondary,
                         boxShadow: [boxShadow()],
                       ),
-                      child: Center(
-                        child: Wrap(
-                          spacing: AppSizer.getWidth(context, 20),
-                          runSpacing: AppSizer.getWidth(context, 40),
-                          children: List.generate(
-                            5,
-                            (index) => SeriesCardWidget(),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(
+                            child: Wrap(
+                              spacing: AppSizer.getWidth(context, 20),
+                              runSpacing: AppSizer.getWidth(context, 40),
+                              children: List.generate(
+                                5,
+                                (index) => SeriesCardWidget(),
+                              ),
+                            ),
                           ),
-                        ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          DotsWidget(
+                            selectedIndex: 0,
+                            totalDots: 4,
+                            size: 14,
+                          )
+                        ],
                       ),
                     ),
                   ],
@@ -183,14 +196,13 @@ class _CollectionsState extends ConsumerState<Collections> {
                                       }),
                                 ),
                               ),
-                              Row(
+                              const Row(
                                 children: [
-                                  const Expanded(
+                                  Expanded(
                                     child: Text(''),
                                   ),
-                                  GestureDetector(
-                                    onTap: () {},
-                                    child: const Padding(
+                                  InkWell(
+                                    child: Padding(
                                       padding: EdgeInsets.only(right: 18.0),
                                       child: Text('View all'),
                                     ),

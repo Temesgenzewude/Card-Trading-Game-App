@@ -30,7 +30,7 @@ class CardNameWidget extends StatelessWidget {
         width: AppSizer.getWidth(context, width),
         padding: EdgeInsets.symmetric(
           horizontal: AppSizer.getWidth(context, 24),
-          vertical: AppSizer.getHeight(context, verticalPadding ?? 20),
+          vertical: verticalPadding ?? 22,
         ),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
