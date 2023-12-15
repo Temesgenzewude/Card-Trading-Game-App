@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import, unused_local_variable
 
 import 'package:card_trading_web/dependency_injection/shared_pref_injection.dart';
+import 'package:card_trading_web/src/common_widgets/auth_button.dart';
 import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
 import 'package:card_trading_web/src/common_widgets/custom_text_field.dart';
 import 'package:card_trading_web/src/constants/colors.dart';
@@ -40,7 +41,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
           child: Padding(
             padding: EdgeInsets.only(top: AppSizer.getHeight(context, 10)),
             child: SizedBox(
-              height: AppSizer.getHeight(context, 800),
+              height: 593,
               width: AppSizer.getWidth(context, 985),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -72,12 +73,18 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(top: 10.0),
+                                  padding: const EdgeInsets.only(
+                                      top: 20.0, bottom: 10),
                                   child: Center(
                                     child: SizedBox(
                                       width: AppSizer.getWidth(context, 410),
-                                      child: Text(
-                                          "Enter the email address associated with your account and we'll send you a link to reset your password."),
+                                      child: const Text(
+                                        "Enter the email address associated with your account and we'll send you a link to reset your password.",
+                                        style: TextStyle(
+                                          fontFamily: 'InterRegular',
+                                          fontSize: 16,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -88,11 +95,12 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            left:
-                                                AppSizer.getWidth(context, 10)),
-                                        child: const Text('Email'),
+                                      const Text(
+                                        'Email',
+                                        style: TextStyle(
+                                          fontFamily: 'InterRegular',
+                                          fontSize: 14,
+                                        ),
                                       ),
                                       SizedBox(
                                         width: AppSizer.getWidth(context, 430),
@@ -105,35 +113,14 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(
-                                    top: AppSizer.getHeight(context, 20),
+                                    top: 20,
                                     bottom: AppSizer.getHeight(context, 80),
                                   ),
                                   child: Center(
                                     child: SizedBox(
-                                      height: AppSizer.getHeight(context, 60),
+                                      height: 60,
                                       width: AppSizer.getWidth(context, 400),
-                                      child: ElevatedButton(
-                                        style: ButtonStyle(
-                                            backgroundColor:
-                                                MaterialStateProperty.all(
-                                                    Theme.of(context)
-                                                        .colorScheme
-                                                        .tertiary)),
-                                        onPressed: () {
-                                          Future.delayed(
-                                              const Duration(seconds: 0), () {
-                                            context.go(
-                                                '/${AppRoutes.DesktopLogin.name}');
-                                          });
-                                        },
-                                        child: Text(
-                                          'Continue',
-                                          style: TextStyle(
-                                              color: Theme.of(context)
-                                                  .colorScheme
-                                                  .secondary),
-                                        ),
-                                      ),
+                                      child: AuthButton(text: 'Continue'),
                                     ),
                                   ),
                                 ),
