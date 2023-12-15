@@ -34,74 +34,66 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
     var selectedCard = useState("Pokellector");
     return Scaffold(
       // extendBodyBehindAppBar: true,
-     
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/images/bg_images/bg_image.png',
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height,
+
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          image: const DecorationImage(
+            image: AssetImage('assets/images/bg_images/bg_image.png'),
             fit: BoxFit.cover,
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            // decoration: BoxDecoration(
-            //     image: const DecorationImage(
-            //       image: AssetImage('assets/images/bg_images/bg_image.png'),
-            //       fit: BoxFit.cover,
-            //     ),
-            //     color: Colors.grey.withOpacity(0.2)),
-            child: NestedScrollView(
-              headerSliverBuilder:
-                  (BuildContext context, bool innerBoxIsScrolled) {
-                return <Widget>[
-                  SliverAppBar(
-                    // forceMaterialTransparency: true,
-                    // backgroundColor: Colors.transparent,
-                    // title: AppBarWidget(),
-                    pinned: true,
-                    expandedHeight: 100,
-                    collapsedHeight: 100,
-                    // snap: true,
-                    flexibleSpace: FlexibleSpaceBar(
-                      background: AppBarWidget(),
-                    ),
-                  ),
-                  SliverAppBar(
-                    expandedHeight: 60,
-                    collapsedHeight: 60,
-                    pinned: true,
-                    backgroundColor: Theme.of(context).secondaryHeaderColor,
-                    flexibleSpace: FlexibleSpaceBar(
-                      background: TabBarContainer(
-                        selectedCard: selectedCard,
-                        cardGames: cardGames,
-                        tabController: tabController,
-                      ),
-                    ),
-                  ),
-                ];
-              },
-              physics: widget.isScroll
-                  ? const BouncingScrollPhysics()
-                  : const NeverScrollableScrollPhysics(),
-              // physics: const NeverScrollableScrollPhysics(),
-              body: TabBarView(
-                physics: const NeverScrollableScrollPhysics(),
-                controller: tabController,
-                children: [
-                  widget.tabBarView1 ?? const HomeScreenTab(),
-                  widget.tabBarView2 ??
-                      const BrowseSetTab(
-                        desktopScaffold: BrowseSetsDesktop(),
-                        mobileScaffold: BrowseSetsMobile(),
-                      ),
-                ],
+          color: Colors.grey.withOpacity(0.1),
+        ),
+        //     color: Colors.grey.withOpacity(0.2)),
+        child: NestedScrollView(
+          headerSliverBuilder:
+              (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                // forceMaterialTransparency: true,
+                // backgroundColor: Colors.transparent,
+                // title: AppBarWidget(),
+                pinned: true,
+                expandedHeight: 100,
+                collapsedHeight: 100,
+                // snap: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: AppBarWidget(),
+                ),
               ),
-            ),
+              SliverAppBar(
+                expandedHeight: 60,
+                collapsedHeight: 60,
+                pinned: true,
+                backgroundColor: Theme.of(context).secondaryHeaderColor,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: TabBarContainer(
+                    selectedCard: selectedCard,
+                    cardGames: cardGames,
+                    tabController: tabController,
+                  ),
+                ),
+              ),
+            ];
+          },
+          physics: widget.isScroll
+              ? const BouncingScrollPhysics()
+              : const NeverScrollableScrollPhysics(),
+          // physics: const NeverScrollableScrollPhysics(),
+          body: TabBarView(
+            physics: const NeverScrollableScrollPhysics(),
+            controller: tabController,
+            children: [
+              widget.tabBarView1 ?? const HomeScreenTab(),
+              widget.tabBarView2 ??
+                  const BrowseSetTab(
+                    desktopScaffold: BrowseSetsDesktop(),
+                    mobileScaffold: BrowseSetsMobile(),
+                  ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

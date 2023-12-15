@@ -34,7 +34,7 @@ class _MainRouterState extends State<MainRouter> {
       errorPageBuilder: (context, state) {
         return PageNotFoundScreen();
       },
-      initialLocation: '/${AppRoutes.DesktopSeeCardDetailScreen.name}',
+      initialLocation: '/${AppRoutes.DesktopHome.name}',
       routes: [
         GoRoute(
           path: '/${AppRoutes.DesktopHome.name}',
