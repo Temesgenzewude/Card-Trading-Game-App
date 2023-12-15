@@ -60,26 +60,25 @@ class ProductCardWidget extends StatelessWidget {
               ],
             ),
             Positioned(
-              top: 9,
-              left: 12,
-              child: Container(
-                alignment: Alignment.center,
-                width: 47,
-                height: 16,
-                // padding: EdgeInsets.all(AppSizer.getWidth(context, 8)),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF3F2E3E),
-                  borderRadius: BorderRadius.circular(9.5),
-                ),
-                child: Text(
-                  '15% Off',
-                  style: TextStyle(
-                    fontSize: 8,
-                    color: Colors.white,
+                top: AppSizer.getHeight(context, 10),
+                left: AppSizer.getWidth(context, 10),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 16,
+                  width: AppSizer.getWidth(context, 47),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.onTertiaryContainer,
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                ),
-              ),
-            ),
+                  child: const Text(
+                    '15% Off',
+                    style: TextStyle(
+                      fontSize: 8,
+                      fontFamily: 'InterRegular',
+                      color: Colors.white,
+                    ),
+                  ),
+                )),
           ],
         ),
       ),

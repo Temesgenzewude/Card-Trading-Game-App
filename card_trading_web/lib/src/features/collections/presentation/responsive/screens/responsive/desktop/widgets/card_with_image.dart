@@ -32,12 +32,21 @@ class CardWithImage extends ConsumerWidget {
                   top: AppSizer.getHeight(context, 10),
                   left: AppSizer.getWidth(context, 10),
                   child: Container(
+                    alignment: Alignment.center,
+                    height: 16,
+                    width: AppSizer.getWidth(context, 37),
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.onTertiaryContainer,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: const Text('15% off',
-                        style: TextStyle(color: Colors.white)),
+                    child: const Text(
+                      '15% Off',
+                      style: TextStyle(
+                        fontSize: 8,
+                        fontFamily: 'InterRegular',
+                        color: Colors.white,
+                      ),
+                    ),
                   )),
             ],
           ),
