@@ -14,9 +14,14 @@ class HomeAndBrowseTabs extends StatefulHookWidget {
   Widget? tabBarView1;
   Widget? tabBarView2;
   bool isScroll;
+  bool isHome;
 
   HomeAndBrowseTabs(
-      {Key? key, this.tabBarView1, this.tabBarView2, this.isScroll = true})
+      {Key? key,
+      this.tabBarView1,
+      this.tabBarView2,
+      this.isScroll = true,
+      this.isHome = true})
       : super(key: key);
 
   @override
@@ -28,9 +33,11 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
     'Pokellector',
     'Pokellector2',
   ];
+
   @override
   Widget build(BuildContext context) {
-    final tabController = useTabController(initialLength: 2);
+    final tabController =
+        useTabController(initialLength: 2, initialIndex: widget.isHome ? 0 : 1);
     var selectedCard = useState("Pokellector");
     return Scaffold(
       // extendBodyBehindAppBar: true,

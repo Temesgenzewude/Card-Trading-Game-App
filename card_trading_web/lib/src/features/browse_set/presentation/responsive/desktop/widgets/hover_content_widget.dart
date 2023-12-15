@@ -1,15 +1,29 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors
 
+import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HoverContent extends StatelessWidget {
+  Widget iconType(index) {
+    if (index == 0) {
+      return SvgPicture.asset(
+        'assets/svg_images/green_check.svg',
+      );
+    } else {
+      return SvgPicture.asset(
+        'assets/svg_images/grey_check.svg',
+      );
+    }
+  }
+
   HoverContent({super.key, required this.index});
   int index;
   @override
   Widget build(BuildContext context) {
     return Positioned.fill(
       child: Container(
-        width: 147,
+        width: AppSizer.getWidth(context, 46),
         // height: 210,
         padding: const EdgeInsets.only(
           top: 7,
@@ -30,15 +44,15 @@ class HoverContent extends StatelessWidget {
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Card not owned',
+                  index == 0 ? 'Already Owned' : 'Card not owned',
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.secondary,
                       fontSize: 14,
                       fontFamily: 'InterRegular'),
                 ),
-                const Icon(
-                  Icons.check_circle,
-                  color: Colors.grey,
+                Padding(
+                  padding: EdgeInsets.only(left: AppSizer.getWidth(context, 5)),
+                  child: iconType(index),
                 ),
               ],
             ),
