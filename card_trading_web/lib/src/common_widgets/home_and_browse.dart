@@ -54,10 +54,11 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
         ),
         //     color: Colors.grey.withOpacity(0.2)),
         child: NestedScrollView(
-          headerSliverBuilder:
-              (BuildContext context, bool innerBoxIsScrolled) {
+          clipBehavior: Clip.none,
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
+                clipBehavior: Clip.none,
                 // forceMaterialTransparency: true,
                 // backgroundColor: Colors.transparent,
                 // title: AppBarWidget(),
@@ -70,8 +71,8 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
                 ),
               ),
               SliverAppBar(
-                expandedHeight: 60,
-                collapsedHeight: 60,
+                expandedHeight: 84,
+                collapsedHeight: 84,
                 pinned: true,
                 backgroundColor: Theme.of(context).secondaryHeaderColor,
                 flexibleSpace: FlexibleSpaceBar(

@@ -31,9 +31,9 @@ class TabBarContainer extends StatelessWidget {
         children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Container(
-              width: 80,
+              width: AppSizer.getWidth(context, 100),
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-              height: 65,
+              height: 84,
               decoration: ShapeDecoration(
                 gradient: const LinearGradient(
                   begin: Alignment(0.00, -1.00),
@@ -47,7 +47,7 @@ class TabBarContainer extends StatelessWidget {
                     color: Color(0x3F000000),
                     blurRadius: 8,
                     offset: Offset(0, 6),
-                    spreadRadius: 0,
+                    spreadRadius: 10,
                   )
                 ],
               ),

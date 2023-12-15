@@ -60,14 +60,12 @@ class _CollectionsState extends ConsumerState<Collections> {
                                       return Padding(
                                         padding: EdgeInsets.only(
                                           top: AppSizer.getHeight(context, 10),
-                                          bottom:
-                                              AppSizer.getWidth(context, 10),
                                         ),
                                         child: Row(
                                           children: [
                                             SizedBox(
                                               width: AppSizer.getWidth(
-                                                  context, 170),
+                                                  context, 144),
                                               child: SeriesCardWidget(),
                                             ),
                                             SizedBox(
@@ -81,8 +79,8 @@ class _CollectionsState extends ConsumerState<Collections> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.symmetric(
-                                vertical: AppSizer.getHeight(context, 10),
+                              padding: EdgeInsets.only(
+                                bottom: AppSizer.getHeight(context, 5),
                               ),
                               child: DotsWidget(
                                 selectedIndex: 0,
@@ -197,7 +195,7 @@ class _CollectionsState extends ConsumerState<Collections> {
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
                                       horizontal:
-                                          AppSizer.getWidth(context, 40)),
+                                          AppSizer.getWidth(context, 10)),
                                   child: ListView.builder(
                                       scrollDirection: Axis.horizontal,
                                       itemCount: 9,
@@ -220,7 +218,7 @@ class _CollectionsState extends ConsumerState<Collections> {
                                   GestureDetector(
                                     onTap: () {},
                                     child: const Padding(
-                                      padding: EdgeInsets.only(right: 60.0),
+                                      padding: EdgeInsets.only(right: 18.0),
                                       child: Text('View all'),
                                     ),
                                   )
