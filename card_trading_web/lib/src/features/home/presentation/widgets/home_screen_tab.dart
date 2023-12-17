@@ -22,7 +22,6 @@ class HomeScreenTab extends StatelessWidget {
               left: AppSizer.getWidth(context, 155),
               right: AppSizer.getWidth(context, 155),
             ),
-            // padding: EdgeInsets.only(top: 30.0),
             child: Column(
               children: [
                 Column(

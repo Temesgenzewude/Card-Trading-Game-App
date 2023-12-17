@@ -26,9 +26,16 @@ class _AuthButtonState extends ConsumerState<AuthButton> {
         padding: const EdgeInsets.only(top: 10.0),
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(64),
-            gradient: AppColors.buttonGradient,
-          ),
+              borderRadius: BorderRadius.circular(64),
+              gradient: AppColors.buttonGradient,
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0x3F000000),
+                  blurRadius: 8,
+                  offset: Offset(0, 6),
+                  spreadRadius: 0,
+                )
+              ]),
           height: 48,
           width: AppSizer.getWidth(context, 430),
           child: ElevatedButton(

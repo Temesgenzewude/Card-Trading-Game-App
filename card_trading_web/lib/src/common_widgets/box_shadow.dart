@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 BoxShadow boxShadow() {
-  return BoxShadow(
-    color: Colors.black.withOpacity(0.25),
-    offset: const Offset(0, 4),
-    blurRadius: 4,
-    spreadRadius: 1,
+  return const BoxShadow(
+    color: Color(0x3F000000),
+    blurRadius: 8,
+    offset: Offset(0, 6),
+    spreadRadius: 0,
   );
 }
 

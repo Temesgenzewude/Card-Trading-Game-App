@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -21,13 +20,14 @@ class _CardDescriptionScreenState extends State<CardDescriptionScreen> {
   @override
   Widget build(BuildContext context) {
     final tabController = useTabController(initialLength: 2);
+    final tabController2 = useTabController(initialLength: 3);
     var selectedCard = useState("Pokellector");
 
     return Scaffold(
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-           SliverAppBar(
+            SliverAppBar(
               title: AppBarWidget(),
             ),
             SliverAppBar(
@@ -37,6 +37,7 @@ class _CardDescriptionScreenState extends State<CardDescriptionScreen> {
                 selectedCard: selectedCard,
                 cardGames: cardGames,
                 tabController: tabController,
+                tabController2: tabController2,
               ),
             ),
           ];
