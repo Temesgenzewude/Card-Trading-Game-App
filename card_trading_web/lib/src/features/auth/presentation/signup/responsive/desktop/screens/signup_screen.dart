@@ -37,9 +37,9 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: AppSizer.getWidth(context, 200),
+              horizontal: AppSizer.getWidth(context, 160),
               vertical: 20,
-            ),
+          ),
             child: Center(
               child: Stack(
                 children: [
