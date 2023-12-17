@@ -42,9 +42,27 @@ class _ContactUsTabDesktopState extends ConsumerState<ContactUsTabDesktop> {
                         height: 67,
                       ),
                       Container(
-                        color: Theme.of(context).colorScheme.background,
                         height: 500,
-                        width: AppSizer.getWidth(context, 885),
+                        width: AppSizer.getWidth(context, 895),
+                        decoration: ShapeDecoration(
+                          // color: Colors.white,
+                          color: Theme.of(context).colorScheme.background,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(8),
+                              bottomLeft: Radius.circular(8),
+                              bottomRight: Radius.circular(8),
+                            ),
+                          ),
+                          shadows: const [
+                            BoxShadow(
+                              color: Color(0x3F000000),
+                              blurRadius: 8,
+                              offset: Offset(0, 4),
+                              spreadRadius: 0,
+                            )
+                          ],
+                        ),
                         child: Center(
                           child: Padding(
                             padding: EdgeInsets.symmetric(

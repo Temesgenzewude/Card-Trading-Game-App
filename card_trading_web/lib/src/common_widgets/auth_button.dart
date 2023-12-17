@@ -28,7 +28,7 @@ class _AuthButtonState extends ConsumerState<AuthButton> {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(64),
               gradient: AppColors.buttonGradient,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Color(0x3F000000),
                   blurRadius: 8,
@@ -46,11 +46,9 @@ class _AuthButtonState extends ConsumerState<AuthButton> {
                   borderRadius: BorderRadius.circular(40),
                 )),
             onPressed: () {
-              widget.isSignIn != null
+              widget.isSignIn != null && widget.isSignIn == true
                   ? login(context)
-                  : () => Future.delayed(const Duration(seconds: 0), () {
-                        context.go('/${AppRoutes.DesktopLogin.name}');
-                      });
+                  : context.go('/${AppRoutes.DesktopLogin.name}');
             },
             child: widget.text == null
                 ? Text(

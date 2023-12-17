@@ -16,15 +16,7 @@ class _PrivacyTabState extends ConsumerState<PrivacyScreen> {
   @override
   Widget build(BuildContext context) {
     return HomeAndBrowseTabs(
-      isScroll: false,
-      tabBarView1: Column(mainAxisSize: MainAxisSize.min, children: [
-        Expanded(
-            child: Padding(
-          padding: EdgeInsets.only(bottom: AppSizer.getHeight(context, 50)),
-          child: const PrivacyTabDesktop(),
-        )),
-        const FooterWidget(),
-      ]),
+      tabBarView1: const PrivacyTabDesktop(),
     );
   }
 }
