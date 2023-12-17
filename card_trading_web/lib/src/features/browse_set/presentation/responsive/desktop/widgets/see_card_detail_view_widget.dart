@@ -33,37 +33,57 @@ class _SeeCardDetailState extends State<SeeCardDetail> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizer.getHeight(context, 67),
-                  ),  
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
+                  child: Stack(
                     children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 67,
+                          ),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: AppSizer.getWidth(context, 46),
+                              vertical: 34,
+                            ),
+                            decoration: const ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(8),
+                                  bottomLeft: Radius.circular(8),
+                                  bottomRight: Radius.circular(8),
+                                ),
+                              ),
+                              shadows: [
+                                BoxShadow(
+                                  color: Color(0x3F000000),
+                                  blurRadius: 8,
+                                  offset: Offset(0, 4),
+                                  spreadRadius: 0,
+                                )
+                              ],
+                            ),
+                            child: Column(
+                              children: [
+                                const CollectionStatusCardWidget(),
+                                Wrap(
+                                  spacing: AppSizer.getWidth(context, 2),
+                                  runSpacing: 40,
+                                  children: List.generate(
+                                    30,
+                                    (index) => CardCollectionItem(index: index),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                       CardNameWidget(
                         primaryTitile: 'Card List',
                         width: 563,
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: AppSizer.getWidth(context, 46),
-                          vertical: 34,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3),
-                          boxShadow: [boxShadow()],
-                          color: Theme.of(context).colorScheme.secondary,
-                        ),
-                        child: Column(
-                          children: [
-                            const CollectionStatusCardWidget(),
-                            Wrap(
-                              spacing: AppSizer.getWidth(context, 2),
-                              runSpacing: 40,
-                              children: List.generate(
-                                30,
-                                (index) => CardCollectionItem(index: index),
-                              ),
-                            )
-                          ],
-                        ),
                       ),
                     ],
                   ),

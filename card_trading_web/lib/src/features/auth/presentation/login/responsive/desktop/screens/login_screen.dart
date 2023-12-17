@@ -36,7 +36,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: AppSizer.getWidth(context, 200),
+              horizontal: AppSizer.getWidth(context, 160),
               vertical: 20,
             ),
             child: Center(

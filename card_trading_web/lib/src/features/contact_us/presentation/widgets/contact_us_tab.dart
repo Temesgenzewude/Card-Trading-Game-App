@@ -28,9 +28,10 @@ class _ContactUsTabDesktopState extends ConsumerState<ContactUsTabDesktop> {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSizer.getWidth(context, 147),
-              vertical: 20,
+            padding: EdgeInsets.only(
+              left: AppSizer.getWidth(context, 160),
+              top: 20,
+              bottom: 20,
             ),
             child: Center(
               child: Stack(

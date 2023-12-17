@@ -39,66 +39,76 @@ class _NewSeeCardDetailScreenState extends State<SeeCardDetailScreen> {
                   padding: EdgeInsets.symmetric(
                     vertical: AppSizer.getHeight(context, 67),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Stack(
                     children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 67,
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 36,
+                              vertical: 34,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(3),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.25),
+                                  offset: const Offset(0, 4),
+                                  blurRadius: 4,
+                                  spreadRadius: 1,
+                                ),
+                              ],
+                              color: Theme.of(context).colorScheme.secondary,
+                            ),
+                            child: Column(
+                              children: [
+                                const CollectionStatusCardWidget(),
+                                Wrap(
+                                  spacing: AppSizer.getWidth(context, 20),
+                                  runSpacing: AppSizer.getWidth(context, 40),
+                                  children: List.generate(
+                                    10,
+                                    (index) => Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(3),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color:
+                                                Colors.black.withOpacity(0.25),
+                                            offset: const Offset(0, 4),
+                                            blurRadius: 4,
+                                            spreadRadius: 1,
+                                          ),
+                                        ],
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary,
+                                      ),
+                                      child: Image.asset(
+                                        'assets/images/image3.png',
+                                        width: AppSizer.getWidth(
+                                          context,
+                                          140,
+                                        ),
+                                        height:
+                                            AppSizer.getHeight(context, 222),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                       CardNameWidget(
                         primaryTitile: 'Card List',
                         width: 563,
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 36,
-                          vertical: 34,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
-                              offset: const Offset(0, 4),
-                              blurRadius: 4,
-                              spreadRadius: 1,
-                            ),
-                          ],
-                          color: Theme.of(context).colorScheme.secondary,
-                        ),
-                        child: Column(
-                          children: [
-                            const CollectionStatusCardWidget(),
-                            Wrap(
-                              spacing: AppSizer.getWidth(context, 20),
-                              runSpacing: AppSizer.getWidth(context, 40),
-                              children: List.generate(
-                                10,
-                                (index) => Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(3),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black.withOpacity(0.25),
-                                        offset: const Offset(0, 4),
-                                        blurRadius: 4,
-                                        spreadRadius: 1,
-                                      ),
-                                    ],
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
-                                  ),
-                                  child: Image.asset(
-                                    'assets/images/image3.png',
-                                    width: AppSizer.getWidth(
-                                      context,
-                                      140,
-                                    ),
-                                    height: AppSizer.getHeight(context, 222),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
                       ),
                     ],
                   ),
