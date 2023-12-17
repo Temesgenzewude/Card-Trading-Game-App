@@ -1,4 +1,5 @@
 import 'package:card_trading_web/src/common_widgets/auth_button.dart';
+import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
 import 'package:card_trading_web/src/common_widgets/card_name_widget.dart';
 import 'package:card_trading_web/src/common_widgets/custom_text_field.dart';
 import 'package:card_trading_web/src/common_widgets/footer_widget.dart';
