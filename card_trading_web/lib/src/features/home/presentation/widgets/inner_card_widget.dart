@@ -48,10 +48,10 @@ class InnerCardWidget extends StatelessWidget {
             Flexible(
               child: Text(
                 title,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontSize: 15,
-                ),
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontFamily: 'InterRegular'),
               ),
             )
           ],

@@ -34,6 +34,9 @@ class FooterWidget extends StatelessWidget {
                   'Contact us',
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.secondary,
+                    fontFamily: 'InterRegular',
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.white,
                   ),
                 ),
               ),
@@ -44,11 +47,23 @@ class FooterWidget extends StatelessWidget {
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 3.0),
-                child: Text(
-                  '\u2022 Terms of use',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
-                  ),
+                child: Row(
+                  children: [
+                    Text(
+                      '\u2022 ',
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.secondary),
+                    ),
+                    Text(
+                      'Terms of use',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
+                        fontFamily: 'InterRegular',
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -58,11 +73,22 @@ class FooterWidget extends StatelessWidget {
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 3.0),
-                child: Text(
-                  '\u2022 Privacy Policy',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
-                  ),
+                child: Row(
+                  children: [
+                    Text('\u2022 ',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.secondary,
+                        )),
+                    Text(
+                      'Privacy Policy',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
+                        fontFamily: 'InterRegular',
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
