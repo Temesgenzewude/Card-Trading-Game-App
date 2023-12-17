@@ -35,7 +35,7 @@ class _CardDescriptionViewWidgetState extends State<CardDescriptionViewWidget> {
               child: Column(
                 children: [
                   const CardItemDescriptionWidget(),
-                  SizedBox(
+                  const SizedBox(
                     height: 44,
                   ),
                   FeaturedCardWidget(

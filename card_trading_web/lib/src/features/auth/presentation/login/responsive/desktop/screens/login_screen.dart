@@ -35,193 +35,205 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: AppSizer.getWidth(context, 147),
+              horizontal: AppSizer.getWidth(context, 200),
               vertical: 20,
             ),
             child: Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Stack(
                 children: [
-                  CardNameWidget(primaryTitile: 'SignIn', width: 313),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.background,
-                      borderRadius: const BorderRadius.only(
-                        topRight: Radius.circular(8),
-                        bottomLeft: Radius.circular(8),
-                        bottomRight: Radius.circular(8),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 67,
                       ),
-                    ),
-                    height: 500,
-                    width: AppSizer.getWidth(context, 885),
-                    child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          left: AppSizer.getWidth(context, 20),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.background,
+                          borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(8),
+                            bottomLeft: Radius.circular(8),
+                            bottomRight: Radius.circular(8),
+                          ),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              bottom: 10.0, left: 48, right: 55),
-                          child: SizedBox(
-                            width: AppSizer.getWidth(context, 430),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Column(
+                        height: 500,
+                        width: AppSizer.getWidth(context, 885),
+                        child: Center(
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              left: AppSizer.getWidth(context, 20),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  bottom: 10.0, left: 48, right: 55),
+                              child: SizedBox(
+                                width: AppSizer.getWidth(context, 430),
+                                child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Padding(
-                                      padding: EdgeInsets.only(top: 20.0),
-                                      child: Text(
-                                        'Email',
-                                        style: TextStyle(
-                                            fontFamily: 'InterRegular',
-                                            fontSize: 14),
-                                      ),
-                                    ),
-                                    CustomTextField(
-                                        textEditingController: emailController),
-                                    const Padding(
-                                      padding: EdgeInsets.only(top: 8.0),
-                                      child: Text(
-                                        'Password',
-                                        style: TextStyle(
-                                            fontFamily: 'InterRegular',
-                                            fontSize: 14),
-                                      ),
-                                    ),
-                                    CustomTextField(
-                                      textEditingController: passwordController,
-                                      isPassword: true,
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 20.0),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Checkbox(
-                                              activeColor: Colors.green,
-                                              checkColor: Colors.white,
-                                              value: rememberMe,
-                                              onChanged: (val) {
-                                                setState(() {
-                                                  rememberMe = !rememberMe;
-                                                });
-                                              }),
-                                          const Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 10.0),
-                                            child: Text(
-                                              'Remember Me',
-                                              style: TextStyle(
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Padding(
+                                          padding: EdgeInsets.only(top: 20.0),
+                                          child: Text(
+                                            'Email',
+                                            style: TextStyle(
                                                 fontFamily: 'InterRegular',
-                                                fontSize: 14,
+                                                fontSize: 14),
+                                          ),
+                                        ),
+                                        CustomTextField(
+                                            textEditingController:
+                                                emailController),
+                                        const Padding(
+                                          padding: EdgeInsets.only(top: 8.0),
+                                          child: Text(
+                                            'Password',
+                                            style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14),
+                                          ),
+                                        ),
+                                        CustomTextField(
+                                          textEditingController:
+                                              passwordController,
+                                          isPassword: true,
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 20.0),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Checkbox(
+                                                  activeColor: Colors.green,
+                                                  checkColor: Colors.white,
+                                                  value: rememberMe,
+                                                  onChanged: (val) {
+                                                    setState(() {
+                                                      rememberMe = !rememberMe;
+                                                    });
+                                                  }),
+                                              const Padding(
+                                                padding:
+                                                    EdgeInsets.only(left: 10.0),
+                                                child: Text(
+                                                  'Remember Me',
+                                                  style: TextStyle(
+                                                    fontFamily: 'InterRegular',
+                                                    fontSize: 14,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: AppSizer.getWidth(
+                                                  context, 20),
+                                            ),
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                context.go(
+                                                    '/${AppRoutes.ForgotPasswordScreen.name}');
+                                              },
+                                              child: const Text(
+                                                'Forgot Password?',
+                                                style: TextStyle(
+                                                  fontFamily: 'InterRegular',
+                                                  fontSize: 14,
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ],
                                       ),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal:
-                                              AppSizer.getWidth(context, 20),
-                                        ),
-                                        child: GestureDetector(
-                                          onTap: () {
-                                            context.go(
-                                                '/${AppRoutes.ForgotPasswordScreen.name}');
-                                          },
-                                          child: const Text(
-                                            'Forgot Password?',
-                                            style: TextStyle(
-                                              fontFamily: 'InterRegular',
-                                              fontSize: 14,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                AuthButton(isSignIn: true),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: AppSizer.getHeight(context, 10)),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      const Padding(
-                                        padding: EdgeInsets.only(top: 20.0),
-                                        child: Text(
-                                          'or continue with',
-                                          style: TextStyle(
-                                            fontFamily: 'InterRegular',
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                          top: 20,
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 15.0),
-                                              child: GestureDetector(
-                                                child: SizedBox(
-                                                  height: 40,
-                                                  width: AppSizer.getWidth(
-                                                      context, 41),
-                                                  child: SvgPicture.asset(
-                                                    'assets/svg_images/google.svg',
-                                                  ),
-                                                ),
+                                    ),
+                                    AuthButton(isSignIn: true),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          top: AppSizer.getHeight(context, 10)),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          const Padding(
+                                            padding: EdgeInsets.only(top: 20.0),
+                                            child: Text(
+                                              'or continue with',
+                                              style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 16,
                                               ),
                                             ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 15.0),
-                                              child: GestureDetector(
-                                                child: SizedBox(
-                                                  height: 40,
-                                                  width: AppSizer.getWidth(
-                                                      context, 41),
-                                                  child: SvgPicture.asset(
-                                                    'assets/svg_images/facebook.svg',
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                              top: 20,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 15.0),
+                                                  child: GestureDetector(
+                                                    child: SizedBox(
+                                                      height: 40,
+                                                      width: AppSizer.getWidth(
+                                                          context, 41),
+                                                      child: SvgPicture.asset(
+                                                        'assets/svg_images/google.svg',
+                                                      ),
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
-                                            )
-                                          ],
-                                        ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 15.0),
+                                                  child: GestureDetector(
+                                                    child: SizedBox(
+                                                      height: 40,
+                                                      width: AppSizer.getWidth(
+                                                          context, 41),
+                                                      child: SvgPicture.asset(
+                                                        'assets/svg_images/facebook.svg',
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          const Padding(
+                                            padding: EdgeInsets.only(
+                                              top: 20,
+                                            ),
+                                            child: DontHaveAccount(),
+                                          ),
+                                        ],
                                       ),
-                                      const Padding(
-                                        padding: EdgeInsets.only(
-                                          top: 20,
-                                        ),
-                                        child: DontHaveAccount(),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
+                  CardNameWidget(primaryTitile: 'SignIn', width: 313),
                 ],
               ),
             ),

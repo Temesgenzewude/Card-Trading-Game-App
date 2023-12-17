@@ -19,42 +19,49 @@ class CardItemDescriptionWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        Stack(
           children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 67,
+                ),
+                Container(
+                  width: AppSizer.getWidth(context, 645),
+                  padding: EdgeInsets.only(
+                    top: 18,
+                    bottom: 56,
+                    left: AppSizer.getWidth(context, 25),
+                    right: AppSizer.getWidth(context, 25),
+                    // vertical: AppSizer.getHeight(context, 18),
+                  ),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      boxShadow(),
+                    ],
+                    color: Theme.of(context).colorScheme.secondary,
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(8),
+                      bottomLeft: Radius.circular(8),
+                      bottomRight: Radius.circular(8),
+                    ),
+                  ),
+                  child: const Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CardItemLeftWidget(),
+                      CardItemRightWidget(),
+                    ],
+                  ),
+                ),
+              ],
+            ),
             CardNameWidget(
               primaryTitile: 'Card name',
               width: 313,
               secondaryTitle: '#2',
-            ),
-            Container(
-              width: AppSizer.getWidth(context, 645),
-              padding: EdgeInsets.only(
-                top: 18,
-                bottom: 56,
-                left: AppSizer.getWidth(context, 25),
-                right: AppSizer.getWidth(context, 25),
-                // vertical: AppSizer.getHeight(context, 18),
-              ),
-              decoration: BoxDecoration(
-                boxShadow: [
-                  boxShadow(),
-                ],
-                color: Theme.of(context).colorScheme.secondary,
-                borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(8),
-                  bottomLeft: Radius.circular(8),
-                  bottomRight: Radius.circular(8),
-                ),
-              ),
-              child: const Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CardItemLeftWidget(),
-                  CardItemRightWidget(),
-                ],
-              ),
             ),
           ],
         ),
@@ -63,12 +70,12 @@ class CardItemDescriptionWidget extends StatelessWidget {
         ),
         const Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children:  [
+          children: [
             AlternateVersionCardWidget(),
             SizedBox(
               height: 33,
             ),
-             OwnedCardsWidget(),
+            OwnedCardsWidget(),
           ],
         ),
       ],

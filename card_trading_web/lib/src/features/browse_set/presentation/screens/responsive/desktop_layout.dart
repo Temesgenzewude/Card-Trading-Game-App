@@ -64,37 +64,44 @@ class SeriesNameCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: AppSizer.getHeight(context, 32)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 67,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSizer.getWidth(context, 27),
+                  vertical: AppSizer.getHeight(context, 35),
+                ),
+                width: AppSizer.getWidth(context, 883),
+                // height: AppSizer.getHeight(context, 350),
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(8),
+                    bottomLeft: Radius.circular(8),
+                    bottomRight: Radius.circular(8),
+                ),
+                  color: Theme.of(context).colorScheme.secondary,
+                  boxShadow: [boxShadow()],
+                ),
+                child: Wrap(
+                  spacing: AppSizer.getWidth(context, 20),
+                  runSpacing: AppSizer.getWidth(context, 40),
+                  children: List.generate(
+                    children,
+                    (index) => SeriesCardWidget(),
+                  ),
+                ),
+              ),
+            ],
+          ),
           CardNameWidget(
             primaryTitile: 'Series name',
             width: 313,
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSizer.getWidth(context, 27),
-              vertical: AppSizer.getHeight(context, 35),
-            ),
-            width: AppSizer.getWidth(context, 883),
-            // height: AppSizer.getHeight(context, 350),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(8),
-                bottomLeft: Radius.circular(8),
-                bottomRight: Radius.circular(8),
-              ),
-              color: Theme.of(context).colorScheme.secondary,
-              boxShadow: [boxShadow()],
-            ),
-            child: Wrap(
-              spacing: AppSizer.getWidth(context, 20),
-              runSpacing: AppSizer.getWidth(context, 40),
-              children: List.generate(
-                children,
-                (index) => SeriesCardWidget(),
-              ),
-            ),
           ),
         ],
       ),

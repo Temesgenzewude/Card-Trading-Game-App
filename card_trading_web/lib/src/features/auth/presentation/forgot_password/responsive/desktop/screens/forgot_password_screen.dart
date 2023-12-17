@@ -30,108 +30,138 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
   Widget build(BuildContext context) {
     TextEditingController emailController = useTextEditingController();
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage('assets/images/bg_images/bg_image.png'),
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/images/bg_images/bg_image.png'),
+            ),
           ),
-        ),
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.only(top: AppSizer.getHeight(context, 10)),
-            child: SizedBox(
-              height: 593,
-              width: AppSizer.getWidth(context, 985),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CardNameWidget(
-                      primaryTitile: 'Password Recovery', width: 400),
-                  Center(
-                    child: Container(
-                      color: Theme.of(context).colorScheme.background,
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 20.0),
-                          child: SizedBox(
-                            width: AppSizer.getWidth(context, 600),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Center(
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 20.0),
-                                    child: SizedBox(
-                                      height: AppSizer.getHeight(context, 281),
-                                      width: AppSizer.getWidth(context, 356),
-                                      child: Lottie.asset(
-                                          'assets/lottie/forgot_password.json'),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 20.0, bottom: 10),
-                                  child: Center(
-                                    child: SizedBox(
-                                      width: AppSizer.getWidth(context, 410),
-                                      child: const Text(
-                                        "Enter the email address associated with your account and we'll send you a link to reset your password.",
-                                        style: TextStyle(
-                                          fontFamily: 'InterRegular',
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 10.0),
-                                  child: Center(
-                                      child: Column(
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.only(top: 70),
+              child: SizedBox(
+                height: 660,
+                width: AppSizer.getWidth(context, 985),
+                child: Stack(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 67,
+                        ),
+                        Center(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).colorScheme.background,
+                              borderRadius: const BorderRadius.only(
+                                topRight: Radius.circular(8),
+                                bottomLeft: Radius.circular(8),
+                                bottomRight: Radius.circular(8),
+                              ),
+                            ),
+                            child: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 20.0),
+                                child: SizedBox(
+                                  width: AppSizer.getWidth(context, 600),
+                                  child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const Text(
-                                        'Email',
-                                        style: TextStyle(
-                                          fontFamily: 'InterRegular',
-                                          fontSize: 14,
+                                      Center(
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                              top: 20.0,
+                                              bottom: 20.0,
+                                              right: AppSizer.getWidth(
+                                                  context, 66)),
+                                          child: SizedBox(
+                                            height: AppSizer.getHeight(
+                                                context, 281),
+                                            width:
+                                                AppSizer.getWidth(context, 356),
+                                            child: Lottie.asset(
+                                                'assets/lottie/forgot_password.json'),
+                                          ),
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: AppSizer.getWidth(context, 430),
-                                        child: CustomTextField(
-                                            textEditingController:
-                                                emailController),
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 20.0, bottom: 10),
+                                        child: Center(
+                                          child: SizedBox(
+                                            width:
+                                                AppSizer.getWidth(context, 410),
+                                            child: const Text(
+                                              "Enter the email address associated with your account and we'll send you a link to reset your password.",
+                                              style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 16,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 10.0),
+                                        child: Center(
+                                            child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              'Email',
+                                              style: TextStyle(
+                                                fontFamily: 'InterRegular',
+                                                fontSize: 14,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: AppSizer.getWidth(
+                                                  context, 430),
+                                              child: CustomTextField(
+                                                  textEditingController:
+                                                      emailController),
+                                            ),
+                                          ],
+                                        )),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                          top: 20,
+                                          bottom:
+                                              AppSizer.getHeight(context, 80),
+                                        ),
+                                        child: Center(
+                                          child: SizedBox(
+                                            height: 60,
+                                            width:
+                                                AppSizer.getWidth(context, 400),
+                                            child: AuthButton(text: 'Continue'),
+                                          ),
+                                        ),
                                       ),
                                     ],
-                                  )),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    top: 20,
-                                    bottom: AppSizer.getHeight(context, 80),
-                                  ),
-                                  child: Center(
-                                    child: SizedBox(
-                                      height: 60,
-                                      width: AppSizer.getWidth(context, 400),
-                                      child: AuthButton(text: 'Continue'),
-                                    ),
                                   ),
                                 ),
-                              ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 67,
+                      child: CardNameWidget(
+                          primaryTitile: 'Password Recovery', width: 400),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
