@@ -68,7 +68,7 @@ class _NewestSeriesCardWidgetState extends State<NewestSeriesCardWidget> {
                       children: List.generate(
                         6,
                         (index) => const ProductCardWidget(),
-                      ),
+                    ),
                     ),
                   ),
                 ),

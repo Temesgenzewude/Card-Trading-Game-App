@@ -45,7 +45,8 @@ class NewestSetsCardWidget extends StatelessWidget {
                   children: [
                     InnerCardWidget(
                         imageUrl: 'assets/images/image3.png',
-                        title: 'Card set name'),
+                        title: 'Card set name',
+                      ),
                     SizedBox(
                       height: AppSizer.getHeight(context, 15),
                     ),
