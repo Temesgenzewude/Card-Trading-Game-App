@@ -1,3 +1,4 @@
+import 'package:card_trading_web/src/common_widgets/box_shadow.dart';
 import 'package:card_trading_web/src/common_widgets/footer_widget.dart';
 import 'package:card_trading_web/src/constants/colors.dart';
 import 'package:flutter/material.dart';
@@ -36,9 +37,20 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CardNameWidget(primaryTitile: 'Profile', width: 313),
                   Container(
-                    color: Theme.of(context).colorScheme.background,
+                    height: 67,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.background,
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(8),
+                        bottomRight: Radius.circular(8),
+                        topLeft: Radius.circular(8),
+                        topRight: Radius.circular(8),
+                      ),
+                      boxShadow: [boxShadow()],
+                    ),
                     height: 500,
                     width: AppSizer.getWidth(context, 885),
                     child: Center(
