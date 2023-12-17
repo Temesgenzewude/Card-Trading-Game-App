@@ -48,13 +48,32 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         height: 67,
                       ),
                       Container(
-                        decoration: BoxDecoration(
+                        // decoration: BoxDecoration(
+                        //   color: Theme.of(context).colorScheme.background,
+                        //   borderRadius: const BorderRadius.only(
+                        //     topRight: Radius.circular(8),
+                        //     bottomLeft: Radius.circular(8),
+                        //     bottomRight: Radius.circular(8),
+                        //   ),
+                        // ),
+                        decoration: ShapeDecoration(
+                          // color: Colors.white,
                           color: Theme.of(context).colorScheme.background,
-                          borderRadius: const BorderRadius.only(
-                            topRight: Radius.circular(8),
-                            bottomLeft: Radius.circular(8),
-                            bottomRight: Radius.circular(8),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(8),
+                              bottomLeft: Radius.circular(8),
+                              bottomRight: Radius.circular(8),
+                            ),
                           ),
+                          shadows: const [
+                            BoxShadow(
+                              color: Color(0x3F000000),
+                              blurRadius: 8,
+                              offset: Offset(0, 4),
+                              spreadRadius: 0,
+                            )
+                          ],
                         ),
                         height: 500,
                         width: AppSizer.getWidth(context, 885),

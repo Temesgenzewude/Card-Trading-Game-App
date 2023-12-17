@@ -11,16 +11,7 @@ class TermsOfUseScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return HomeAndBrowseTabs(
-      isScroll: false,
-      tabBarView1: Column(children: [
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(bottom: AppSizer.getHeight(context, 50)),
-            child: const TermsOfUseTabDesktop(),
-          ),
-        ),
-        const FooterWidget(),
-      ]),
+      tabBarView1: const TermsOfUseTabDesktop(),
     );
   }
 }

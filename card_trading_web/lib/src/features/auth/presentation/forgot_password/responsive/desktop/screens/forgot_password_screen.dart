@@ -55,13 +55,32 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                         ),
                         Center(
                           child: Container(
-                            decoration: BoxDecoration(
+                            // decoration: BoxDecoration(
+                            //   color: Theme.of(context).colorScheme.background,
+                            //   borderRadius: const BorderRadius.only(
+                            //     topRight: Radius.circular(8),
+                            //     bottomLeft: Radius.circular(8),
+                            //     bottomRight: Radius.circular(8),
+                            //   ),
+                            // ),
+                            decoration: ShapeDecoration(
+                              // color: Colors.white,
                               color: Theme.of(context).colorScheme.background,
-                              borderRadius: const BorderRadius.only(
-                                topRight: Radius.circular(8),
-                                bottomLeft: Radius.circular(8),
-                                bottomRight: Radius.circular(8),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(8),
+                                  bottomLeft: Radius.circular(8),
+                                  bottomRight: Radius.circular(8),
+                                ),
                               ),
+                              shadows: const [
+                                BoxShadow(
+                                  color: Color(0x3F000000),
+                                  blurRadius: 8,
+                                  offset: Offset(0, 4),
+                                  spreadRadius: 0,
+                                )
+                              ],
                             ),
                             child: Center(
                               child: Padding(
@@ -142,7 +161,9 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                                             height: 60,
                                             width:
                                                 AppSizer.getWidth(context, 400),
-                                            child: AuthButton(text: 'Continue'),
+                                            child: AuthButton(
+                                              text: 'Continue',
+                                            ),
                                           ),
                                         ),
                                       ),
