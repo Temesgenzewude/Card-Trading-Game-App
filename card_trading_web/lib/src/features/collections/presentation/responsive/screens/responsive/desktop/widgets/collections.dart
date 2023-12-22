@@ -9,6 +9,7 @@ import 'package:card_trading_web/src/features/collections/presentation/responsiv
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/widgets/selected_dot_widget.dart';
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/widgets/series_name_container.dart';
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/widgets/unselected_dot_widget.dart';
+import 'package:card_trading_web/src/features/home/presentation/widgets/product_card_widget.dart';
 import 'package:card_trading_web/src/routing/routes.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class _CollectionsState extends State<Collections> {
               child: Padding(
                 padding: EdgeInsets.only(
                     top: AppSizer.getHeight(context, 32),
-                    left: AppSizer.getWidth(context, 154)),
+                    left: AppSizer.getWidth(context, 164)),
                 child: Stack(
                   children: [
                     Column(
@@ -81,7 +82,7 @@ class _CollectionsState extends State<Collections> {
             ),
             Padding(
               padding: EdgeInsets.only(
-                  top: 80, bottom: 80, left: AppSizer.getWidth(context, 154)),
+                  top: 80, bottom: 80, left: AppSizer.getWidth(context, 164)),
               child: Center(
                 child: Stack(
                   children: [
@@ -100,9 +101,9 @@ class _CollectionsState extends State<Collections> {
                             bottomRight: Radius.circular(10),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 30.0),
+                            padding: const EdgeInsets.only(top: 30.0),
                             child: SizedBox(
-                              height: 240,
+                              height: 200,
                               width: AppSizer.getWidth(context, 883),
                               child: Column(
                                 children: [
@@ -115,18 +116,10 @@ class _CollectionsState extends State<Collections> {
                                           scrollDirection: Axis.horizontal,
                                           itemCount: 9,
                                           itemBuilder: (context, index) {
-                                            return Padding(
+                                            return const Padding(
                                               padding: EdgeInsets.symmetric(
-                                                  horizontal: 1.0),
-                                              child: AspectRatio(
-                                                aspectRatio: 0.5,
-                                                child: InkWell(
-                                                    onTap: () {
-                                                      context.go(
-                                                          '/${AppRoutes.DesktopCardDetailScreen.name}');
-                                                    },
-                                                    child: CardWithImage()),
-                                              ),
+                                                  horizontal: 4.0),
+                                              child: ProductCardWidget(),
                                             );
                                           }),
                                     ),
@@ -136,11 +129,10 @@ class _CollectionsState extends State<Collections> {
                                       Expanded(
                                         child: Text(''),
                                       ),
-                                      InkWell(
-                                        child: Padding(
-                                          padding: EdgeInsets.only(right: 18.0),
-                                          child: Text('View all'),
-                                        ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            right: 18.0, bottom: 10),
+                                        child: Text('View all'),
                                       )
                                     ],
                                   ),
@@ -151,7 +143,7 @@ class _CollectionsState extends State<Collections> {
                         ),
                       ],
                     ),
-                    CustomCardNameWidget(),
+                    const CustomCardNameWidget(),
                   ],
                 ),
               ),

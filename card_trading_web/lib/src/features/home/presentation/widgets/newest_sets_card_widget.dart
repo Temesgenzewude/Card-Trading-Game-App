@@ -31,7 +31,7 @@ class NewestSetsCardWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CardNameWidget(
-                primaryTitile: 'Newests sets',
+                primaryTitile: 'Newest Sets',
                 width: width ?? 267,
                 secondaryTitle: 'View all',
               ),
@@ -44,9 +44,9 @@ class NewestSetsCardWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     InnerCardWidget(
-                        imageUrl: 'assets/images/image3.png',
-                        title: 'Card set name',
-                      ),
+                      imageUrl: 'assets/images/image3.png',
+                      title: 'Card set name',
+                    ),
                     SizedBox(
                       height: AppSizer.getHeight(context, 15),
                     ),
