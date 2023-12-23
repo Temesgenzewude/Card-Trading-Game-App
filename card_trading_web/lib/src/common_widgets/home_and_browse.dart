@@ -113,17 +113,17 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
                             tabs: [
                               Padding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: AppSizer.getWidth(context, 2),
+                                  horizontal: AppSizer.getWidth(context, 10),
                                 ),
                                 child: Image.asset(
                                   'assets/images/logo_images/p-logo.png',
                                   height: 84,
-                                  width: AppSizer.getWidth(context, 100),
+                                  width: AppSizer.getWidth(context, 76),
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: AppSizer.getWidth(context, 2),
+                                  horizontal: AppSizer.getWidth(context, 8),
                                 ),
                                 child: Image.asset(
                                   'assets/images/logo_images/one-piece.png',
@@ -133,7 +133,7 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
                               ),
                               Padding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: AppSizer.getWidth(context, 2),
+                                  horizontal: AppSizer.getWidth(context, 8),
                                 ),
                                 child: Image.asset(
                                   'assets/images/logo_images/lorcana.png',

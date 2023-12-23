@@ -23,7 +23,7 @@ class _AuthButtonState extends ConsumerState<AuthButton> {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.only(top: 10.0),
+        padding: const EdgeInsets.only(top: 5.0),
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(64),

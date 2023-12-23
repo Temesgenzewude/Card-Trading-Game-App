@@ -31,15 +31,17 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
     TextEditingController confirmPasswordController =
         useTextEditingController();
     return SingleChildScrollView(
+      physics: const PageScrollPhysics(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSizer.getWidth(context, 160),
-              vertical: 20,
-          ),
+            padding: EdgeInsets.only(
+              left: AppSizer.getWidth(context, 210),
+              top: 20,
+              bottom: 20,
+            ),
             child: Center(
               child: Stack(
                 children: [
@@ -77,7 +79,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                             )
                           ],
                         ),
-                        height: 500,
+                        height: 410,
                         width: AppSizer.getWidth(context, 885),
                         child: Center(
                           child: Padding(
@@ -103,7 +105,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                     CustomTextField(
                                         textEditingController: emailController),
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 8.0),
+                                      padding: const EdgeInsets.only(top: 4.0),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
@@ -155,7 +157,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.symmetric(vertical: 20),
+                                      const EdgeInsets.symmetric(vertical: 10),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -190,13 +192,13 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                 AuthButton(),
                                 Padding(
                                   padding: EdgeInsets.only(
-                                      top: AppSizer.getHeight(context, 10)),
+                                      top: AppSizer.getHeight(context, 5)),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
                                       const Padding(
-                                        padding: EdgeInsets.only(top: 20.0),
+                                        padding: EdgeInsets.only(top: 10.0),
                                         child: Text(
                                           'or continue with',
                                           style: TextStyle(
@@ -207,7 +209,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                          top: 20,
+                                          top: 10,
                                         ),
                                         child: Row(
                                           mainAxisAlignment:
@@ -216,11 +218,12 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   right: 15.0),
-                                              child: GestureDetector(
+                                              child: InkWell(
+                                                onTap: () {},
                                                 child: SizedBox(
-                                                  height: 40,
+                                                  height: 30,
                                                   width: AppSizer.getWidth(
-                                                      context, 41),
+                                                      context, 31),
                                                   child: SvgPicture.asset(
                                                     'assets/svg_images/google.svg',
                                                   ),
@@ -230,11 +233,12 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   left: 15.0),
-                                              child: GestureDetector(
+                                              child: InkWell(
+                                                onTap: () {},
                                                 child: SizedBox(
-                                                  height: 40,
+                                                  height: 30,
                                                   width: AppSizer.getWidth(
-                                                      context, 41),
+                                                      context, 31),
                                                   child: SvgPicture.asset(
                                                     'assets/svg_images/facebook.svg',
                                                   ),
@@ -246,7 +250,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                       ),
                                       const Padding(
                                         padding: EdgeInsets.only(
-                                          top: 20,
+                                          top: 10,
                                         ),
                                         child: DontHaveAccount(
                                           message: 'Already have an account? ',
@@ -262,13 +266,13 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                       ),
                     ],
                   ),
-                  CardNameWidget(primaryTitile: 'Signup', width: 313),
+                  CardNameWidget(primaryTitile: 'Create Account', width: 313),
                 ],
               ),
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 100.0),
+            padding: EdgeInsets.only(top: 160.0),
             child: FooterWidget(),
           ),
         ],
