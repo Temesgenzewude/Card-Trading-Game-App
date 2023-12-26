@@ -38,7 +38,7 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
   @override
   Widget build(BuildContext context) {
     final tabController =
-        useTabController(initialLength: 3, initialIndex: widget.isHome ? 0 : 1);
+        useTabController(initialLength: 3, initialIndex: widget.isHome ? 0 : 2);
     var selectedCard = useState("Pokellector");
     return Scaffold(
       // extendBodyBehindAppBar: true,
