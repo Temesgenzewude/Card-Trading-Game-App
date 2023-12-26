@@ -31,52 +31,60 @@ class PrimarySearchBar extends StatelessWidget {
           )
         ],
       ),
-      child: SearchBar(
-        trailing: [
-          Center(
-            child: Icon(
-              Icons.search,
-              color: Theme.of(context).colorScheme.tertiary,
-              size: 20,
+      child: SizedBox(
+        width: AppSizer.getWidth(context, 400),
+        height: 50,
+        child: SearchBar(
+          trailing: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.search,
+                  color: Theme.of(context).colorScheme.tertiary,
+                  size: 20,
+                ),
+                Icon(
+                  Icons.filter_list,
+                  color: Theme.of(context).colorScheme.tertiary,
+                  size: 20,
+                )
+              ],
+            ),
+          ],
+          surfaceTintColor: const MaterialStatePropertyAll(
+            Colors.white,
+          ),
+          backgroundColor: const MaterialStatePropertyAll(
+            Colors.white,
+          ),
+          overlayColor: const MaterialStatePropertyAll(
+            Colors.white,
+          ),
+          padding: MaterialStateProperty.all(
+            EdgeInsets.only(
+              left: AppSizer.getWidth(context, 10),
+              // top: 2,
+              bottom: 3,
+              right: AppSizer.getHeight(context, 20),
             ),
           ),
-        ],
-        surfaceTintColor: const MaterialStatePropertyAll(
-          Colors.white,
-        ),
-        backgroundColor: const MaterialStatePropertyAll(
-          Colors.white,
-        ),
-        overlayColor: const MaterialStatePropertyAll(
-          Colors.white,
-        ),
-        padding: MaterialStateProperty.all(
-          EdgeInsets.only(
-            left: AppSizer.getWidth(context, 10),
-            // top: 2,
-            bottom: 3,
-            right: AppSizer.getHeight(context, 20),
+          elevation: const MaterialStatePropertyAll(1),
+          side: MaterialStateProperty.all(
+            BorderSide(
+              color: Theme.of(context).colorScheme.tertiary,
+            ),
+          ),
+          hintText: hintText,
+          hintStyle: MaterialStatePropertyAll(
+            TextStyle(
+              color: const Color(0xFF3F2E3E).withOpacity(0.5),
+              fontSize: 12,
+              fontFamily: 'InterRegular',
+              height: 0,
+            ),
           ),
         ),
-        elevation: const MaterialStatePropertyAll(1),
-        side: MaterialStateProperty.all(
-          BorderSide(
-            color: Theme.of(context).colorScheme.tertiary,
-          ),
-        ),
-        hintText: hintText,
-        hintStyle: MaterialStatePropertyAll(
-          TextStyle(
-            color: const Color(0xFF3F2E3E).withOpacity(0.5),
-            fontSize: 12,
-            fontFamily: 'InterRegular',
-            height: 0,
-          ),
-        ),
-        constraints: BoxConstraints(
-            maxHeight: 43,
-            maxWidth: AppSizer.getWidth(context, 473),
-            minWidth: AppSizer.getWidth(context, 233)),
       ),
     );
   }
