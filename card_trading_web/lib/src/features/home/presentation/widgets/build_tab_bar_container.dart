@@ -10,39 +10,42 @@ class TabBarContainer extends StatelessWidget {
     required this.selectedCard,
     required this.cardGames,
     required this.tabController,
-    required this.tabController2,
   });
 
   final ValueNotifier<String> selectedCard;
   final List<String> cardGames;
   final TabController tabController;
-  final TabController tabController2;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 86,
+      height: 84,
       padding: EdgeInsets.only(
-          left: AppSizer.getWidth(context, 150),
-          right: AppSizer.getWidth(context, 150)),
+        left: AppSizer.getWidth(context, 150),
+        right: AppSizer.getWidth(context, 150),
+      ),
       width: double.infinity,
       decoration: BoxDecoration(
         color: Theme.of(context).secondaryHeaderColor,
       ),
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(
-            child: SizedBox(),
-          ),
-          const Expanded(child: SizedBox()),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: SizedBox(
-                width: 300,
-                child: BuildTabBarForHomePage(tabController: tabController)),
-          ),
+          Expanded(child: Text('')),
+          Flexible(
+            child: Text(
+              'Welcome to TCG-Collector, Manage Your Collection',
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 14,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w400,
+                height: 0,
+              ),
+            ),
+          )
         ],
       ),
     );
