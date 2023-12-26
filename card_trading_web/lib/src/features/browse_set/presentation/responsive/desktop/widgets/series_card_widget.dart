@@ -16,6 +16,7 @@ class SeriesCardWidget extends StatelessWidget {
     return InkWell(
       onTap: () {
         context.go('/${AppRoutes.DesktopSeeCardDetailScreen.name}');
+        
       },
       child: Container(
         height: 200,

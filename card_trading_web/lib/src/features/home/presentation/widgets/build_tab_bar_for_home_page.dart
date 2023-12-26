@@ -1,5 +1,7 @@
+import 'package:card_trading_web/src/routing/routes.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../constants/colors.dart';
 
@@ -55,16 +57,24 @@ class _BuildTabBarForHomePageState extends State<BuildTabBarForHomePage> {
             height: 0,
           ),
           tabs: [
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
-              child: Tab(
-                child: SizedBox(
-                  width: 140,
-                  child: Center(
-                    child: Padding(
-                      padding: EdgeInsets.all(5),
-                      child: Text(
-                        'Home',
+              child: GestureDetector(
+                // onTap: () {
+                //   if (context.namedLocation('/${AppRoutes.DesktopHome.name}') !=
+                //       AppRoutes.DesktopHome.name) {
+                //     context.go('/${AppRoutes.DesktopHome.name}');
+                //   }
+                // },
+                child: Tab(
+                  child: SizedBox(
+                    width: 140,
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(5),
+                        child: Text(
+                          'Home',
+                        ),
                       ),
                     ),
                   ),
@@ -80,36 +90,38 @@ class _BuildTabBarForHomePageState extends State<BuildTabBarForHomePage> {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: DropdownButton<String>(
-                  dropdownColor: Colors.white,
-                  padding: const EdgeInsets.all(4),
-                  value: dropdownValue,
-                  icon: const Icon(Icons.arrow_drop_down),
-                  iconSize: 24,
-                  elevation: 16,
-                  onTap: () {
-                    setState(() {
-                      widget.tabController.index = 1;
-                    });
-                  },
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      dropdownValue = newValue!;
-                    });
-                  },
-                  items: [
-                    'assets/images/logo_images/p-logo.png',
-                    'assets/images/logo_images/one-piece.png',
-                    'assets/images/logo_images/lorcana.png',
-                  ].map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                        value: value,
-                        child: Image.asset(
-                          value,
-                          width: AppSizer.getWidth(context, 64),
-                          height: 87,
-                        ));
-                  }).toList(),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    dropdownColor: Colors.white,
+                    padding: const EdgeInsets.all(4),
+                    value: dropdownValue,
+                    icon: const Icon(Icons.arrow_drop_down),
+                    iconSize: 24,
+                    elevation: 16,
+                    onTap: () {
+                      setState(() {
+                        widget.tabController.index = 1;
+                      });
+                    },
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownValue = newValue!;
+                      });
+                    },
+                    items: [
+                      'assets/images/logo_images/p-logo.png',
+                      'assets/images/logo_images/one-piece.png',
+                      'assets/images/logo_images/lorcana.png',
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                          value: value,
+                          child: Image.asset(
+                            value,
+                            width: AppSizer.getWidth(context, 64),
+                            height: 87,
+                          ));
+                    }).toList(),
+                  ),
                 ),
               ),
             ),
