@@ -30,7 +30,7 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
         children: [
           Padding(
             padding: EdgeInsets.only(
-              left: AppSizer.getWidth(context, 160),
+              left: AppSizer.getWidth(context, 210),
               top: 20,
               bottom: 20,
             ),
@@ -54,7 +54,7 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                           ),
                           boxShadow: [boxShadow()],
                         ),
-                        height: 500,
+                        height: 400,
                         width: AppSizer.getWidth(context, 885),
                         child: Center(
                           child: Padding(
@@ -72,8 +72,8 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                                       child: Stack(
                                         children: [
                                           Container(
-                                            height: 155,
-                                            width: 155,
+                                            height: 115,
+                                            width: 115,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Theme.of(context)
@@ -227,7 +227,7 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                    top: 60,
+                                    top: 20,
                                   ),
                                   child: Center(
                                     child: Container(
@@ -287,7 +287,7 @@ class _ProfileTabDesktopState extends ConsumerState<ProfileTabDesktop> {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 80.0),
+            padding: EdgeInsets.only(top: 150.0),
             child: FooterWidget(),
           ),
         ],

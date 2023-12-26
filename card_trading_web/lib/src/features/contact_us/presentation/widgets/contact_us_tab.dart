@@ -29,7 +29,7 @@ class _ContactUsTabDesktopState extends ConsumerState<ContactUsTabDesktop> {
         children: [
           Padding(
             padding: EdgeInsets.only(
-              left: AppSizer.getWidth(context, 160),
+              left: AppSizer.getWidth(context, 210),
               top: 20,
               bottom: 20,
             ),
@@ -43,7 +43,7 @@ class _ContactUsTabDesktopState extends ConsumerState<ContactUsTabDesktop> {
                         height: 67,
                       ),
                       Container(
-                        height: 500,
+                        height: 410,
                         width: AppSizer.getWidth(context, 895),
                         decoration: ShapeDecoration(
                           // color: Colors.white,
@@ -150,7 +150,7 @@ class _ContactUsTabDesktopState extends ConsumerState<ContactUsTabDesktop> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                      top: 60,
+                                      top: 20,
                                     ),
                                     child: Center(
                                       child: Container(
@@ -198,7 +198,7 @@ class _ContactUsTabDesktopState extends ConsumerState<ContactUsTabDesktop> {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 80.0),
+            padding: EdgeInsets.only(top: 150.0),
             child: FooterWidget(),
           ),
         ],
