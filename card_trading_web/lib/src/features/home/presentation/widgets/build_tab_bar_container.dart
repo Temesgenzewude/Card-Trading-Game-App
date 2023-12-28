@@ -28,24 +28,20 @@ class TabBarContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).secondaryHeaderColor,
       ),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(child: Text('')),
-          Flexible(
-            child: Text(
-              'Welcome to TCG-Collector, Manage Your Collection',
-              textAlign: TextAlign.right,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 14,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w400,
-                height: 0,
-              ),
-            ),
-          )
+          const Expanded(
+            child: SizedBox(),
+          ),
+          const Expanded(child: SizedBox()),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: SizedBox(
+                width: 300,
+                child: BuildTabBarForHomePage(tabController: tabController)),
+          ),
         ],
       ),
     );
