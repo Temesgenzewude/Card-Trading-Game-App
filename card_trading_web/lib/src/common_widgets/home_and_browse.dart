@@ -38,7 +38,8 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
   @override
   Widget build(BuildContext context) {
     final tabController =
-        useTabController(initialLength: 3, initialIndex: widget.isHome ? 0 : 2);
+        useTabController(initialLength: 2, initialIndex: widget.isHome ? 0 : 1);
+    final tabController2 = useTabController(initialLength: 4, initialIndex: 0);
     var selectedCard = useState("Pokellector");
     return Scaffold(
       // extendBodyBehindAppBar: true,
@@ -80,9 +81,67 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
                         tabController: tabController,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 163.0),
-                        child: BuildTabBarForHomePage(
-                            tabController: tabController),
+                        padding: const EdgeInsets.only(left: 122.0),
+                        child: TabBar(
+                          isScrollable: true,
+                          labelPadding:
+                              const EdgeInsets.symmetric(horizontal: 4),
+                          // indicatorPadding: const EdgeInsets.only(),
+                          dividerColor: Colors.transparent,
+                          padding: const EdgeInsets.symmetric(horizontal: 2),
+                          indicator: ShapeDecoration(
+                            gradient: const LinearGradient(
+                              begin: Alignment(0.00, -1.00),
+                              end: Alignment(0, 1),
+                              colors: [Color(0xFF8ECAE6), Color(0xFF219EBC)],
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            shadows: const [
+                              BoxShadow(
+                                color: Color(0x3F000000),
+                                blurRadius: 8,
+                                offset: Offset(0, 6),
+                                spreadRadius: 0,
+                              ),
+                            ],
+                          ),
+                          indicatorSize: TabBarIndicatorSize.label,
+                          controller: tabController2,
+                          tabs: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: AppSizer.getWidth(context, 10),
+                              ),
+                              child: Image.asset(
+                                'assets/images/logo_images/p-logo.png',
+                                height: 84.5,
+                                width: AppSizer.getWidth(context, 76),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: AppSizer.getWidth(context, 8),
+                              ),
+                              child: Image.asset(
+                                'assets/images/logo_images/one-piece.png',
+                                width: AppSizer.getWidth(context, 80),
+                                height: 84.5,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: AppSizer.getWidth(context, 8),
+                              ),
+                              child: Image.asset(
+                                'assets/images/logo_images/lorcana.png',
+                                width: AppSizer.getWidth(context, 80),
+                                height: 84.5,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
