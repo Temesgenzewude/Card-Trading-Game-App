@@ -30,7 +30,7 @@ class _NewestSeriesCardWidgetState extends State<NewestSeriesCardWidget> {
               height: 67,
             ),
             Container(
-              height: 224,
+              height: 254,
               width: AppSizer.getWidth(context, 662),
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.only(
@@ -68,7 +68,7 @@ class _NewestSeriesCardWidgetState extends State<NewestSeriesCardWidget> {
                       children: List.generate(
                         6,
                         (index) => const ProductCardWidget(),
-                      ),
+                    ),
                     ),
                   ),
                 ),
