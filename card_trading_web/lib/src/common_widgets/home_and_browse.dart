@@ -115,6 +115,16 @@ class _NewHomeScreenState extends State<HomeAndBrowseTabs> {
                                 horizontal: AppSizer.getWidth(context, 10),
                               ),
                               child: Image.asset(
+                                'assets/images/poke_collector_home.png',
+                                height: 84.5,
+                                width: AppSizer.getWidth(context, 80),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: AppSizer.getWidth(context, 10),
+                              ),
+                              child: Image.asset(
                                 'assets/images/logo_images/p-logo.png',
                                 height: 84.5,
                                 width: AppSizer.getWidth(context, 76),
