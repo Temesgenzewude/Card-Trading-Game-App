@@ -1,9 +1,4 @@
-import 'package:card_trading_web/src/routing/routes.dart';
-import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-import '../../../../constants/colors.dart';
 
 class BuildTabBarForHomePage extends StatefulWidget {
   final TabController tabController;
@@ -18,8 +13,10 @@ class _BuildTabBarForHomePageState extends State<BuildTabBarForHomePage> {
   String dropdownValue = 'assets/images/logo_images/p-logo.png';
   @override
   Widget build(BuildContext context) {
-    
     return TabBar(
+        onTap: (indxe) {
+          print('Current index is $indxe');
+        },
         dividerColor: Colors.transparent,
         padding: EdgeInsets.symmetric(horizontal: 2, vertical: 2),
 
@@ -57,26 +54,30 @@ class _BuildTabBarForHomePageState extends State<BuildTabBarForHomePage> {
         ),
         tabs: const [
           Tab(
-            child: SizedBox(
-              width: 65,
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Text(
-                    'Home',
+            child: InkWell(
+              child: SizedBox(
+                width: 65,
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Text(
+                      'Home',
+                    ),
                   ),
                 ),
               ),
             ),
           ),
           Tab(
-            child: SizedBox(
-              width: 300,
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Text(
-                    'Browse Sets',
+            child: InkWell(
+              child: SizedBox(
+                width: 300,
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Text(
+                      'Browse All',
+                    ),
                   ),
                 ),
               ),

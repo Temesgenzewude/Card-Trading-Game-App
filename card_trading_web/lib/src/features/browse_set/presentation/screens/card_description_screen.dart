@@ -20,6 +20,7 @@ class _CardDescriptionScreenState extends State<CardDescriptionScreen> {
   @override
   Widget build(BuildContext context) {
     final tabController = useTabController(initialLength: 2);
+    final tabController2 = useTabController(initialLength: 4, initialIndex: 0);
     var selectedCard = useState("Pokellector");
 
     return Scaffold(
@@ -36,6 +37,7 @@ class _CardDescriptionScreenState extends State<CardDescriptionScreen> {
                 selectedCard: selectedCard,
                 cardGames: cardGames,
                 tabController: tabController,
+                tabController2: tabController2,
               ),
             ),
           ];
