@@ -51,7 +51,7 @@ class _CollectionsState extends State<Collections> {
                         ),
                         Container(
                           height: 300,
-                          width: AppSizer.getWidth(context, 883),
+                          width: AppSizer.getWidth(context, 883), 
                           child: TabBarView(
                               controller: _tabController,
                               children: List.generate(
