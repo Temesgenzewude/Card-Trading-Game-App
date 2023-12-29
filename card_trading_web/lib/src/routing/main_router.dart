@@ -1,4 +1,5 @@
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_list_viewscreen_desktop.dart';
+import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/wish_list_screen_desktop.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -35,7 +36,7 @@ class _MainRouterState extends State<MainRouter> {
       errorPageBuilder: (context, state) {
         return PageNotFoundScreen();
       },
-      initialLocation: '/${AppRoutes.DesktopSeeListViewCardDetailScreen.name}',
+      initialLocation: '/${AppRoutes.DesktopWishlistScreen.name}',
       routes: [
         GoRoute(
           path: '/${AppRoutes.DesktopHome.name}',
@@ -126,6 +127,12 @@ class _MainRouterState extends State<MainRouter> {
           name: AppRoutes.DesktopSeeListViewCardDetailScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
               context, state, const SeeCardDetailListScreenDesktop()),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.DesktopWishlistScreen.name}',
+          name: AppRoutes.DesktopWishlistScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const WishListScreenDesktop()),
         ),
       ],
     );
