@@ -84,7 +84,7 @@ class CardDetailCardWidget extends StatelessWidget {
               Text(
                 cardSubTitle,
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   fontFamily: 'InterMedium',
                   color: Theme.of(context).colorScheme.primary,
                 ),

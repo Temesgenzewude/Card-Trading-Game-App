@@ -6,6 +6,7 @@ enum AppRoutes {
   DesktopBrowseSets,
   DesktopHome,
   DesktopSeeCardDetailScreen,
+  DesktopSeeListViewCardDetailScreen,
   DesktopCollections,
   DesktopMoreOptionsScreen,
   DesktopEditProfileScreen,
