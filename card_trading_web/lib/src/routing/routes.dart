@@ -14,6 +14,7 @@ enum AppRoutes {
   DesktopPrivacyScreen,
   DesktopCardDetailScreen,
   DesktopTermsScreen,
+  DesktopWishlistScreen,
   BrowseSets,
   Home,
   SeeCardDetailScreen,
