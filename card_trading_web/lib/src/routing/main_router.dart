@@ -1,3 +1,4 @@
+import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_list_viewscreen_desktop.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -34,7 +35,7 @@ class _MainRouterState extends State<MainRouter> {
       errorPageBuilder: (context, state) {
         return PageNotFoundScreen();
       },
-      initialLocation: '/${AppRoutes.DesktopHome.name}',
+      initialLocation: '/${AppRoutes.DesktopSeeListViewCardDetailScreen.name}',
       routes: [
         GoRoute(
           path: '/${AppRoutes.DesktopHome.name}',
@@ -119,6 +120,12 @@ class _MainRouterState extends State<MainRouter> {
           name: AppRoutes.ForgotPasswordScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
               context, state, const ForgotPasswordScreen()),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.DesktopSeeListViewCardDetailScreen.name}',
+          name: AppRoutes.DesktopSeeListViewCardDetailScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const SeeCardDetailListScreenDesktop()),
         ),
       ],
     );
