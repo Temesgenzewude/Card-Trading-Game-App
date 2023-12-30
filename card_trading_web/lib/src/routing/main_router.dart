@@ -68,6 +68,12 @@ class _MainRouterState extends State<MainRouter> {
               context, state, const SeeCardDetailScreenDesktop()),
         ),
         GoRoute(
+          path: '/${AppRoutes.DesktopSettingScreen.name}',
+          name: AppRoutes.DesktopSettingScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const DesktopSettingScreen()),
+        ),
+        GoRoute(
             path: '/${AppRoutes.DesktopBrowseSets.name}',
             name: AppRoutes.DesktopBrowseSets.name,
             pageBuilder: (context, state) => buildCustomTransitionForPage(
