@@ -3,8 +3,8 @@ import 'package:card_trading_web/src/features/settings/presentation/widgets/chan
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class ChangePasswordScreen extends StatelessWidget {
-  const ChangePasswordScreen({super.key});
+class DesktopChangePasswordScreen extends StatelessWidget {
+  const DesktopChangePasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

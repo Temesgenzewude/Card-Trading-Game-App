@@ -1,5 +1,8 @@
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/see_card_detail_list_viewscreen_desktop.dart';
 import 'package:card_trading_web/src/features/browse_set/presentation/responsive/desktop/screens/wish_list_screen_desktop.dart';
+import 'package:card_trading_web/src/features/settings/presentation/screens/change_email_screen.dart';
+import 'package:card_trading_web/src/features/settings/presentation/screens/change_password_screen.dart';
+import 'package:card_trading_web/src/features/settings/presentation/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -36,7 +39,7 @@ class _MainRouterState extends State<MainRouter> {
       errorPageBuilder: (context, state) {
         return PageNotFoundScreen();
       },
-      initialLocation: '/${AppRoutes.DesktopWishlistScreen.name}',
+      initialLocation: '/${AppRoutes.DesktopHome.name}',
       routes: [
         GoRoute(
           path: '/${AppRoutes.DesktopHome.name}',
@@ -72,6 +75,18 @@ class _MainRouterState extends State<MainRouter> {
           name: AppRoutes.DesktopSettingScreen.name,
           pageBuilder: (context, state) => buildCustomTransitionForPage(
               context, state, const DesktopSettingScreen()),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.DesktopChangePasswordScreen.name}',
+          name: AppRoutes.DesktopChangePasswordScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const DesktopChangePasswordScreen()),
+        ),
+        GoRoute(
+          path: '/${AppRoutes.DesktopChangeEmailScreen.name}',
+          name: AppRoutes.DesktopChangeEmailScreen.name,
+          pageBuilder: (context, state) => buildCustomTransitionForPage(
+              context, state, const DesktopChangeEmailScreen()),
         ),
         GoRoute(
             path: '/${AppRoutes.DesktopBrowseSets.name}',

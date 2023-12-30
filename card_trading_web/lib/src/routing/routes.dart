@@ -24,5 +24,5 @@ enum AppRoutes {
   ProfileScreen,
   ContactUsScreen,
   CardDescriptionScreen,
-  ForgotPasswordScreen, DesktopSettingScreen,
+  ForgotPasswordScreen, DesktopSettingScreen, DesktopChangePasswordScreen, DesktopChangeEmailScreen,
 }
