@@ -9,6 +9,7 @@ import 'package:card_trading_web/src/features/collections/presentation/responsiv
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/widgets/selected_dot_widget.dart';
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/widgets/series_name_container.dart';
 import 'package:card_trading_web/src/features/collections/presentation/responsive/screens/responsive/desktop/widgets/unselected_dot_widget.dart';
+import 'package:card_trading_web/src/features/home/presentation/widgets/product_card_widget.dart';
 import 'package:card_trading_web/src/routing/routes.dart';
 import 'package:card_trading_web/src/utils/size_convertor.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,7 @@ class _CollectionsState extends State<Collections> {
                         ),
                         Container(
                           height: 300,
-                          width: AppSizer.getWidth(context, 883), 
+                          width: AppSizer.getWidth(context, 883),
                           child: TabBarView(
                               controller: _tabController,
                               children: List.generate(
@@ -102,33 +103,21 @@ class _CollectionsState extends State<Collections> {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 30.0),
                             child: SizedBox(
-                              height: 240,
+                              height: 160,
                               width: AppSizer.getWidth(context, 883),
                               child: Column(
                                 children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal:
-                                              AppSizer.getWidth(context, 10)),
-                                      child: ListView.builder(
-                                          scrollDirection: Axis.horizontal,
-                                          itemCount: 9,
-                                          itemBuilder: (context, index) {
-                                            return Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 1.0),
-                                              child: AspectRatio(
-                                                aspectRatio: 0.5,
-                                                child: InkWell(
-                                                    onTap: () {
-                                                      context.go(
-                                                          '/${AppRoutes.DesktopCardDetailScreen.name}');
-                                                    },
-                                                    child: CardWithImage()),
-                                              ),
-                                            );
-                                          }),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal:
+                                            AppSizer.getWidth(context, 10)),
+                                    child: Wrap(
+                                      spacing: 6,
+                                      runSpacing: 6,
+                                      children: List.generate(
+                                        9,
+                                        (index) => const ProductCardWidget(),
+                                      ),
                                     ),
                                   ),
                                   const Row(
@@ -138,7 +127,7 @@ class _CollectionsState extends State<Collections> {
                                       ),
                                       InkWell(
                                         child: Padding(
-                                          padding: EdgeInsets.only(right: 18.0),
+                                          padding: EdgeInsets.only(right: 42.0),
                                           child: Text('View all'),
                                         ),
                                       )

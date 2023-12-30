@@ -2,6 +2,7 @@ import 'package:card_trading_web/dependency_injection/shared_pref_injection.dart
 import 'package:card_trading_web/src/features/more_options/presentation/responsive/desktop/widgets/build_cutom_divider.dart';
 import 'package:card_trading_web/src/routing/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../constants/colors.dart';
@@ -43,13 +44,14 @@ Row buildProfileNameAndProfilePic() {
                 });
               },
               title: 'Profile',
-              icon: const SizedBox(
+              icon: SizedBox(
                 height: 24,
                 width: 24,
-                child: Icon(
-                  Icons.person_2_outlined,
-                  size: 24,
-                  color: AppColors.appBarBackgroundColor,
+                child: SvgPicture.asset(
+                  'assets/svg_images/profile.svg',
+                  // color: AppColors.appBarBackgroundColor,
+                  width: 24,
+                  height: 24,
                 ),
               ),
             ),
@@ -63,8 +65,8 @@ Row buildProfileNameAndProfilePic() {
               icon: SizedBox(
                 height: 24,
                 width: 24,
-                child: Image.asset(
-                  'assets/images/icon_images/collection_green.png',
+                child: SvgPicture.asset(
+                  'assets/svg_images/collection.svg',
                   // color: AppColors.appBarBackgroundColor,
                   width: 24,
                   height: 24,
@@ -72,8 +74,25 @@ Row buildProfileNameAndProfilePic() {
               ),
             ),
             buildMenuItem(
+                onTap: () { 
+                  Future.delayed(const Duration(seconds: 1), () {
+                    context.go('/${AppRoutes.DesktopSettingScreen.name}');
+                  });
+                },
+                title: 'Settings',
+                icon: SizedBox(
+                  height: 24,
+                  width: 24,
+                  child: SvgPicture.asset(
+                    'assets/svg_images/setting.svg',
+                    // color: AppColors.appBarBackgroundColor,
+                    width: 24,
+                    height: 24,
+                  ),
+                ),
+                showDivider: false),
+            buildMenuItem(
                 onTap: () {
-
                   prefManage.setBool(SharedPrefKeys.ISLOGGED, false);
                   prefManage.clear();
 
@@ -85,8 +104,8 @@ Row buildProfileNameAndProfilePic() {
                 icon: SizedBox(
                   height: 24,
                   width: 24,
-                  child: Image.asset(
-                    'assets/images/icon_images/logout-image.png',
+                  child: SvgPicture.asset(
+                    'assets/svg_images/logout.svg',
                     color: AppColors.appBarBackgroundColor,
                     width: 24,
                     height: 24,

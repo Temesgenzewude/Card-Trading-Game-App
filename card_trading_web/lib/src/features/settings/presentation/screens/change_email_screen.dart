@@ -3,8 +3,8 @@ import 'package:card_trading_web/src/features/settings/presentation/widgets/chan
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class ChangeEmailScreen extends StatelessWidget {
-  const ChangeEmailScreen({super.key});
+class DesktopChangeEmailScreen extends StatelessWidget {
+  const DesktopChangeEmailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
