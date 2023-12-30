@@ -14,9 +14,6 @@ class _BuildTabBarForHomePageState extends State<BuildTabBarForHomePage> {
   @override
   Widget build(BuildContext context) {
     return TabBar(
-        onTap: (indxe) {
-          print('Current index is $indxe');
-        },
         dividerColor: Colors.transparent,
         padding: EdgeInsets.symmetric(horizontal: 2, vertical: 2),
 
@@ -56,27 +53,19 @@ class _BuildTabBarForHomePageState extends State<BuildTabBarForHomePage> {
           Tab(
             child: InkWell(
               child: SizedBox(
-                width: 65,
+                width: 240,
                 child: Center(
                   child: Padding(
                     padding: EdgeInsets.all(5),
                     child: Text(
-                      'Home',
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Tab(
-            child: InkWell(
-              child: SizedBox(
-                width: 300,
-                child: Center(
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                    child: Text(
-                      'Browse All',
+                      ' Manage Your Collection',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
+                      ),
                     ),
                   ),
                 ),
